@@ -1,0 +1,29 @@
+/*公用头部*/
+
+/*共用侧导航*/
+.left{
+	width: 200px;
+	text-align: left;
+	color: #fff;
+	background-color: #333;
+}
+.left .left-con{
+	padding-left: 15px;
+}
+.left .left-con h3{
+	height: 45px;
+	line-height: 45px;
+}
+.left .left-con a{
+	color: #fff;
+}
+.left .left-item-content .left-item-content-text{
+	height: 40px;
+	line-height: 40px;
+}
+.left .left-con-item i{
+	
+}
+.left .left-con-item-activeItem{
+	
+}
