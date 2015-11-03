@@ -1,5 +1,47 @@
 /*公用头部*/
-
+.head{
+	width: 100%;
+	height: 80px;
+	background-color: #2e2e2e;
+}
+.head .head-con{
+	width: 1200px;
+	margin: 0 auto;
+}
+.head .head-con-logo{
+	width: 200px;
+	height: 80px;
+}
+.head .head-con-user{
+	height: 80px;
+	color: #fff;
+	font-size: 14px;
+}
+.head .head-con-user div{
+	height: 40px;
+	padding: 0 10px;
+	margin: 20px 0;
+	line-height: 40px;
+	border-right: 1px solid #000;
+}
+.head .head-con-user a{
+	color: #fff;
+}
+.head .head-user-userCenter-icon{
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: url(../images/icon_3.png) no-repeat;
+	margin-right: 10px;
+}
+.head .head-user-quit-icon{
+	display: inline-block;
+	width: 8px;
+	height: 10px;
+	background: url(../images/icon_3.png) no-repeat;
+	background-position: -26px 0;
+	margin-right: 10px;
+}
 /*共用侧导航*/
 .left{
 	width: 200px;
