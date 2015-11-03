@@ -2,6 +2,7 @@
 
 /*共用侧导航*/
 .left{
+	float: left;
 	width: 200px;
 	text-align: left;
 	color: #fff;
