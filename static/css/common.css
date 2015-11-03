@@ -1,1 +1,57 @@
-*{margin: 0;padding: 0;}
+/*定义默认样式，防止在不同版本浏览器显示效果不同*/
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: #000;
+	background: #FFF;
+	font: 12px Verdana, Arial, sans-serif, "microsoft yahei";
+	text-align: center;
+}
+/*清浮动*/
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:before,.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}
+/* 清除ul列表标记的样式 */
+ul,li{
+ 	list-style: none;
+}
+ /* 去掉链接的虚线框 */
+a{
+	color: #000;
+	display: block;
+	text-decoration: none;
+}
+/* 定义默认的链接样式，仅仅是作为默认样式提供，可以在各自的实例中覆盖掉 */
+a:hover {
+	text-decoration: none;
+}
+/* 定义图片边框，当图片作为链接内容被填充时，会有默认边框出现，重定义掉 */
+img{
+	border: none;
+	vertical-align: top;
+}
+
+/* 浮动定义 */
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+/* 从页面布局上隐藏元素，从布局上隐藏元素 */
+.hidden {
+	display: none;
+}
+.block {
+	display: block;
+}
