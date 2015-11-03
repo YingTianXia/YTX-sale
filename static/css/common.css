@@ -31,6 +31,11 @@ a{
 	display: block;
 	text-decoration: none;
 }
+/* 去掉table部分默认样式 */
+table,tr,td{
+	border: 0 none;
+	border-spacing:0;
+}
 /* 定义默认的链接样式，仅仅是作为默认样式提供，可以在各自的实例中覆盖掉 */
 a:hover {
 	text-decoration: none;

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <style>
+        .manage-main{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .manage-right{
+            padding-left: 26px;
+            width: 974px;
+            height: auto;
+            overflow: hidden;
+            float: right;
+        }
+        .key-search{
+            width: 890px;
+            background: #f5f5f5;
+            height: 54px;
+            margin-top: 24px;
+            padding-left: 60px;
+            padding-top: 22px;
+            overflow: hidden;
+        }
+        .key-search-word{
+            height: 24px;
+            width: 80px;
+            text-align: left;
+            line-height: 24px;
+            color: #333;
+            font-size: 12px;
+            float: left;
+        }
+        .key-search-input{
+            float: left;
+            padding-left: 10px;
+            width: 416px;
+            height: 22px;
+            border: 1px solid #333;
+            line-height: 22px;
+            color: #999;
+        }
+        .key-search-go{
+            display: block;
+            width: 100px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            color: #fff;
+            background: #fd9500;
+            font-size: 12px;
+            float: left;
+            margin-left: 6px;
+            cursor: pointer;
+        }
+        .item-manage-title{
+            margin-top: 18px;
+            height: 35px;
+            width: 100px;
+            color: #FFFFFF;
+            font-size: 14px;
+            text-align: center;
+            line-height: 35px;
+            background: url("../../static/images/yz.png") no-repeat 0 0;
+        }
+        .item-manage-line{
+            width: 950px;
+            height: 1px;
+            background: #fd9500;
+            margin-bottom: 12px;
+        }
+        .item-manage-wrap{
+            width: 948px;
+            height: auto;
+            overflow: hidden;
+            border: 1px solid #c9c9c9;
+            background: #f5f5f5;
+            padding-top: 40px;
+            position: relative;
+        }
+        .item-manage-search{
+            width: 100%;
+            margin-left: 20px;
+            height: auto;
+            overflow: hidden;
+        }
+        .item-search-li{
+            width: 100%;
+            height: 20px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .item-search-name{
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            color: #333;
+            font-size: 12px;
+            float: left;
+            margin-right: 10px;
+            float: left;
+        }
+        .item-select{
+            margin-right: 10px;
+            border: 1px solid #c9caca;
+            height: 20px;
+            float: left;
+            background: #fff;
+        }
+        .category-select{
+            width: 130px;
+        }
+        .sellerId-select{
+            width: 200px;
+            margin-right: 60px;
+        }
+        .sort-select{
+            width: 200px;
+        }
+        .item-input{
+            margin-right: 10px;
+            border: 1px solid #c9caca;
+            height: 18px;
+            float: left;
+        }
+        .sellerSN-input{
+            width: 200px;
+        }
+        .itemName-input{
+            width: 200px;
+            margin-right: 50px;
+        }
+        .itemNO-input{
+            width: 200px;
+        }
+        .item-search-confirm{
+            float: left;
+            display: block;
+            height: 18px;
+            width: 40px;
+            text-align: center;
+            line-height: 18px;
+            border: 1px solid #fd9500;
+            background: #fff;
+        }
+        .add-newItem{
+            position: absolute;
+            right: 50px;
+            top: 40px;
+            width: 130px;
+            height: 35px;
+            background: url("../../static/images/yz.png") no-repeat 0 -35px;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+        .item-search-num{
+            position: absolute;
+            display: block;
+            right: 50px;
+            top: 75px;
+            width: 130px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            color: #fd9500;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .item-result-table{
+            padding-bottom: 100px;
+            height: 130px;
+            overflow: hidden;
+        }
+        .manage-result-title{
+            background: #000;
+            height: 35px;
+            width: 948px;
+            color: #fff;
+            font-size: 12px;
+        }
+        .result-sellerId{
+            width: 76px;
+        }
+        .result-sellerName{
+            width: 84px;
+        }
+        .result-itemPic{
+            width: 80px;
+        }
+        .result-itemId{
+            width: 96px;
+        }
+        .result-itemName{
+            width: 136px;
+        }
+        .result-itemPrice{
+            width: 118px;
+        }
+        .result-itemLeft{
+            width: 76px;
+        }
+        .result-saleNum{
+            width: 78px;
+        }
+        .result-time{
+            width: 100px;
+        }
+        .result-operate{
+            width: 104px;
+        }
+        .manage-result-detail{
+            height: 130px;
+            overflow: hidden;
+        }
+        .manage-result-detail:hover{
+            background: #ffdea5;
+        }
+        .select-opreate{
+            border: 1px solid #c9caca;
+            width: 70px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="manage-main">
+        <div class="manage-right">
+            <div class="key-search">
+                <div class="key-search-word">关键词搜索:</div>
+                <input type="text" placeholder="请输入宝贝名/货号，数码电器输入型号，书籍类输入ISBN号" class="key-search-input"/>
+                <span class="key-search-go">快速找到类目</span>
+            </div>
+            <div class="item-manage">
+                <h3 class="item-manage-title">商品管理</h3>
+                <div class="item-manage-line"></div>
+                <div class="item-manage-wrap">
+                    <ul class="item-manage-search">
+                        <li class="item-search-li">
+                            <span class="item-search-name">类目搜索:</span>
+                            <select name="" class="item-select category-select">
+                                <option value=""></option>
+                            </select>
+                            <select name="" class="item-select category-select">
+                                <option value=""></option>
+                            </select>
+                            <select name="" class="item-select category-select">
+                                <option value=""></option>
+                            </select>
+                            <select name="" class="item-select category-select">
+                                <option value=""></option>
+                            </select>
+                        </li>
+                        <li class="item-search-li">
+                            <span class="item-search-name">商家ID:</span>
+                            <select name="" class="item-select sellerId-select">
+                                <option value=""></option>
+                            </select>
+                            <span class="item-search-name">商家货号:</span>
+                            <input type="text" class="item-input sellerSN-input" />
+                        </li>
+                        <li class="item-search-li">
+                            <span class="item-search-name">商品名称:</span>
+                            <input type="text" class="item-input itemName-input" />
+                            <span class="item-search-name">商品编号:</span>
+                            <input type="text" class="item-input itemNO-input" />
+                        </li>
+                        <li class="item-search-li">
+                            <span class="item-search-name">排序:</span>
+                            <select name="" class="item-select sort-select">
+                                <option value=""></option>
+                            </select>
+                            <span class="item-search-confirm">确定</span>
+                        </li>
+                    </ul>
+                    <a href="#" target="_blank" class="add-newItem">添加新产品</a>
+                    <span class="item-search-num">全部1234条</span>
+                    <div class="item-manage-result">
+                        <table class="result-title-table">
+                            <tr class="manage-result-title">
+                                <td class="result-sellerId">商家ID</td>
+                                <td class="result-sellerName">商家名称</td>
+                                <td class="result-itemPic">商品图</td>
+                                <td class="result-itemId">商品ID</td>
+                                <td class="result-itemName">名称</td>
+                                <td class="result-itemPrice">价格/特卖价</td>
+                                <td class="result-itemLeft">库存</td>
+                                <td class="result-saleNum">总销量</td>
+                                <td class="result-time">发布时间</td>
+                                <td class="result-operate">操作</td>
+                            </tr>
+                        </table>
+                        <table class="item-result-table">
+                            <tr class="manage-result-detail">
+                                <td class="result-sellerId">SM</td>
+                                <td class="result-sellerName">森马</td>
+                                <td class="result-itemPic"><img src="../../static/images/yz-test.jpg" alt="" width="100%"/></td>
+                                <td class="result-itemId">SM00123</td>
+                                <td class="result-itemName">潮女衫韩版潮女女士甜美套头毛衫圆领绣花针织衫韩版潮女 女士甜美套头毛衫圆领绣花针织衫韩版潮女女士甜美套头毛衫圆领绣花针织衫韩版潮女</td>
+                                <td class="result-itemPrice">
+                                    <p>99</p>
+                                    <p><del>199</del></p>
+                                </td>
+                                <td class="result-itemLeft">999</td>
+                                <td class="result-saleNum">87</td>
+                                <td class="result-time">2015-05-07</td>
+                                <td class="result-operate">
+                                    <select class=" select-opreate"></select>
+                                </td>
+                            </tr>
+                            <tr class="manage-result-detail">
+                                <td class="result-sellerId">SM</td>
+                                <td class="result-sellerName">森马</td>
+                                <td class="result-itemPic"><img src="../../static/images/yz-test.jpg" alt="" width="100%"/></td>
+                                <td class="result-itemId">SM00123</td>
+                                <td class="result-itemName">森马毛衣 2015冬装新款 女士甜美套头毛衫圆领绣花针织衫韩版潮女</td>
+                                <td class="result-itemPrice">
+                                    <p>99</p>
+                                    <p><del>199</del></p>
+                                </td>
+                                <td class="result-itemLeft">999</td>
+                                <td class="result-saleNum">87</td>
+                                <td class="result-time">2015-05-07</td>
+                                <td class="result-operate">
+                                    <select class=" select-opreate"></select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
