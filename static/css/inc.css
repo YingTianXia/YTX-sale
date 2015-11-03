@@ -22,8 +22,11 @@
 	line-height: 40px;
 }
 .left .left-con-item i{
-	
+	display: block;
+	height: 13px;
 }
-.left .left-con-item-activeItem{
-	
+.left .left-item-icon-index{
+	width: 9px;
+	background: url(../images/icon_3.png) no-repeat;
+	background-position: 0 42px;
 }
