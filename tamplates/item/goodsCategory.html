@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<title>迎天下ERP管理系统-商品类目选择</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/goodsCategeory.css"/>
+</head>
+<body>
+<div class="erp-container">
+	<div class="container clearfix">
+		<div class="erp-main">
+			<div class="category-search clearfix">
+				<div class="category-search-title">类目搜索：</div>
+				<input type="text" class="category-search-input" placeholder="请输入宝贝名/货号，数码电器输入型号，书籍类输入ISBN号" />
+				<div class="category-search-submit">快速找到类目</div>
+			</div>
+			<div class="category-content">
+				<div class="category-main clearfix" id="typechoose">
+					<div class="category-step category-step-one" id="type1">
+						<dl class="category-type">
+							<dt class="category-type-title">服装鞋包</dt>
+							<dd>
+								<p class="category-type-item">女装</p>
+								<p class="category-type-item">男鞋</p>
+							</dd>
+						</dl>
+						<dl class="category-type">
+							<dt class="category-type-title">服装鞋包</dt>
+							<dd>
+								<p class="category-type-item">女装</p>
+								<p class="category-type-item">男鞋</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="category-step">
+						<ul class="category-type" id="type2">
+
+						</ul>
+					</div>
+					<div class="category-step">
+						<ul class="category-type" id="type3">
+
+						</ul>
+					</div>
+				</div>
+				<div class="category-curStatus" id="typeStatus">
+					<span class="category-curStatus-static">您当前的选择是:</span>
+				</div>
+			</div>
+			<div class="category-submit">我已阅读以下规则，现在发布宝贝</div>
+		</div>
+	</div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/goodsCategory.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		category();
+		chooseType();
+	});
+</script>
+</body>
+</html>

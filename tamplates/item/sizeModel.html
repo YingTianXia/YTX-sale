@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <title>迎天下ERP管理系统-创建尺码表</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/sizeModel.css"/>
+</head>
+<body>
+<div class="erp-container">
+    <div class="container clearfix">
+        <div class="erp-main">
+            <div class="newSizeModel">
+                <h1 class="newSizeModel-title">新增尺寸模版</h1>
+                <div class="SM-con">
+                    <dl class="UG-goods-attr-inputCon clearfix">
+                        <dt class="UG-goods-attr-name">模版名：</dt>
+                        <dd class="UG-goods-attr-content">
+                            <input type="text" class="UG-goods-attr-input" />
+                        </dd>
+                    </dl>
+                    <dl class="UG-goods-attr-inputCon clearfix">
+                        <dt class="UG-goods-attr-name">规格名：</dt>
+                        <dd class="UG-goods-attr-content">
+                            <input type="text" class="UG-goods-attr-input" placeholder="如：尺寸" id="table-spec" />
+                        </dd>
+                    </dl>
+                    <dl class="UG-goods-attr-inputCon clearfix">
+                        <dt class="UG-goods-attr-name">参数名：</dt>
+                        <dd class="UG-goods-attr-content">
+                            <input type="text" class="UG-goods-attr-input" placeholder="如：衣长或袖长" />
+                        </dd>
+                        <dd class="SM-addArg" id="addArg">新增参数</dd>
+                    </dl>
+                    <dl class="UG-goods-attr-inputCon clearfix">
+                        <dt class="UG-goods-attr-name">型号名：</dt>
+                        <dd class="UG-goods-attr-content">
+                            <input type="text" class="UG-goods-attr-input" placeholder="如：S、M、L" />
+                        </dd>
+                        <dd class="SM-addArg" id="addSize">新增型号</dd>
+                        <dd class="SM-addArg-alert yellow">建议从最小尺码开始添加，以保证表格顺序便于观看!</dd>
+                    </dl>
+                    <div class="SM-table-con" id="tableCon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/sizeModel.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        sizeTable();
+    })
+</script>
+</body>
+</html>

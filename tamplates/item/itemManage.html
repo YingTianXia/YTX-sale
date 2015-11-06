@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>后台管理－商品管理</title>
-    <link rel="stylesheet" href="../../static/css/item-manage.css"/>
+    <title>迎天下ERP管理系统-商品管理</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <link rel="stylesheet" href="../../static/css/itemManage.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/include.css"/>
+
 </head>
 <body>
+    <div class="lazy" ng-app>
     <div ng-include="'../include/head.html'"></div>
     <div class="manage-main">
         <div ng-include="'../include/left.html'"></div>
@@ -89,7 +93,7 @@
                                 <td class="result-saleNum">87</td>
                                 <td class="result-time">2015-05-07</td>
                                 <td class="result-operate">
-                                    <select class=" select-opreate"></select>
+                                    <select class=" select-operate"></select>
                                 </td>
                             </tr>
                             <tr class="manage-result-detail">
@@ -106,7 +110,7 @@
                                 <td class="result-saleNum">87</td>
                                 <td class="result-time">2015-05-07</td>
                                 <td class="result-operate">
-                                    <select class=" select-opreate"></select>
+                                    <select class=" select-operate"></select>
                                 </td>
                             </tr>
                         </table>
@@ -115,8 +119,9 @@
             </div>
         </div>
     </div>
+    </div>
     <script src="../../static/js/jquery-1.11.3.min.js"></script>
     <script src="../../static/js/angular.min.js"></script>
-    <script src="../../static/js/item-manage.js"></script>
+    <script src="../../static/js/include-left.js"></script>
 </body>
 </html>
