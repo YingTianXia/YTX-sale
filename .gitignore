@@ -1,0 +1,8 @@
+*.dmb
+*.rsc
+*.int
+*.lk
+*.zip
+*.project
+*.DS_Store
+*.idea/
