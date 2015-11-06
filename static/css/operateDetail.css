@@ -1,0 +1,246 @@
+.user-main{
+    float: left;
+    padding: 25px;
+    width: 950px;
+    height: auto;
+    overflow: hidden;
+}
+.detail-title{
+    display: block;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    background: #fd9500;
+    font-size: 14px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.detail-line{
+    width: 100%;
+    height: 1px;
+    background: #fd9500;
+}
+.detail-form{
+    margin-top: 12px;
+    margin-bottom: 26px;
+    width: 948px;
+    border: 1px solid #c9c9c9;
+    height: auto;
+    overflow: hidden;
+}
+.date-up-time{
+    margin-left: 30px;
+    width: 50%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    color: #333;
+}
+.date-up-time i{
+    color: #fd9500;
+}
+.shop-detail-ul{
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.shop-detail-li{
+    float: left;
+    width: 88px;
+    height: 170px;
+    margin: 0 50px;
+    text-align: center;
+}
+.shop-detail-li .one{
+    display: block;
+    width: 88px;
+    height: 88px;
+    background: url("../../static/images/yzUser.png") no-repeat 0 0;
+}
+.shop-detail-li .two{
+    display: block;
+    width: 88px;
+    height: 88px;
+    background: url("../../static/images/yzUser.png") no-repeat 0 -88px;
+}
+.shop-detail-li .three{
+    display: block;
+    width: 88px;
+    height: 88px;
+    background: url("../../static/images/yzUser.png") no-repeat 0 -176px;
+}
+.shop-detail-li .four{
+    display: block;
+    width: 88px;
+    height: 88px;
+    background: url("../../static/images/yzUser.png") no-repeat -88px 0;
+}
+.shop-detail-li .five{
+    display: block;
+    width: 88px;
+    height: 88px;
+    background: url("../../static/images/yzUser.png") no-repeat -88px -88px;
+}
+.shop-detail-name{
+    height: 44px;
+    width: 88px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+.shop-detail-num{
+    height: 20px;
+    width: 88px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+.shop-detail-wrap{
+    position: relative;
+    margin-left: 20px;
+    width: 930px;
+}
+.shop-detail-title{
+    display: block;
+    height: 50px;
+    line-height: 60px;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+.shop-detail-one{
+    overflow: hidden;
+}
+.shop-detail-one .left{
+    padding: 5px 0;
+    float: left;
+    background: #fd9500;
+    width: 117px;
+}
+.shop-left-li{
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 12px;
+}
+.shop-detail-one .right{
+    float: left;
+    margin-left: 13px;
+    padding: 4px 0;
+    border: 1px solid #dfdfdf;
+    width: 798px;
+}
+.shop-right-li{
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+    color: #333333;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.seller-address-info{
+    border: 1px solid #dfdfdf;
+    border-collapse:collapse;
+}
+.seller-address-info td{
+    border-bottom: 1px solid #dfdfdf;
+}
+.seller-address-send,.seller-address-get{
+    height: 50px;
+    width: 930px;
+}
+.seller-address-title{
+    width: 110px;
+}
+.seller-address-title span{
+    display: block;
+    width: 65px;
+    height: 20px;
+    border: 1px solid #fd9500;
+    color: #fd9500;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+.seller-address-name{
+    width: 80px;
+    text-align: left;
+}
+.seller-address-area{
+    width: 215px;
+    text-align: left;
+}
+.seller-address-detail{
+    width: 180px;
+    padding-right: 30px;
+    text-align: left;
+}
+.seller-address-email{
+    width: 90px;
+    text-align: left;
+}
+.seller-address-phone{
+    width: 115px;
+    text-align: center;
+}
+.seller-address-operate{
+    padding-left: 10px;
+    width: 98px;
+}
+.seller-address-operate a{
+    color: #4598c8;
+    font-size: 12px;
+    display: inline-block;
+    width: 45px;
+    text-align: center;
+}
+.shop-info-ul{
+    width: 930px;
+    height: auto;
+    overflow: hidden;
+    background: #eee;
+}
+.shop-info-li{
+    float: left;
+    height: 50px;
+    font-size: 14px;
+    color: #333;
+    line-height: 50px;
+}
+.shop-info-ul .one{
+    margin-left: 192px;
+}
+.shop-info-ul .two{
+    margin-left: 157px;
+}
+.shop-info-ul .three{
+    margin-left: 155px;
+}
+.shop-info-ul .four{
+    margin-left: 74px;
+}
+.shop-info-ul .five{
+    margin-left: 90px;
+}
+.shop-info-change{
+    display: block;
+    position: absolute;
+    top: 15px;
+    border-radius: 5px;
+    right: 0;
+    width: 45px;
+    height: 22px;
+    font-size: 12px;;
+    background: #fd9500;
+    color: #fff;
+    line-height: 22px;
+    text-align: center;
+}

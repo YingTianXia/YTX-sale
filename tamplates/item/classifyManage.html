@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<title>迎天下ERP管理系统-分类管理</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/classifyManage.css"/>
+</head>
+<body>
+<div class="erp-container">
+	<div class="container clearfix">
+		<div class="erp-main">
+			<div class="erp-main-title-con clearfix" style="margin-top:0;">
+				<h1 class="erp-main-title">分类管理</h1>
+				<div class="erp-main-title-btn">导入</div>
+			</div>
+			<div class="category-con">
+				<div class="category-list clearfix" id="cateCon">
+					<div class="category-item">
+						<p class="category-item-title">一级类目</p>
+						<div class="category-attr-list-con">
+							<ul class="category-attr-list" id="C_list">
+								<li class="category-attr-item">
+									<span class="category-attr-name">服装</span>
+									<a class="category-attr-delete">删除</a>
+								</li>
+								<li class="category-attr-item">
+									<span class="category-attr-name">服装</span>
+									<a class="category-attr-delete">删除</a>
+								</li>
+								<li class="category-attr-item">
+									<span class="category-attr-name">服装</span>
+									<a class="category-attr-delete">删除</a>
+								</li>
+							</ul>
+							<!--<div class="category-add-con">
+								<input type="text" class="category-attr-input" />
+								<b class="category-attr-add">确定</b>
+							</div>-->
+						</div>
+						<div class="category-action" id="C_acitons">
+							<span class="category-action-addNew">新增</span>
+							<span class="category-action-addNewType">新增下一级</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/classifyManage.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        type();
+    });
+</script>
+</body>
+</html>
