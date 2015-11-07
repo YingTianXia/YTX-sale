@@ -46,29 +46,33 @@
                         <div class="act-info-tit">
                             <span>*</span>活动类型： 
                         </div>
-                        <select class="act-info-select">
+                        <select class="act-info-select J_actSelect">
                             <option value="" selected="true" disabled="true">请选择</option>
-                            <option value="">限时折扣</option>
-                            <option value="">全场限时折扣</option>
-                            <option value="">满减</option>
-                            <option value="">满折</option>
+                            <option value="0">限时折扣</option>
+                            <option value="1">全场限时折扣</option>
+                            <option value="2">满减</option>
+                            <option value="3">满折</option>
                         </select>
                     </div>
-                    <div class="act-set">
+                    <div class="act-set J_actType">
                         <p>折扣：<input class="act-info-input2" type="number"> 折</p>
                         <p><a class="act-set-btn" href="javascript:;">保存并添加商品</a></p>
                     </div>
-                    <div class="act-set">
+                    <div class="act-set J_actType">
                         <p>折扣：<input class="act-info-input2" type="number"> 折</p>
                         <p><a class="act-set-btn" href="javascript:;">保存</a></p>
                     </div>
-                    <div class="act-set">
-                        <p>满：<input class="act-info-input2" type="number"> 元 减：<input class="act-info-input2" type="number"> 元</p>
-                        <p><a class="act-set-btn" href="javascript:;">添加</a></p>
+                    <div class="act-set J_actType">
+                        <div class="J_condition_manjian">
+                            <p>满：<input class="act-info-input2" type="number"> 元 减：<input class="act-info-input2" type="number"> 元</p>
+                        </div>
+                        <p><a class="act-set-btn J_addmanjian" href="javascript:;">添加</a></p>
                     </div>
-                    <div class="act-set">
-                        <p>满：<input class="act-info-input2" type="number"> 元 打：<input class="act-info-input2" type="number"> 折</p>
-                        <p><a class="act-set-btn" href="javascript:;">添加</a></p>
+                    <div class="act-set J_actType">
+                        <div class="J_condition_manzhe">
+                            <p>满：<input class="act-info-input2" type="number"> 元 打：<input class="act-info-input2" type="number"> 折</p>
+                        </div>
+                        <p><a class="act-set-btn J_addmanzhe" href="javascript:;">添加</a></p>
                     </div>
                 </div>
                 <div class="act-submit-box">
@@ -78,5 +82,21 @@
             </div>
         </div>
     </div>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script>
+(function($){
+    $('.J_actSelect').on('change',function(e){
+        var _v = e.target.value;
+        $('.J_actType').hide();
+        $('.J_actType').eq(_v).show();
+    });
+    $('.J_addmanjian').on('click',function(){
+        $('.J_condition_manjian').append('<p>满：<input class="act-info-input2" type="number"> 元 减：<input class="act-info-input2" type="number"> 元</p>');
+    });
+    $('.J_addmanzhe').on('click',function(){
+        $('.J_condition_manzhe').append('<p>满：<input class="act-info-input2" type="number"> 元 打：<input class="act-info-input2" type="number"> 折</p>');
+    });
+})(jQuery);
+</script>
 </body>
 </html>

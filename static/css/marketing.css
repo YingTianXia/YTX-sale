@@ -221,6 +221,7 @@
 .act-set{
     padding-left: 120px;
     line-height: 30px;
+    display: none;
 }
 .act-set-btn{
     display: inline-block;
