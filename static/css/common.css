@@ -61,3 +61,9 @@ em,i{
 .block {
 	display: block;
 }
+.vHidden{
+	visibility: hidden;
+}
+.fw{
+	font-weight: bold;
+}

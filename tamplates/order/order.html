@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理-订单管理</title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/order.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/laydate.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/laydate-skin.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/layer.css"/>
+	</head>
+	<body>
+		<div ng-include="'../include/head.html'"></div>
+		<div class="order">
+			<div ng-include="'../include/left.html'"></div>
+			<div class="order-con fr">
+				<div class="order-con-title">
+					<p>订单管理</p>
+				</div>
+				<div class="order-con-search clearfix">
+					<div class="order-search-tagbox">
+						<ul class="order-search-tag fl clearfix">
+							<li class="order-search-tag-active">全部订单</li>
+							<li>待付款<span class="order-search-num">216</span></li>
+							<li>待发货<span class="order-search-num">23</span></li>
+							<li>部分发货<span class="order-search-num">39</span></li>
+							<li>已发货<span class="order-search-num">539</span></li>
+							<li>未评价<span class="order-search-num">39</span></li>
+							<li>成功的订单<span class="order-search-num">339</span></li>
+							<li>关闭的订单<span class="order-search-num">59</span></li>
+						</ul>
+						<p class="order-search-time fr">
+							<a class="order-search-time-active" href="">近一周</a>
+							<a href="">一个月</a>
+							<a href="">三个月</a>
+						</p>
+					</div>
+					<div class="order-search-condition clearfix">
+						<div class="order-condition-time fl">
+							<span>成交时间:</span>
+							<input id="start" />—<input id="end" />
+						</div>
+						<div class="order-condition-phone fl">
+							<span>买家电话:</span>
+							<input value="" />
+						</div>
+						<div class="order-condition-orderNum fl">
+							<span>订单号:</span>
+							<input value="" />
+						</div>
+						<div class="order-condition-status fl">
+							<span>售后状态:</span>
+							<select name="">
+								<option>申请退款</option>
+								<option>申请退款退货</option>
+								<option>卖家已同意</option>
+								<option>买家已发货</option>
+								<option>买家确认收货</option>
+								<option>退款成功</option>
+								<option>买家取消申请</option>
+								<option>卖家不同意</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="order-con-main">
+					<div class="order-main-orders">
+						<div class="order-orders-details clearfix">
+							<p class="order-details-orderNum fl">订单号:<span>20150718123456789</span></p>
+							<p class="order-details-saleOrderNum fl">卖家订单号:<span>20150718123456789</span></p>
+							<p class="order-details-orderTime fl">下单时间:<span>2015-07-18 12:34:56</span></p>
+							<p class="order-details-payTime fl">付款时间:<span>2015-07-18 12:34:56</span></p>
+							<p class="order-details-orderStatus fl">订单状态:<span>已付款</span></p>
+							<p class="order-details-buyer fl">收货人:<span>王小明</span></p>
+							<p class="order-details-phone fl">联系方式:<span>12345678912</span></p>
+							<p class="order-details-address fl">买家地址:<span>北京市 东城区 东华门街道 某某小区2幢3单元2楼</span></p>
+						</div>
+						<div class="order-orders-items">
+							<table class="order-items-inner">
+								<tr>
+									<td class="order-items-inner-choose"><input name="order-items-inner" type="checkbox" value="" /></td>
+									<td class="order-items-inner-img"><img src="../../static/images/test-80-80.jpg"/></td>
+									<td class="order-items-inner-details">
+										<p>货号:10016</p>
+										<p>森马加厚棒球羽绒服 男 2015冬装新款 男士直筒休闲外套 韩版潮流</p>
+										<p><span>蓝色</span><span>M</span></p>
+									</td>
+									<td class="order-items-inner-num"><span>1</span></td>
+									<td class="order-items-inner-price"><span>￥359.00</span></td>
+									<td class="order-items-inner-buttom"><a href="">发货</a></td>
+								</tr>
+							</table>
+							<table class="order-items-inner">
+								<tr>
+									<td class="order-items-inner-choose"><input name="order-items-inner" type="checkbox" value="" /></td>
+									<td class="order-items-inner-img"><img src="../../static/images/test-80-80.jpg"/></td>
+									<td class="order-items-inner-details">
+										<p>货号:10016</p>
+										<p>森马加厚棒球羽绒服 男 2015冬装新款 男士直筒休闲外套 韩版潮流</p>
+										<p><span>蓝色</span><span>M</span></p>
+									</td>
+									<td class="order-items-inner-num"><span>1</span></td>
+									<td class="order-items-inner-price"><span>￥359.00</span></td>
+									<td class="order-items-inner-buttom"><a id="delivery" href="">发货</a></td>
+								</tr>
+							</table>
+							<div class="order-items-statistics clearfix">
+								<p class="fr"><span>共2件</span><span>合计:￥652(平台包邮)</span></p>
+								<p class="fr clearfix">
+									<a class="order-items-statistics-print" href="">打印配货单</a>
+									<a href="">批量发货</a>
+									<a href="">备注</a>
+									<a href="">查看物流</a>
+									<a href="">订单详情</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/js/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../../static/js/layer.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../../static/js/order-order.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

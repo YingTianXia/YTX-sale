@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理-配货单</title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/express.css"/>
+	</head>
+	<body>
+		<div ng-include="'../include/head.html'"></div>
+		<div class="invoice">
+			<div class="invoice-con">
+				<h3 class="invoice-con-title">配货单</h3>
+				<div class="invoice-con-main">
+					<div class="invoice-main-detail clearfix">
+						<div class="invoice-detail-orderNum fl">订单号:<span>201510718123456789</span></div>
+						<div class="invoice-detail-address fl">收货地址:<span>北京市 东城区 东华门街道 某某小区2幢3单元2楼</span></div>
+						<div class="invoice-detail-buyer fl">收件人:<span>王小明</span></div>
+						<div class="invoice-detail-phone fl">联系方式:<span>123456789123</span></div>
+					</div>
+					<div class="invoice-main-item">
+						<table>
+							<tr>
+								<td>货号</td>
+								<td>商品名</td>
+								<td>颜色</td>
+								<td>尺寸</td>
+								<td>数量</td>
+							</tr>
+							<tr>
+								<td>10016</td>
+								<td>森马加厚棒球羽绒服</td>
+								<td>蓝色</td>
+								<td>M</td>
+								<td>1</td>
+							</tr>
+						</table>
+					</div>
+					<div class="invoice-main-remarks clearfix">
+						<p class="fl">买家备注:</p>
+						<textarea name="" class="fl"></textarea>
+					</div>
+				</div>
+				<div class="invoice-con-print">
+					<a class="invoice-print-prints" href="">打印</a>
+					<a class="invoice-print-cancel" href="">取消</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+</html>
