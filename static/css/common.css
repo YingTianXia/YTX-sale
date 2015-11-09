@@ -44,7 +44,9 @@ img{
 	border: none;
 	vertical-align: top;
 }
-
+em,i{
+	font-style: normal;
+}
 /* 浮动定义 */
 .fl {
 	float: left;

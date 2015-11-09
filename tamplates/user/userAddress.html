@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>商家中心－卖家地址修改</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <link rel="stylesheet" href="../../static/css/userAddress.css"/>
+</head>
+<body>
+
+<div class="user-main" ng-controller="myCtrl">
+    <div class="operate-detail">
+        <span class="addressInfo">地址信息</span>
+        <p class="hr-line"></p>
+        <form name="addressForm" ng-submit="save()" novalidate>
+            <div class="detail-wrap">
+                <div class="detail-address-send">
+                    <span class="address-send">发货地址</span>
+                    <span class="address-star">*</span>
+                    <span class="address-send-mark">为必填项</span>
+                    <div class="address-province">
+                        <span class="address-left">省:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <select name="province"  ng-model="send.province" required>
+                            <option value="">请选择</option>
+                            <option value="浙江省">浙江省</option>
+                            <option value="江苏省">江苏省</option>
+                        </select>
+                        <span class="address-left address-left－two" >市:</span>
+                        <select name="city" ng-model="send.city" required>
+                            <option value="">请选择</option>
+                            <option value="杭州市">杭州市</option>
+                        </select>
+                        <span class="address-left address-left－two">区:</span>
+                        <select name="area" id="" ng-model="send.area" required>
+                            <option value="">请选择</option>
+                            <option value="西湖区">西湖区</option>
+                        </select>
+                        <span class="false-show"  ng-show="addressForm.province.$touched&&addressForm.province.$invalid">省不能为空</span>
+                        <span class="false-show"  ng-show="addressForm.city.$touched&& addressForm.city.$invalid">市不能为空</span>
+                        <span class="false-show"  ng-show="addressForm.area.$touched&& addressForm.area.$invalid">区不能为空</span>
+
+                    </div>
+                    <div class="address-email">
+                        <span class="address-left">邮政编码:</span>
+                        <input class="email-input" type="text" ng-model="send.code" placeholder="如不清楚，请填写0x00000"/>
+                    </div>
+                    <div class="address-detail">
+                        <span class="address-left">街道地址:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <textarea ng-model="send.detail" name="detail" ng-minlength="5" ng-maxlength="100" required class="address-textarea" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息" name="" id="" cols="30" rows="10"></textarea>
+                        <span class="address-detail-mark">请填写街道地址，最少5个字，最多不能超过100个字</span>
+                        <span class="false-show"  ng-show="addressForm.detail.$touched&& addressForm.detail.$invalid">详细地址是必须的</span>
+                    </div>
+                    <div class="address-name">
+                        <span class="address-left">联系人姓名:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <input type="text" name="name" ng-model="send.name" ng-maxlength="25" required placeholder="长度不超过25个字符"/>
+                        <span class="false-show"  ng-show="addressForm.name.$touched&& addressForm.name.$invalid">姓名不正确</span>
+                    </div>
+                    <div class="address-phone">
+                        <span class="address-left">手机:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <input ng-model="send.phone" name="phone"  type="text" ng-pattern="/^0?(13|14|15|18)[0-9]{9}$/" required/>
+                        <span class="false-show"  ng-show="addressForm.phone.$touched&& addressForm.phone.$invalid">手机不正确</span>
+                    </div>
+                </div>
+            </div>
+            <p class="address-hr"></p>
+            <div class="detail-wrap">
+                <div class="detail-address-send">
+                    <span class="address-send">退货地址</span>
+                    <p class="same-address"><input class="select-radio"  type="radio" ng-click="reset()"/>和发货地址相同</p>
+                    <div class="address-province">
+                        <span class="address-left">省:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <select name="" id="" ng-model="back.province" name="backprovince" required>
+                            <option value="">请选择</option>
+                            <option value="浙江省">浙江省</option>
+                            <option value="江苏省">江苏省</option>
+                        </select>
+                        <span class="address-left address-left－two">市:</span>
+                        <select name="" id="" ng-model="back.city" name="backcity" required>
+                            <option value="">请选择</option>
+                            <option value="杭州市">杭州市</option>
+                        </select>
+                        <span class="address-left address-left－two">区:</span>
+                        <select name="" id=""  ng-model="back.area" name="area" required>
+                            <option value="">请选择</option>
+                            <option value="西湖区">西湖区</option>
+                        </select>
+                        <span class="false-show"  ng-show="addressForm.backprovince.$touched&&addressForm.backprovince.$invalid">省不能为空</span>
+                        <span class="false-show"  ng-show="addressForm.backcity.$touched&& addressForm.backcity.$invalid">市不能为空</span>
+                        <span class="false-show"  ng-show="addressForm.backarea.$touched&& addressForm.backarea.$invalid">区不能为空</span>
+                    </div>
+                    <div class="address-email">
+                        <span class="address-left">邮政编码:</span>
+                        <input class="email-input" ng-model="back.code" type="text" placeholder="如不清楚，请填写0x00000"/>
+                    </div>
+                    <div class="address-detail">
+                        <span class="address-left">街道地址:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <textarea class="address-textarea" ng-model="back.detail" ng-minlength="5" ng-maxlength="100" name="backdetail" required placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息" name="" id="" cols="30" rows="10"></textarea>
+                        <span class="address-detail-mark">请填写街道地址，最少5个字，最多不能超过100个字</span>
+                        <span class="false-show"  ng-show="addressForm.backdetail.$touched&& addressForm.backdetail.$invalid">详细地址是必须的</span>
+                    </div>
+                    <div class="address-name">
+                        <span class="address-left" >联系人姓名:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <input type="text" ng-model="back.name" placeholder="长度不超过25个字符" name="backname" required ng-maxlength="25"/>
+                        <span class="false-show"  ng-show="addressForm.backname.$touched&& addressForm.backname.$invalid">姓名不正确</span>
+                    </div>
+                    <div class="address-phone">
+                        <span class="address-left">手机:</span>
+                        <span class="address-star address-star-two">*</span>
+                        <input type="text" name="backphone" ng-model="back.phone" ng-pattern="/^0?(13|14|15|18)[0-9]{9}$/" required/>
+                        <span class="false-show"  ng-show="addressForm.backphone.$touched&& addressForm.backphone.$invalid">手机不正确</span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="address-save">保存</button>
+        </form>
+    </div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script src="../../static/js/angular.min.js"></script>
+<script src="../../static/js/userAddress.js"></script>
+</body>
+</html>

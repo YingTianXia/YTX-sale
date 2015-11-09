@@ -1,6 +1,7 @@
 .manage-main{
     width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 .manage-right{
     padding-left: 26px;
@@ -213,7 +214,7 @@
 .manage-result-detail:hover{
     background: #ffdea5;
 }
-.select-opreate{
+.select-operate{
     border: 1px solid #c9caca;
     width: 70px;
     height: 18px;
