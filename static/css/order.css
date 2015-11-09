@@ -129,3 +129,30 @@
     -webkit-border-radius: 5px;
     border-radius:5px;
 }
+.order .order-con .order-items-statistics p{
+	width: 945px;
+	padding-right: 20px;
+	text-align: right;
+	margin: 10px 0;
+}
+.order .order-con .order-items-statistics span{
+	margin-left: 20px;
+}
+.order .order-con .order-items-statistics .order-items-statistics-print{
+	background-color: #fff;
+	color: #000;
+	width: 78px;
+	border: 1px solid #333;
+}
+.order .order-con .order-items-statistics a{
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #333;
+	color: #fff;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    text-align: center;
+}

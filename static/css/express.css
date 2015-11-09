@@ -1,0 +1,181 @@
+/*配送单*/
+.invoice {
+	padding-top: 60px;
+}
+.invoice .invoice-con{
+	width: 950px;
+	margin: 0 auto;
+}
+.invoice .invoice-con h3{
+	height: 40px;
+	line-height: 40px;
+}
+.invoice .invoice-con .invoice-con-main{
+	border: 1px solid #C6C6C6;
+	padding: 0 20px;
+}
+.invoice .invoice-con .invoice-main-detail{
+	height: 64px;
+	border-bottom: 1px solid #999;
+}
+.invoice .invoice-con .invoice-main-detail div{
+	margin-right: 20px;
+	padding-top: 25px;
+	height: 64px;
+}
+.invoice .invoice-con .invoice-detail-orderNum{
+	width: 200px;
+}
+.invoice .invoice-con .invoice-detail-address{
+	width: 340px;
+}
+.invoice .invoice-con .invoice-detail-buyer{
+	width: 110px;
+}
+.invoice .invoice-con .invoice-detail-phone{
+	width: 150px;
+}
+.invoice .invoice-con .invoice-main-item{
+	margin-bottom: 50px;
+}
+.invoice .invoice-con .invoice-main-item table{
+	width: 675px;
+	text-align: center;
+	margin: 0 auto;
+	border:solid #c9c9c9; 
+	border-width:1px 0px 0px 1px;
+}
+.invoice .invoice-con .invoice-main-item table td{
+	height: 40px;
+	border:solid #c9c9c9; 
+	border-width:0px 1px 1px 0px;
+}
+.invoice .invoice-con .invoice-main-remarks{
+	margin-bottom: 40px;
+}
+.invoice .invoice-con .invoice-main-remarks textarea{
+	width: 300px;
+	height: 100px;
+}
+.invoice .invoice-con .invoice-con-print{
+	padding-top: 40px;
+	width: 200px;
+	margin: 0 auto;
+}
+.invoice .invoice-con .invoice-con-print a{
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    border: 1px solid #FD9500;
+}
+.invoice .invoice-con .invoice-con-print .invoice-print-prints{
+	background-color: #fd9500;
+	color: #fff;
+}
+.invoice .invoice-con .invoice-con-print .invoice-print-cancel{
+	color: #fd9500;
+}
+/*查看物流*/
+.checkExpress .check-con{
+	width: 1200px;
+	padding-top: 50px;
+	margin: 0 auto;
+}
+.checkExpress .check-con-tabNav{
+	width: 1200px;
+	height: 34px;
+	border-bottom: 2px solid #FD9500;
+}
+.checkExpress .check-con-tabNav li{
+	float: left;
+	width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #000;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.checkExpress .check-con-tabNav .check-con-tabActive{
+	background-color: #FD9500;
+	color: #fff;
+}
+.checkExpress .check-con-tabCon{
+	padding-top: 30px;
+}
+.checkExpress .check-con-tabCon .check-pannel-status{
+	color: #FD9500;
+}
+.checkExpress .check-con-tabCon .check-pannel-express{
+	border: 1px solid #CCCCCC;
+	padding: 25px;
+}
+.checkExpress .check-con-tabCon .check-express-statusList{
+	padding-bottom: 25px;
+}
+.checkExpress .check-con-tabCon .check-express-statusList li{
+	height: 40px;
+	line-height: 40px;
+}
+.checkExpress .check-express-statusList span{
+	display: inline-block;
+}
+.checkExpress .check-express-statusList .date,.checkExpress .check-express-statusList .week{
+	font-weight: bold;
+}
+.checkExpress .check-express-statusList .date{
+	width: 90px;
+}
+.checkExpress .check-express-statusList .week{
+	width: 40px;
+}
+.checkExpress .check-express-statusList .time{
+	width: 80px;
+}
+.checkExpress .check-express-statusList .text{
+	width: 700px;
+	vertical-align: text-top;
+    line-height: 1.3em;
+}
+.checkExpress .check-express-statusInfo{
+	width: 100%;
+	height: 40px;
+	line-height: 60px;
+	text-align: right;
+	border-top: 1px solid #CCC;
+}
+.checkExpress .check-express-statusInfo span,.checkExpress .check-express-statusInfo a{
+	color: #FD9500;
+	display: inline-block;
+}
+.checkExpress .check-pannel-details{
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	padding: 25px;
+}
+.checkExpress .check-pannel-details .check-pannel-details-row{
+	height: 24px;
+	line-height: 24px;
+}
+.checkExpress .check-pannel-details .check-pannel-details-row span{
+	margin-right: 10px;
+}
+.checkExpress .check-pannel-details .check-pannel-details-list{
+	padding-top: 20px;
+}
+.checkExpress .check-pannel-details .check-pannel-details-list a{
+	display: inline-block;
+}
+.checkExpress .check-pannel-details .check-pannel-details-list span{
+	display: inline-block;
+	width: 80px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+}

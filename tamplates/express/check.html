@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理-查看物流</title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/express.css"/>
+	</head>
+	<body>
+		<div ng-include="'../include/head.html'"></div>
+		<div class="checkExpress">
+			<div class="check-con">
+				<ul class="check-con-tabNav">
+					<li class="check-con-tabActive">包裹1</li>
+					<li>包裹2</li>
+				</ul>
+				<div class="check-con-tabCon">
+					<div class="check-tabCon-pannel">
+						<p><span>状态:</span><span class="check-pannel-status">已签收</span></p>
+						<div class="check-pannel-express">
+							<ul class="check-express-statusList">
+								<li>
+									<span class="date">2015-11-04</span>
+									<span class="week">周三</span>
+									<span class="time">15:29:08</span>
+									<span class="text">您的订单开始处理</span>
+								</li>
+								<li>
+									<span class="date vHidden">2015-11-04</span>
+									<span class="week vHidden">周三</span>
+									<span class="time">15:30:08</span>
+									<span class="text">您的订单待配货</span>
+								</li>
+							</ul>
+							<div class="check-express-statusInfo">此订单由<span>韵达快递</span>派送。如需查看原文<a href="">到快递官网</a></div>
+						</div>
+						<div class="check-pannel-details">
+							<div class="check-pannel-details-row">
+								<label>运单号码:</label>
+								<span class="fw">123456789123</span>
+								<label>物流公司:</label>
+								<span class="fw">韵达快递</span>
+								<label>客服电话:</label>
+								<span class="fw">95546</span>
+							</div>
+							<div class="check-pannel-details-row">
+								<label>品牌名:</label>
+								<span class="fw">森马官方旗舰店</span>
+							</div>
+							<div class="check-pannel-details-row">
+								<label>发货地址:</label>
+								<span>浙江省杭州市余杭区临平街道望梅路619号 万事利科技园11号仓库 <span class="fw">310000</span><span class="fw">森马官方旗舰店</span><span class="fw">0571-87389909</span></span>
+							</div>
+							<div class="check-pannel-details-row">
+								<label>收货地址:</label>
+								<span>浙江省杭州市江干区 凯旋路华景北苑20幢5单元701室 <span class="fw">310000</span><span class="fw">王小明</span><span class="fw">13355412369</span></span>
+							</div>
+							<div class="check-pannel-details-list">
+								<ul>
+									<li>
+										<div>
+											<a href="">
+												<img src="../../static/images/test-80-80.jpg" width="80"/>
+											</a>
+										</div>
+										<span>￥359.00*1</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="check-tabCon-pannel"></div>
+				</div>
+			</div>
+		</div>
+		<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

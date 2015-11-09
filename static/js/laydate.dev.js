@@ -1,12 +1,4 @@
-﻿/**
- 
- @Name : layDate v1.1 日期控件
- @Author: 贤心
- @Date: 2014-06-25
- @QQ群：176047195
- @Site：http://sentsin.com/layui/laydate
- 
- */
+﻿/*日期控件*/
 
 ;!function(win){
 

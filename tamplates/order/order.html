@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../../static/css/order.css"/>
 		<link rel="stylesheet" type="text/css" href="../../static/css/laydate.css"/>
 		<link rel="stylesheet" type="text/css" href="../../static/css/laydate-skin.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/css/layer.css"/>
 	</head>
 	<body>
 		<div ng-include="'../include/head.html'"></div>
@@ -100,11 +101,18 @@
 									</td>
 									<td class="order-items-inner-num"><span>1</span></td>
 									<td class="order-items-inner-price"><span>￥359.00</span></td>
-									<td class="order-items-inner-buttom"><a href="">发货</a></td>
+									<td class="order-items-inner-buttom"><a id="delivery" href="">发货</a></td>
 								</tr>
 							</table>
-							<div class="order-items-statistics">
-								<p><span>共2件</span><span>合计:￥652</span></p>
+							<div class="order-items-statistics clearfix">
+								<p class="fr"><span>共2件</span><span>合计:￥652(平台包邮)</span></p>
+								<p class="fr clearfix">
+									<a class="order-items-statistics-print" href="">打印配货单</a>
+									<a href="">批量发货</a>
+									<a href="">备注</a>
+									<a href="">查看物流</a>
+									<a href="">订单详情</a>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -114,6 +122,7 @@
 		<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/js/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../../static/js/layer.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="../../static/js/order-order.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
