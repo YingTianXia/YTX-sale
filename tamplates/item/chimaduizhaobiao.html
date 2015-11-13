@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理-尺码对照表</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+</head>
+<style type="text/css">
+
+.pub-content{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.pub-right{
+    width: 950px;
+    padding: 30px 25px 70px;
+    float: right;
+}
+.pub-title-box{
+    border-bottom: solid 1px #fd9500;
+    line-height: 0;
+    text-align: left;
+}
+.pub-title{
+    font-size: 14px;
+    color: #fff;
+    line-height: 34px;
+    padding: 0 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    background-color: #fd9500;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+}
+.pub-box{
+    border: solid 1px #c9c9c9;
+    padding: 20px 25px 40px;
+    background-color: #f5f5f5;
+    margin-top: 15px;
+}
+.pub-box-noborder{
+    padding: 20px 20px 40px;
+}
+.size-tab-nav li{
+    padding-bottom: 15px;
+}
+.size-tab-nav input[type="radio"]{
+    margin-right: 10px;
+}
+.size-tab-con{
+    width: 100%;
+    overflow-x:scroll;
+    padding: 20px 0;
+    display: none;
+}
+.size-table-th{
+    height: 50px;
+}
+.size-table{
+    border: solid 1px #dfdfdf;
+    border-bottom: none;
+    float: left;
+    display: inline;
+}
+.size-table-th{
+    border-bottom: solid 1px #dfdfdf;
+    background-color: #eeeeee;
+    height: 50px;
+}
+.size-table-td{
+    border-bottom: solid 1px #dfdfdf;
+    height: 50px;
+}
+.size-table-box{
+    float: left;
+    position: relative;
+    line-height: 50px;
+    width: 120px;
+    text-align: center;
+}
+.size-btn-addpara{
+    float: left;
+    display: none;
+    width: 80px;
+    height: 20px;
+    margin: 15px 20px 0;
+    text-align: center;
+    background-color: #fd9500;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 20px;
+}
+.size-btn-addsize{
+    width: 80px;
+    height: 20px;
+    margin: 15px 0 0 20px;
+    text-align: center;
+    background-color: #fd9500;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 20px;
+    display: none;
+}
+.size-table-input1{
+    width: 50px;
+    display: none;
+    padding: 0 5px;
+}
+.size-btn-newtable{
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    background-color: #fd9500;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 20px;
+    margin: 10px 0 0;
+}
+.size-table-opration{
+    text-align: right;
+}
+.size-table-opration a{
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    background-color: #fd9500;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 20px;
+    margin: 10px;
+}
+.size-btn-delete{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    right: 8px;
+    top: 19px;
+    border: solid 1px #333;
+    border-radius: 50%;
+    display: none;
+}
+.editing .size-table-box:hover .size-btn-delete,
+.editing .J_addPara,
+.editing .J_addSize{
+    display: block;
+}
+.editing .J_tableEditInput{
+    display: inline;
+}
+.editing .J_tableData,
+.editing .J_tableEdit{
+    display: none;
+}
+.J_tableSave,.J_tableCanel,.J_addPara,.J_addSize{
+    display: none;
+}
+body .J_tableSave,
+body .J_tableCanel{
+    display: none;
+}
+body .editing .J_tableSave,
+body .editing .J_tableCanel{
+    display: inline-block;
+}
+/* pop */
+
+.pop1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    display: none;
+}
+.size-pop1{
+    width: 360px;
+    padding: 20px 20px 30px;
+    margin: -150px 0 0 -200px;
+    background-color: #fff;
+    border: solid 1px #a0a0a0;
+}
+.pop-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: .6;
+    display: none;
+}
+.size-pop-con1{
+    padding-top: 20px;
+    line-height: 30px;
+}
+
+.size-pop-con1 span{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    line-height: 30px;
+    width: 90px;
+    text-align: right;
+    margin-right: 5px;
+}
+.size-pop-con1 input{
+    width: 230px;
+    padding: 0 5px;
+    height: 28px;
+    border:solid 1px #999;
+}
+.size-pop-btnbox{
+    padding-top: 30px;
+    text-align: center;
+}
+.size-pop-btn1{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    padding: 0 28px;
+    line-height: 22px;
+    margin: 0 10px;
+    background-color: #fd9500;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 1px #fd9500;
+}
+.size-pop-btn2{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    padding: 0 28px;
+    line-height: 22px;
+    margin: 0 10px;
+    color: #fd9500;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 1px #fd9500;
+}
+</style>
+<body>
+    <div class="pub-content">
+        <div class="pub-right">
+            <div class="pub-title-box">
+                <div class="pub-title">尺码对照表</div>
+            </div>
+            <div class="pub-box-noborder">
+                <div class="size-tab-nav">
+                    <ul>
+                        <li>
+                            <input class="J_sizeTabNav" id="class1" type="radio" name="class">
+                            <label for="class1">衬衣－第一批尺码对照</label>
+                        </li>
+                        <li>
+                            <input class="J_sizeTabNav" id="class2" type="radio" name="class">
+                            <label for="class2">T恤－第一批尺码对照</label>
+                        </li>
+                        <li>
+                            <input class="J_sizeTabNav" id="class3" type="radio" name="class">
+                            <label for="class3">外套－第一批尺码对照</label>
+                        </li>
+                    </ul>
+                </div>
+                <a class="size-btn-newtable" href="javascript:;">新建对照表</a>
+                <!-- 对照表 -->
+
+
+                <div class="size-tab-con">
+                    <div class="size-table-opration">
+                        <a class="J_tableEdit" href="javascript:;">编辑</a>
+                        <a class="J_tableSave" href="javascript:;">保存</a>
+                        <a class="J_tableCanel" href="javascript:;">取消</a>
+                    </div>
+                    <div class="size-table-wrap clearfix J_tableWrap">
+                        <div class="size-table J_table">
+                            <div class="size-table-th clearfix J_tableHead">
+                                <div class="size-table-box">
+                                    <span>尺寸</span>
+                                </div>
+                                <div class="size-table-box J_tableTit">
+                                    <span>袖长</span>
+                                    <a class="size-btn-delete J_delPara" href="javascript:;">×</a>
+                                </div>
+                            </div>
+                            <div class="size-table-td clearfix J_tableBody">
+                                <div class="size-table-box J_tableSize">
+                                    <span>S1</span>
+                                    <a class="size-btn-delete J_delSize" href="javascript:;">×</a>
+                                </div>
+                                <div class="size-table-box J_tableCon">
+                                    <span class="J_tableData">10</span>
+                                    <input class="size-table-input1 J_tableEditInput" type="text" >
+                                </div>
+                            </div>
+                        </div>
+                        <a class="size-btn-addpara J_addPara" href="javascript:;">添加属性</a>
+                    </div>
+                    <a class="size-btn-addsize J_addSize" href="javascript:;">添加尺寸</a>
+                </div>
+
+                <div class="size-tab-con">
+                    <div class="size-table-opration">
+                        <a class="J_tableEdit" href="javascript:;">编辑</a>
+                        <a class="J_tableSave" href="javascript:;">保存</a>
+                        <a class="J_tableCanel" href="javascript:;">取消</a>
+                    </div>
+                    <div class="size-table-wrap clearfix J_tableWrap">
+                        <div class="size-table J_table">
+                            <div class="size-table-th clearfix J_tableHead">
+                                <div class="size-table-box">
+                                    <span>尺寸</span>
+                                </div>
+                                <div class="size-table-box J_tableTit">
+                                    <span>袖长</span>
+                                    <a class="size-btn-delete J_delPara" href="javascript:;">×</a>
+                                </div>
+                            </div>
+                            <div class="size-table-td clearfix J_tableBody">
+                                <div class="size-table-box J_tableSize">
+                                    <span>S2</span>
+                                    <a class="size-btn-delete J_delSize" href="javascript:;">×</a>
+                                </div>
+                                <div class="size-table-box J_tableCon">
+                                    <span class="J_tableData">20</span>
+                                    <input class="size-table-input1 J_tableEditInput" type="text" >
+                                </div>
+                            </div>
+                        </div>
+                        <a class="size-btn-addpara J_addPara" href="javascript:;">添加属性</a>
+                    </div>
+                    <a class="size-btn-addsize J_addSize" href="javascript:;">添加尺寸</a>
+                </div>
+
+                <div class="size-tab-con">
+                    <div class="size-table-opration">
+                        <a class="J_tableEdit" href="javascript:;">编辑</a>
+                        <a class="J_tableSave" href="javascript:;">保存</a>
+                        <a class="J_tableCanel" href="javascript:;">取消</a>
+                    </div>
+                    <div class="size-table-wrap clearfix J_tableWrap">
+                        <div class="size-table J_table">
+                            <div class="size-table-th clearfix J_tableHead">
+                                <div class="size-table-box">
+                                    <span>尺寸</span>
+                                </div>
+                                <div class="size-table-box J_tableTit">
+                                    <span>袖长</span>
+                                    <a class="size-btn-delete J_delPara" href="javascript:;">×</a>
+                                </div>
+                            </div>
+                            <div class="size-table-td clearfix J_tableBody">
+                                <div class="size-table-box J_tableSize">
+                                    <span>S3</span>
+                                    <a class="size-btn-delete J_delSize" href="javascript:;">×</a>
+                                </div>
+                                <div class="size-table-box J_tableCon">
+                                    <span class="J_tableData">30</span>
+                                    <input class="size-table-input1 J_tableEditInput" type="text" >
+                                </div>
+                            </div>
+                        </div>
+                        <a class="size-btn-addpara J_addPara" href="javascript:;">添加属性</a>
+                    </div>
+                    <a class="size-btn-addsize J_addSize" href="javascript:;">添加尺寸</a>
+                </div>
+
+                <!-- 对照表 end -->
+            </div>
+        </div>
+    </div>
+    <div class="pop-mask" id="J_popMask"></div>
+    <div class="pop1 size-pop1 J_pop" id="pop_addPara">
+        <p class="size-pop-con1"><span>属性名:</span><input id="addParaName" type="text" value=""></p>
+        <div class="size-pop-btnbox">
+            <a class="size-pop-btn1 J_submitAddPara" href="javascript:;">确定</a>
+            <a class="size-pop-btn2 J_popClose" href="javascript:;">取消</a>
+        </div>
+    </div>
+    <div class="pop1 size-pop1 J_pop" id="pop_addSize">
+        <p class="size-pop-con1"><span>尺寸名:</span><input id="addSizeName" type="text" value=""></p>
+        <div class="size-pop-btnbox">
+            <a class="size-pop-btn1 J_submitAddSize" href="javascript:;">确定</a>
+            <a class="size-pop-btn2 J_popClose" href="javascript:;">取消</a>
+        </div>
+    </div>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script>
+(function($){
+    var pop = {
+        init:function(){
+            var _this = this;
+            $('body').on('click','.J_popClose',function(){
+                _this.popHide();
+            });
+        },
+        popShow:function(el) {
+            var _this = this;
+            $(el).show();
+            _this.maskShow();
+        },
+        popHide:function(el){
+            var _this = this;
+            var _el = el || '.J_pop';
+            $(_el).hide();
+            $('#J_popMask').hide();
+        },
+        maskShow:function(){
+            var _this = this;
+            if($('#J_popMask').length){
+                $('#J_popMask').show();
+            }else{
+                $('body').append('<div class="pop-mask" id="J_popMask" style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: #333;opacity: .6;display: none;"></div>');
+                $('#J_popMask').show();
+            }
+        }
+    }
+
+    var sizeTable = {
+        tableBackup:'',
+        init:function(){
+            var _this = this; 
+            _this.bindEv();
+            _this.sizeTab();
+            pop.init();
+        },
+        bindEv:function(){
+            var _this = this;
+            $('.J_tableEdit').on('click',function(e){
+                var _tpp = $(e.target).parent().parent();
+                _tpp.addClass("editing");
+                //开启编辑模式
+                _this.editStart();
+                //备份
+                _this.backup();
+
+
+            });
+            $('.J_addPara').on('click',function(e){
+                pop.popShow('#pop_addPara');
+            });
+            $('.J_addSize').on('click',function(e){
+                pop.popShow('#pop_addSize');
+            });
+            $('.J_table').on('click','.J_delPara',function(e){
+                var _n = $(e.target).parent().index()-1;
+                _this.deletePara(_n);
+            });
+            $('.J_table').on('click','.J_delSize',function(e){
+                var _n = $(e.target).parent().parent().index()-1;
+                _this.deleteSize(_n);
+            });
+            $('.J_submitAddPara').on('click',function(){
+                var _paraName = $('#addParaName').val();
+                if(_paraName != ''){
+                    _this.addPara(_paraName);
+                }else{
+                    alert('请输入属性名');
+                }
+            });
+            $('.J_submitAddSize').on('click',function(){
+                var _sizeName = $('#addSizeName').val();
+                if(_sizeName != ''){
+                    _this.addSize(_sizeName);
+                }else{
+                    alert('请输入尺寸名');
+                }
+            });
+            $('.J_tableSave').on('click',function(e){
+                _this.editSave();
+            });
+            $('.J_tableCanel').on('click',function(e){
+                _this.editCanel();
+
+            });
+        },
+        sizeTab:function(){
+            var _this = this; 
+            $('.J_sizeTabNav').each(function(i,e){
+                $(e).on('change',function(){
+                    var _con = $('.size-tab-con');
+                    if(_con.hasClass('editing')){
+                        if(_this.editCanel()){
+                            _con.hide();
+                            _con.eq(i).show();
+                        }else{
+                            _con.each(function(j,f){
+                                if($(f).hasClass('editing')){
+                                    $(e).removeAttr('checked');
+                                    $('.J_sizeTabNav').eq(j).prop("checked","checked");;
+                                };
+                            });
+                            return false;
+                        }
+                    }else{
+                    _con.hide();
+                    _con.eq(i).show();
+                    }
+                });
+            });
+        },
+        editStart:function(){
+            var _this = this; 
+            var editInput = $('.J_tableEditInput','.editing');
+            editInput.each(function(i,e){
+                var _data = $(e).siblings('.J_tableData').html();
+                $(e).siblings('.J_tableData');
+                $(e).val(_data);
+            });
+        },
+        editSave:function(){
+            var _this = this;
+            var editInput = $('.J_tableEditInput','.editing');
+            editInput.each(function(i,e){
+                var _data = $(e).val();
+                $(e).siblings('.J_tableData').html(_data);
+            });
+            $('.editing').removeClass('editing');
+            alert('保存成功');
+        },
+        editCanel:function(){
+            var _this = this; 
+
+            if(confirm("未保存的数据将丢失")){
+                var editInput = $('.J_tableEditInput','.editing');
+                //还原
+                $('.J_table','.editing').html(_this.tableBackup);
+                $('.editing').removeClass('editing');
+                return true;
+            }else{
+                return false;
+            }
+
+        },
+        addPara:function(paraName){
+            var _this = this; 
+            $('.J_tableHead','.editing').append('<div class="size-table-box J_tableTit">'+
+                                                    '<span>'+ paraName +'</span>'+
+                                                    '<a class="size-btn-delete J_delPara" href="javascript:;">×</a>'+
+                                                '</div>');
+            $('.J_tableBody','.editing').each(function(i,e){
+                $(e).append('<div class="size-table-box J_tableCon">'+
+                                    '<span class="J_tableData"></span>'+
+                                    '<input class="size-table-input1 J_tableEditInput" type="text" >'+
+                                '</div>');
+            });
+            pop.popHide();
+            $('#addParaName').val('');
+        },
+        addSize:function(sizeName){
+            var _this = this; 
+            var tableConHtml = '';
+            var paraLength = $('.J_tableTit','.editing').length;
+            var conHtml = '<div class="size-table-box J_tableCon">'+
+                                '<span class="J_tableData"></span>'+
+                                '<input class="size-table-input1 J_tableEditInput" type="text" >'+
+                            '</div>';
+            for (var i = 0; i < paraLength; i++) {
+                tableConHtml += conHtml;
+            };
+
+            var addHtml = '<div class="size-table-td clearfix J_tableBody">'+
+                                '<div class="size-table-box J_tableSize">'+
+                                    '<span>'+ sizeName +'</span>'+
+                                    '<a class="size-btn-delete J_delSize" href="javascript:;">×</a>'+
+                                '</div>'+ tableConHtml +
+                            '</div>';
+            $('.J_table','.editing').append(addHtml);
+            pop.popHide();
+            $('#addSizeName').val('');
+        },
+        deletePara:function(n){
+            var _this = this;
+            if($('.J_tableTit','.editing').length<2){
+                alert('至少需要一个属性');
+                return false;
+            }
+            if(confirm("确认删除")){
+                $('.J_tableTit','.editing').eq(n).remove();
+                $('.J_tableBody','.editing').each(function(i,e){
+                    $('.J_tableCon',e).eq(n).remove();
+                });
+            }else{
+                return false;
+            }
+
+        },
+        deleteSize:function(n){
+            var _this = this; 
+            if($('.J_tableBody','.editing').length<2){
+                alert('至少需要一个尺寸');
+                return false;
+            }
+            if(confirm("确认删除")){
+                $('.J_tableBody','.editing').eq(n).remove();
+            }else{
+                return false;
+            }
+
+        },
+        backup:function(){
+            var _this = this; 
+            var backuphtml = $('.J_table','.editing').html();
+            _this.tableBackup = backuphtml;
+        }
+    }
+
+    sizeTable.init();
+})(jQuery)
+</script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+.manage-main{
+	width: 1200px;
+	margin: 0 auto;
+}
+.imageManage,.propManage{
+	float: left;
+	width: 950px;
+	padding: 25px;
+}
+.imageManage .title-content,.propManage .title-content{
+	border-bottom: 1px solid #FD9500;
+}
+.imageManage .title,.propManage .title{
+	font-size:14px;
+	width: 101px;
+	line-height: 34px;
+	background: #fd9500;
+	text-align: center;
+	color: #fff;
+	border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	-moz-border-radius: 2px 2px 0 0;
+}
+.imageManage .main-content{
+	padding-top:20px;
+}
+
+.imageManage .catalog{
+	float: left;
+	width: 200px;
+}
+.imageManage .catalog-title{
+	background: #FD9500;
+	line-height: 49px;
+	color: #fff;
+	padding-left:20px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+.imageManage .catalog-list{
+	border: 1px solid #dfdfdf;
+	padding:13px 19px 13px 0;
+	height: 622px;
+	overflow: auto;
+}
+.imageManage .catalog-folder-name-content{
+	font-size:0;
+	line-height: 17px;
+	height: 17px;
+	margin: 10px 0;
+}
+.imageManage .catalog-folder{
+	padding-left:19px;
+}
+.imageManage .catalog-folder-icon{
+	width: 20px;
+	height: 17px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right:10px;
+	background: url(../images/folder.png) no-repeat 0 0;
+}
+.imageManage .folder-content{
+	width: 730px;
+	float: left;
+	margin-left: 20px;
+}
+.imageManage .catalog-folder .active .catalog-folder-icon{
+	background: url(../images/folder.png) no-repeat -22px 0;
+}
+.imageManage .catalog-folder .active .catalog-folder-name{
+	color: #FD9500;
+}
+.imageManage .catalog-folder-content{
+	cursor: pointer;
+}
+.imageManage .catalog-folder-name{
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: middle;
+}
+.imageManage .folder-controler{
+	border-bottom: 1px solid #DFDFDF;
+}
+.imageManage .folder-bread-nav{
+	float: left;
+	line-height: 49px;
+}
+.imageManage .folder-actions{
+	padding-top: 12px;
+	float: right;
+}
+.imageManage .bread-nav{
+	color: #4598c8;
+}
+.imageManage .createFolder,.imageManage .uploadImage,.imageManage .deleteImage,.imageManage .allSelect{
+	float:right;
+}
+.imageManage .createFolder,.imageManage .uploadImage{
+	width: 80px;
+}
+.imageManage .uploadImage{
+	position: relative;
+}
+.imageManage .createFolder,.imageManage .uploadImage,.imageManage .deleteImage{
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	text-align: center;
+	color: #fff;
+	line-height: 25px;
+	background: #FD9500;
+	margin-left: 8px;
+	cursor:pointer;
+}
+.imageManage .deleteImage{
+	width: 60px;
+}
+.imageManage .folder-actions .disabled{
+	background: #999;
+	cursor: default;
+}
+.imageManage .allSelect{
+	font-size: 0;
+	line-height: 25px;
+	height: 25px;
+}
+#allSelect,.imageManage .allSelect label{
+	display: inline-block;
+	vertical-align: middle;
+}
+.imageManage .allSelect label{
+	font-size: 12px;
+	margin-left: 4px;
+}
+.imageManage .imageList-item{
+	float: left;
+	width: 150px;
+	margin: 15px;
+}
+.imageManage .imagelist-item-content{
+	cursor: pointer;
+	border: 1px solid #DFDFDF;
+	height:148px;
+	overflow:hidden;
+	position: relative;
+}
+.imageManage .imagelist-item-content img{
+	width:100%;
+}
+.imageManage .imageList-item-controler{
+	padding: 10px 0 0 0;
+	text-align: center;
+}
+.imageManage .copyLink,.imageManage .deleteSingle{
+	display: inline;
+	color: #4598c8;
+}
+.imageManage .copyLink:hover,.imageManage .deleteSingle:hover{
+	color: #FD9500;
+}
+.imageManage .selected-icon{
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: url(../images/selected.png) no-repeat 0 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.imageManage .selected{
+	border: 1px solid #FD9500;
+}
+#uploadImage{
+	height: 25px;
+	width: 80px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+.pop-size{
+	width:478px;
+	margin-left: -239px;
+}
+.popMain-content{
+	margin-top:10px;
+	padding: 20px 0;
+}
+.propManage .prop-tabBar{
+	font-size: 0;
+	padding: 10px 0;
+}
+.propManage .prop-tab{
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 10px;
+	background: #999;
+	padding:4px 10px;
+	color: #fff;
+	cursor: pointer;
+}
+.propManage .prop-tabBar .active{
+	background: #FD9500;
+}
+.propManage .bread-item{
+	margin: 0 2px;
+}
+.propManage .bread-nav{
+	padding-top:10px;
+}
+.propManage .prop-controler{
+	padding-top:10px;
+}
+.propManage .addProp,.propManage .sort{
+	width:100px;
+	line-height:24px;
+	text-align: center;
+	background: #FD9500;
+	color:#fff;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+}
+.propManage .prop-controler{
+	
+}
+.propManage .addProp{
+	float:left;
+}
+.propManage .sort{
+	float:right;
+}
+.propManage .propTable{
+	margin-top:20px;
+}
+.propManage .propth{
+	border:1px solid #999;
+	line-height: 40px;
+	font-weight: normal;
+}
+.propManage .proptd{
+	height:40px;
+	border:1px solid #999;
+	text-align: center;
+}
+.propManage .propAction{
+	display: inline;
+}
+.propManage .propAction:hover{
+	color:#FD9500;
+}
+.pop-prop .prop-name{
+	float:left;
+	width:120px;
+	text-align: right;
+}
+.pop-prop .prop-name .unsee{
+	color:#fff;
+}
+.pop-prop .prop-form{
+	padding:5px 0;
+}
+.pop-prop .prop-content{
+	float:left;
+	margin-left: 20px;
+}
+#textarea_tab,#select_tab,#number_tab{
+	display: none;
+}
+.propManage .J_propsort{
+	width: 100px;
+	text-align: center;
+	line-height: 24px;
+	height: 24px;
+}
+.sortComplete{
+	width:100px;
+	line-height:34px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background:#FD9500;
+	color:#fff;
+	text-align: center;
+	margin:30px auto 0 auto;
+	display: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+

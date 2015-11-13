@@ -10,10 +10,10 @@
     <div class="pub-content">
         <div class="pub-right">
             <div class="pub-title-box">
-                <div class="pub-title">待添加活动商品</div>
+                <div class="pub-title">设置折扣</div>
             </div>
             <div class="pub-box">
-                <div class="additem-select-bar">
+<!--                 <div class="additem-select-bar">
                     商品类型: 
                     <select class="additem-select">
                         <option value="" selected="true" disabled="true">请选择</option>
@@ -38,53 +38,68 @@
                         <input type="text">
                         <a class="act-select-btn" href="javascript:;">搜索</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="additem-table J_itemTable">
                     <table>
                         <thead>
                             <tr>
-                                <th width="5%">&nbsp;</th>
                                 <th width="10%">商品ID</th>
                                 <th width="10%">商品图</th>
-                                <th width="30%">名称</th>
+                                <th width="25%">名称</th>
                                 <th width="10%">原价</th>
-                                <th width="10%">库存</th>
-                                <th width="25%">操作</th>
+                                <th colspan="3" width="45%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input class="J_itemCheck" type="checkbox" itemid="SM00013"></td>
                                 <td>SM00013</td>
                                 <td><img src="../../static/images/80x100.jpg"></td>
                                 <td>
                                     <p class="additem-table-name">森马毛衣 2015冬装新款 女士甜美套头毛衫圆领绣花针织衫韩版潮女 </p>
                                 </td>
                                 <td>88888</td>
-                                <td>88888</td>
-                                <td>
-                                    <a class="J_item_detail" href="javascript:;">查看商品详情</a>
+                                <td width="15%">
+                                    <p>折扣</p>
+                                    <p><input class="act-set-rebate" type="text">折</p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠金额</p>
+                                    <p>&yen;<input class="act-set-rebate" type="text"></p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠后金额</p>
+                                    <p>&yen;<input class="act-set-rebate" type="text"></p>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input class="J_itemCheck" type="checkbox" itemid="SM00013"></td>
                                 <td>SM00013</td>
                                 <td><img src="../../static/images/80x100.jpg"></td>
                                 <td>
                                     <p class="additem-table-name">森马毛衣 2015冬装新款 女士甜美套头毛衫圆领绣花针织衫韩版潮女 </p>
                                 </td>
                                 <td>88888</td>
-                                <td>88888</td>
-                                <td>
-                                    <a class="J_item_detail" href="javascript:;">查看商品详情</a>
+                                <td width="15%">
+                                    <p>折扣</p>
+                                    <p><input class="act-set-rebate" type="text">折</p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠金额</p>
+                                    <p>&yen;<input class="act-set-rebate" type="text"></p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠后金额</p>
+                                    <p>&yen;<input class="act-set-rebate" type="text"></p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="act-table-batch">
-                    <a class="act-batch-btn1 J_allCheck" href="javascript:;">本页全选</a>
-                    <a class="act-batch-btn2 J_allUncheck" href="javascript:;">本页全部取消</a>
+                    <label>统一设置折扣</label>
+                    <input class="act-set-rebate" type="text">折
+                    <label>统一设置优惠金额</label>
+                    &yen;<input class="act-set-rebate" type="text">
+                    <a class="act-batch-btn1" href="javascript:;">本页统一设置</a>
                 </div>
                 <div class="act-page">
                     <a class="act-page-num lt" href="javascript:;">&lt;</a>
@@ -96,7 +111,8 @@
                     <a class="act-page-num gt" href="javascript:;">&gt;</a>
                 </div>
                 <div class="act-submit-box">
-                    <a class="act-submit-btn" href="javascript:;">下一步</a>
+                    <a class="act-submit-btn" href="javascript:;">返回选择商品</a>
+                    <a class="act-submit-btn" href="javascript:;">提交</a>
                 </div> 
             </div>
         </div>
@@ -106,23 +122,6 @@
 <script type="text/javascript">
 
 (function($){
-    $('.J_itemTable tr').on('click',function(e){
-        if($('.J_itemCheck',this)[0].checked){
-            $('.J_itemCheck',this).prop("checked",false);
-        }else{
-            $('.J_itemCheck',this).prop("checked",true);
-        }
-        $('.J_item_detail').on('click',function(e){
-            e.stopPropagation();
-        });
-    });
-    $('.J_allCheck').on('click',function(){
-        $('.J_itemCheck').prop("checked",true);
-    });
-    $('.J_allUncheck').on('click',function(){
-        $('.J_itemCheck').prop("checked",false);
-    });
-
 })(jQuery)
 </script>
 </html>

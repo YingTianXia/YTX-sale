@@ -1,3 +1,9 @@
+.ml-10{
+    margin-left: 10px;
+}
+.fc-red{
+    color: #ff0000;
+}
 .pub-content{
     width: 1200px;
     margin: 0 auto;
@@ -34,6 +40,7 @@
     padding: 20px 25px 40px;
     background-color: #f5f5f5;
     margin-top: 15px;
+    position: relative;
 }
 .act-top{
     position: relative;
@@ -98,7 +105,7 @@
 }
 .act-table tr:hover,
 .additem-table tr:hover{
-    background-color: #ffdea5;
+    /*background-color: #ffdea5;*/
 }
 .act-table td{
     border-bottom: solid 1px #e5e5e5;
@@ -133,6 +140,7 @@
     padding: 0 16px;
     line-height: 22px;
     margin-right: 10px;
+    vertical-align: middle;
 }
 .act-batch-btn2{
     display: inline-block;
@@ -142,10 +150,12 @@
     padding: 0 16px;
     overflow: hidden;
     line-height: 24px;
+    vertical-align: middle;
 }
 .act-table-batch{
     padding: 20px 20px 20px 0;
     text-align: right;
+    line-height: 22px;
 }
 .act-page{
     text-align: center;
@@ -183,6 +193,11 @@
     color: #ff0000;
     margin-right: 3px;
 }
+.act-info-con{
+    float: left;
+    display: inline;
+    line-height: 22px;
+}
 .act-info-input{
     width: 190px;
     border: solid 1px #cfd0cf;
@@ -190,7 +205,6 @@
     color: #333;
     height: 20px;
     padding: 0 5px;
-    float: left;
 }
 .act-info-input2{
     width: 90px;
@@ -212,16 +226,17 @@
 }
 .act-info-select{
     width: 140px;
-    margin-top: 2px;
-    float: left;
 }
 .act-info-checkbox{
-    margin: 0 5px 0 38px;
+    margin-right: 5px;
 }
 .act-set{
     padding-left: 120px;
     line-height: 30px;
     display: none;
+}
+.act-set.active{
+    display: block;
 }
 .act-set-btn{
     display: inline-block;
@@ -233,7 +248,7 @@
     border-radius: 3px;
     overflow: hidden;
     line-height: 20px;
-    margin-top: 5px;
+    vertical-align: middle;
 }
 .act-submit-box{
     margin-top: 20px;
@@ -280,11 +295,13 @@
     text-align: center;
 }
 
-.additem-table th{
+.additem-table th,
+.act-table th{
     background-color: #000;
     color: #fff;
     font-weight: normal;
     line-height: 36px;
+    text-align: center;
 }
 .additem-table-name{
     width: 60%;
@@ -294,4 +311,42 @@
 .additem-table-operation{
     display: inline;
 }
-
+.act-btn-additemback{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    text-align: center;
+    color: #333;
+    border-radius: 5px;
+    border: solid 1px #333;
+    overflow: hidden;
+    line-height: 22px;
+}
+.act-btn-edit{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #333;
+    border-radius: 5px;
+    border: solid 1px #333;
+    overflow: hidden;
+    padding: 0 16px;
+    line-height: 22px;
+}
+.J_info_view{
+    display: inline;
+}
+.J_info_edit{
+    display: none;
+}
+.editing .J_info_view{
+    display: none;
+}
+.editing .J_info_edit{
+    display: inline;
+}
+.act-set-rebate{
+    width: 70px;
+    margin: 0 10px;
+}
