@@ -3,6 +3,7 @@ var start = {
 	elem: '#start', 
     event: 'focus', 
     istime: true,
+    format: 'YYYY-MM-DD hh:mm:ss',
     choose: function(datas){
          end.min = datas; //开始日选好后，重置结束日的最小日期
          end.start = datas //将结束日的初始值设定为开始日
@@ -13,6 +14,7 @@ laydate(start);
 var end = {
 	elem: '#end', 
     event: 'focus', 
+    format: 'YYYY-MM-DD hh:mm:ss',
     istime: true,
     choose: function(datas){
         start.max = datas; //结束日选好后，重置开始日的最大日期
