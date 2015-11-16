@@ -15,7 +15,6 @@
             <div class="pub-box J_detail_box">
                 <div>查看活动</div>
                 <a class="act-btn-edit J_open_edit J_info_view" href="javascript:;">编辑</a>
-                <a class="act-btn-edit J_close_edit J_info_edit" href="javascript:;">关闭编辑</a>
                 <div class="act-box">
                     <div class="act-info clearfix">
                         <div class="act-info-tit">
@@ -63,7 +62,6 @@
                         <div class="act-info-con">
                             <span class="J_info_view">限时折扣</span>
                             <select id="activityType" class="act-info-select J_actSelect J_info_edit">
-                                <option value="0" selected="true" disabled="true">请选择</option>
                                 <option value="1">限时折扣</option>
                                 <option value="2">全场限时折扣</option>
                                 <option value="3">满多少元减多少元</option>
@@ -72,7 +70,7 @@
                         </div>
                     </div>
                     <!-- 限时折扣 -->
-                    <div class="act-set J_actType">
+                    <div class="act-set J_actType" style="display:block">
                         <!-- <p>折扣：<input class="act-info-input2 J_rebate" type="number"> 折</p> -->
                         <!-- <p><a class="act-set-btn" href="additem.html">提交并添加商品</a></p> -->
                         <p><a href="activity-list.html">提交并前往编辑参加活动商品与折扣</a></p>
@@ -105,7 +103,7 @@
                     </div>
                     <div class="J_info_edit">
                         <a class="act-submit-btn J_actSubmit" href="javascript:;">提交</a>
-                        <a class="act-submit-btn" href="javascript:;">取消</a>
+                        <a class="act-submit-btn J_close_edit" href="javascript:;">取消</a>
                     </div>
                 </div> 
             </div>

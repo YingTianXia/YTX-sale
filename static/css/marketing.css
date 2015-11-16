@@ -344,7 +344,7 @@
     display: none;
 }
 .editing .J_info_edit{
-    display: inline;
+    display: inline-block;
 }
 .act-set-rebate{
     width: 70px;

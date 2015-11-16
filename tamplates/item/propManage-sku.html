@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>迎天下ERP管理系统-图片管理</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/include.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/imageManage.css"/>
+<style type="text/css">
+.sku-part{
+	padding: 20px 0;
+}
+.sku-tit{
+	float: left;
+	display: inline;
+	margin-right: 10px;
+	width: 100px;
+	text-align: right;
+}
+.sku-box{
+	float: left;
+	display: inline;
+	border: solid 1px #c9c9c9;
+	padding: 15px 0;
+	min-width: 400px;
+	max-width: 700px;
+}
+.sku-li{
+	padding: 10px 15px 0;
+}
+.sku-li label{
+	margin-right: 5px;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	vertical-align: top;
+}
+.sku-textarea{
+	resize:none;
+	width: 200px;
+	height: 100px;
+}
+.sku-btn-box{
+	padding-top: 10px;
+	text-align: center;
+}
+.sku-btn{
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	padding: 0 5px;
+	border: solid 1px #c9c9c9;
+	line-height: 20px;
+	margin: 0 10px;
+}
+.sku-btn-edit{
+	display: none;
+}
+.editing .sku-btn-edit{
+	display: block;
+}
+.editing .sku-btn-view{
+	display: none;
+}
+.sku-view-box{
+	margin-top: 20px;
+	padding: 15px;
+	border-top: solid 1px #c9c9c9;
+}
+.sku-view{
+	padding: 10px 0 0;
+}
+.sku-view1{
+	float: left;
+	max-width: 30%;
+}
+.sku-view2{
+	float: left;
+	max-width: 65%;
+	padding-left: 5%;
+}
+.sku-view2 span{
+	margin-right: 15px;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+}
+.sku-view2 input[type="checkbox"]{
+	margin-right: 5px;
+}
+</style>
+</head>
+<body>
+<div class="lazy" ng-app>
+	<div ng-include="'../include/head.html'"></div>
+	<div class="manage-main">
+		<div ng-include="'../include/left.html'"></div>
+		<div class="propManage" style="text-align: initial;">
+			<div class="title-content">
+				<div class="title">类目管理</div>
+			</div>
+			<div class="prop-tabBar">
+				<span class="prop-tab">类目属性管理</span>
+				<span class="prop-tab active">类目sku管理</span>
+			</div>
+			<div class="bread-nav">当前类目：<span class="bread-item">服装</span><span class="bread-item">&gt;</span><span class="bread-item">男装</span><span class="bread-item">&gt;</span><span class="bread-item">男装</span></div>
+			<div class="propMain-content J_sku_main">
+				<div class="sku-part clearfix">
+					<div class="sku-tit">颜色分类:</div>
+					<div class="sku-box">
+						<div class="sku-li">
+							<label>是否有颜色分类:</label>
+							<input id="ifColor" type="checkbox" disabled checked>
+						</div>
+					</div>
+				</div>
+				<div class="sku-part clearfix">
+					<div class="sku-tit">规格:</div>
+					<div class="sku-box">
+						<div class="sku-li">
+							<label>规格名称:</label>
+							<input id="skuName" type="text" disabled value="尺寸">
+						</div>
+						<div class="sku-li">
+							<label>规格SKU:<br/>(一行一个值)</label>
+							<textarea id="skuList" class="sku-textarea" disabled></textarea>
+						</div>
+						<div class="sku-btn-box sku-btn-edit">
+							<a class="sku-btn J_editSave" href="javascript:;">保存</a>
+							<a class="sku-btn J_editCanel" href="javascript:;">取消</a>
+						</div>
+						<div class="sku-btn-box sku-btn-view">
+							<a class="sku-btn J_editOpen" href="javascript:;">编辑</a>
+						</div>
+						<div class="sku-view-box">
+							<div>展示效果</div>
+							<div class="sku-view clearfix">
+								<div class="sku-view1 J_view_name"><span>尺寸</span>:</div>
+								<div class="sku-view2 J_view_list">
+									<span><input type="checkbox" disabled><label>S</label></span>
+									<span><input type="checkbox" disabled><label>M</label></span>
+									<span><input type="checkbox" disabled><label>L</label></span>
+									<span><input type="checkbox" disabled><label>LL</label></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script>
+(function($){
+	var backupSkuList,
+		backupIfColor,
+		backupskuName;
+		backupSkuList ="S\nM\nL\nLL";
+		$('#skuList').val(backupSkuList);
+	$('.J_editOpen').on('click',function(){
+		$('.J_sku_main').addClass('editing');
+		backupIfColor = $('#ifColor')[0].checked;
+		backupskuName = $('#skuName').val();
+		backupSkuList = $('#skuList').val();
+		$('#ifColor,#skuName,#skuList').prop('disabled',false);
+	});
+	$('.J_editSave').on('click',function(){
+		var _name = $('#skuName').val();
+		var _listArr = $('#skuList').val().split('\n');
+		var _viewHtml ='';
+		if(_name =='' || _name == ' '){
+			alert('名称不能为空');
+			return false;
+		}else if(_listArr == 0){
+			alert('sku不能为空');
+		}
+		$(_listArr).each(function(i,e){
+			if(e == '' || e == ' '){
+
+			}else{
+				_viewHtml += '<span><input type="checkbox" disabled><label>'+ e +'</label></span>';
+			}
+		});
+		$('.J_view_list').html(_viewHtml);
+		$('.J_sku_main').removeClass('editing');
+		$('#ifColor,#skuName,#skuList').prop('disabled',true);
+		$('.J_view_name span').html(_name);
+	});
+	$('.J_editCanel').on('click',function(){
+		$('.J_sku_main').removeClass('editing');
+		if(backupIfColor){
+			$('#ifColor').prop('checked',true);
+		}else{
+			$('#ifColor').prop('checked',false);
+		}
+		$('#skuName').val(backupskuName);
+		$('#skuList').val(backupSkuList);
+		$('#ifColor,#skuName,#skuList').prop('disabled',true);
+	});
+})(jQuery)
+</script>
+<!-- <script src="../../static/js/angular.min.js"></script>
+<script src="../../static/js/include-left.js"></script>
+<script src="../../static/js/propManage.js" type="text/javascript" charset="utf-8"></script> -->
+</body>
+</html>
