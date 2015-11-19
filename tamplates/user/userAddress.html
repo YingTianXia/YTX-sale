@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>商家中心－卖家地址修改</title>
     <link rel="stylesheet" href="../../static/css/common.css"/>
-    <link rel="stylesheet" href="../../static/css/userAddress.css"/>
+    <link rel="stylesheet" href="../../static/css/include.css"/>
+    <link rel="stylesheet" href="../../static/css/user.css"/>
 </head>
 <body>
-
-<div class="user-main" ng-controller="myCtrl">
+<div class="" ng-include="'../include/head.html'"></div>
+<div class="yz-main">
+    <div class="" ng-include="'../include/left.html'"></div>
+    <div class="user-main" ng-controller="myCtrl">
     <div class="operate-detail">
         <span class="addressInfo">地址信息</span>
         <p class="hr-line"></p>
@@ -122,8 +125,10 @@
         </form>
     </div>
 </div>
+</div>
 <script src="../../static/js/jquery-1.11.3.min.js"></script>
 <script src="../../static/js/angular.min.js"></script>
+<script src="../../static/js/include-left.js"></script>
 <script src="../../static/js/userAddress.js"></script>
 </body>
 </html>
