@@ -1,6 +1,9 @@
 .fc-red{
     color: #ff0000;
 }
+.w-400{
+    width: 400px;
+}
 .mr-15{
     margin-right: 15px;
 }
@@ -118,6 +121,10 @@
     width: 140px;
     margin-right: 10px;
     text-align: right;
+}
+.coupons-li-con{
+    float: left;
+    display: inline;
 }
 .coupons-input1{
     width: 190px;

@@ -5,6 +5,8 @@
     <title>后台管理-优惠券-优惠券列表</title>
     <link rel="stylesheet" href="../../static/css/common.css"/>
     <link rel="stylesheet" href="../../static/css/coupons.css"/>
+    <link rel="stylesheet" href="../../static/css/laydate.css"/>
+    <link rel="stylesheet" href="../../static/css/laydate-skin.css"/>
 </head>
 <body>
     <div class="pub-content">
@@ -17,13 +19,13 @@
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit"><span class="fc-red">*</span>优惠券名称:</div>
                         <div class="coupons-li-con">
-                            <input class="coupons-input1" value="输入活动名称" type="text">
+                            <input class="coupons-input1 J_input_name" id="couponsName" value="输入活动名称" type="text">
                         </div>
                     </div>
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit"><span class="fc-red">*</span>面额:</div>
                         <div class="coupons-li-con">
-                            <select class="coupons-select">
+                            <select class="coupons-select" id="faceValue">
                                 <option>2元</option>
                                 <option>3元</option>
                                 <option>5元</option>
@@ -40,60 +42,53 @@
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit"><span class="fc-red">*</span>使用条件:</div>
                         <div class="coupons-li-con">
-                            <input class="coupons-radio" type="radio" name="use-limit">
-                            <input class="coupons-input2" value="" type="text">
+                            <input class="coupons-radio" type="radio" name="useCondition" value="1">
+                            <input class="coupons-input2" id="useCondition1" value="" type="number">
                             <label class="mr-15">元 使用</label>
-                            <input class="coupons-radio" type="radio" name="use-limit">
+                            <input class="coupons-radio" type="radio" name="useCondition" value="0">
                             <label>无使用条件</label>
                         </div>
                     </div>
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit"><span class="fc-red">*</span>有效期:</div>
                         <div class="coupons-li-con">
-                            <input type="date">
+                            <input id="date_start">
                             <span class="mlr-10">至</span>   
-                            <input type="date">
+                            <input id="date_end">
                         </div>
                     </div>
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit"><span class="fc-red">*</span>发行量:</div>
                         <div class="coupons-li-con">
-                            <input class="coupons-input2" type="text">
+                            <input class="coupons-input2" id="publishCount" type="number">
                             <span class="coupons-tip1">不超过100000张</span>
                         </div>
                     </div>
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit"><span class="fc-red">*</span>推广方式:</div>
                         <div class="coupons-li-con">
-                            <input class="coupons-radio" type="radio" name="get-way">
+                            <input class="coupons-radio" type="radio" name="getWay" value="1">
                             <label class="mr-15">买家领取</label>
-                            <input class="coupons-radio" type="radio" name="get-way">
+                            <input class="coupons-radio" type="radio" name="getWay" value="2">
                             <label>卖家发放</label>
                         </div>
                     </div>
                     <div class="coupons-li clearfix">
                         <div class="coupons-li-tit">优惠券描述:</div>
                         <div class="coupons-li-con">
-                            <textarea class="coupons-textarea1"></textarea>
-                        </div>
-                    </div>
-                    <div class="coupons-li clearfix">
-                        <div class="coupons-li-tit">优惠券描述:</div>
-                        <div class="coupons-li-con">
-                            <select class="coupons-select">
-                                <option value="" selected="true" disabled>请选择</option>
-                                <option>满多少元减多少</option>
-                                <option>满多少件减多少</option>
-                            </select>
+                            <textarea class="coupons-textarea1" id="couponsDescribe"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="act-submit-box">
-                    <a class="act-submit-btn" href="javascript:;">提交</a>
+                    <a class="act-submit-btn J_coupons_submit" href="javascript:;">提交</a>
                     <a class="act-submit-btn" href="javascript:;">取消</a>
                 </div> 
             </div>
         </div>
     </div>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script src="../../static/js/laydate.dev.js"></script>
+<script src="../../static/js/coupons-new.js"></script>
 </body>
 </html>
