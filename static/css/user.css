@@ -1,3 +1,4 @@
+
 /*userAddress.html by hangwei*/
 .yz-main input,.yz-main select{
     float: left;
@@ -87,7 +88,8 @@
     margin-right: 10px;
     line-height: 20px;
 }
-.yz-main .address-left－two{
+
+.yz-main .address-left-two{
     width: 40px;
     text-align: center;
 }
@@ -155,7 +157,7 @@
     line-height: 28px;
     display: none;
 }
-/*inde.html  by hangwei*/
+/*index.html by hangwei*/
 .yz-main .user-main{
     float: left;
     padding: 25px;
@@ -174,6 +176,25 @@
     font-size: 14px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+}
+.yz-main .detail-address {
+    margin-top: 35px;
+    overflow: hidden;
+}
+.yz-main .detail-address .detail-title{
+    margin-right: 10px;
+    font-weight: bold;
+    float: left;
+}
+.yz-main .cur-address{
+    height: 34px;
+    border: 1px solid #fd9500;
+    color: #fd9500;
+    background: #fff0db;
+    font-size: 14px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 0 none;
 }
 .yz-main .detail-line{
     width: 100%;
@@ -263,6 +284,12 @@
     margin-left: 20px;
     width: 930px;
 }
+
+.yz-main .default-address{
+    width: 110px;
+    color: #fd9500;
+    text-align: center;
+}
 .yz-main .shop-detail-title{
     display: block;
     height: 50px;
@@ -350,17 +377,18 @@
     text-align: center;
 }
 .yz-main .seller-address-operate{
-    padding-left: 10px;
-    width: 98px;
+
+    width: 108px;
 }
-.yz-main .seller-address-operate a{
-    color: #4598c8;
+.yz-main .seller-address-operate select{
+
     font-size: 12px;
-    display: inline-block;
-    width: 45px;
+    width: 108px;
+    margin: 0 auto;
     text-align: center;
 }
 .yz-main .shop-info-ul{
+    margin-top: 20px;
     width: 930px;
     height: auto;
     overflow: hidden;
@@ -401,7 +429,74 @@
     color: #fff;
     line-height: 22px;
     text-align: center;
+    cursor: pointer;
 }
+.yz-main .add-address{
+    margin-top: 30px;
+    display: block;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 12px;;
+    background: #fd9500;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+}
+.yz-main .set-AddressDefault{
+    height: 26px;
+    line-height: 26px;
+    padding-left: 100px;
+    margin-bottom: 5px;
+}
+.yz-main .set-AddressDefault input{
+    width: 20px;
+}
+.yz-main .address-html{
+    display: none;
+}
+.yz-main .pop1{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    z-index: 1000;
+    margin-left: -118px;
+    border: 3px solid #e0e0e0;
+    background: #fff;
+    padding: 15px 20px;
+    display: none;
+}
+.yz-main .pop-title{
+    font-size: 14px;
+    color: #FD9500;
+}
+.yz-main .size-pop-btnbox{
+    font-size: 0;
+    text-align: center;
+}
+.yz-main .size-pop-btn1,.size-pop-btn2{
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 24px;
+    margin: 10px 10px 0 10px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.yz-main .size-pop-btn1{
+    border:1px solid #FD9500;
+    background: #FD9500;
+    color: #fff;
+}
+.yz-main .size-pop-btn2{
+    border: 1px solid #999;
+    color: #999;
+}
+.yz-main .size-pop-con1{
+    text-align: center;
+}
+
 /*login.html by yeting*/
 .login .login-con{
 	width: 367px;
@@ -458,3 +553,4 @@
 	padding:6px 32px 0 0;
 	color: #666;
 }
+
