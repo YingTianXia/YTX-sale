@@ -66,20 +66,16 @@ em,i{
 .block {
 	display: block;
 }
-<<<<<<< HEAD
 .vHidden{
 	visibility: hidden;
 }
 .fw{
 	font-weight: bold;
-=======
-
+}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 textarea {
 	display: block;
->>>>>>> hangwei
 }
