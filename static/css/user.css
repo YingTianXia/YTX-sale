@@ -1,5 +1,5 @@
-
-input,select{
+/*userAddress.html by hangwei*/
+.yz-main input,.yz-main select{
     float: left;
     width: 128px;
     height: 26px;
@@ -8,20 +8,20 @@ input,select{
     font-size: 12px;
     padding: 0 5px;
 }
-select{
+.yz-main select{
     color: #333;
 }
-input{
+.yz-main input{
     color: #999;
 }
-.user-main{
+.yz-main .user-main{
     float: left;
     padding: 25px;
     width: 950px;
     height: auto;
     overflow: hidden;
 }
-.addressInfo{
+.yz-main .addressInfo{
     display: block;
     width: 100px;
     height: 35px;
@@ -33,15 +33,15 @@ input{
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
-.hr-line{
+.yz-main .hr-line{
     width: 100%;
     height: 1px;
     background: #fd9500;
 }
-.detail-wrap{
+.yz-main .detail-wrap{
     margin-left: 10px;
 }
-.address-send,.address-left{
+.yz-main .address-send,.address-left{
     width: 70px;
     float: left;
     margin-right: 5px;
@@ -52,7 +52,7 @@ input{
     font-size: 14px;
     text-align: right;
 }
-.address-star{
+.yz-main .address-star{
     float: left;
     height: 50px;
     width: 10px;
@@ -62,7 +62,7 @@ input{
     margin-left: 5px;
     text-align: right;
 }
-.address-send-mark{
+.yz-main .address-send-mark{
     float: left;
     width: 50px;
     height: 50px;
@@ -70,32 +70,32 @@ input{
     font-size: 12px;
     color: #333;
 }
-.address-province,.address-email,.address-name,.address-phone{
+.yz-main .address-province,.yz-main .address-email,.yz-main .address-name,.yz-main .address-phone{
     overflow: hidden;
     margin-bottom: 12px;
     height: 28px;
     width: 100%;
 }
-.address-left{
+.yz-main .address-left{
     color: #333;
     line-height: 28px;
     font-size: 12px;
     font-weight: normal;
     text-align: right;
 }
-.address-star-two{
+.yz-main .address-star-two{
     margin-right: 10px;
     line-height: 20px;
 }
-.address-left－two{
+.yz-main .address-left－two{
     width: 40px;
     text-align: center;
 }
-.email-input{
+.yz-main .email-input{
     margin-left: 25px;
     width: 180px;
 }
-.address-textarea{
+.yz-main .address-textarea{
     float: left;
     padding: 0 10px;
     width: 700px;
@@ -104,12 +104,12 @@ input{
     line-height: 20px;
     color: #333;
 }
-.address-detail{
+.yz-main .address-detail{
     position: relative;
     height: 80px;
     margin-bottom: 32px;
 }
-.address-detail-mark{
+.yz-main .address-detail-mark{
     font-size: 12px;
     line-height: 20px;
     color: #333;
@@ -117,26 +117,26 @@ input{
     bottom: -25px;
     left: 100px;
 }
-.address-hr{
+.yz-main .address-hr{
     width: 900px;
     height: 1px;
     margin-left: 15px;
     background: #dfdfdf;
 }
-.select-radio{
+.yz-main .select-radio{
     margin-top: 23px;
     width: 14px;
     height: 14px;
     margin-right: 5px;
     cursor: pointer;
 }
-.same-address{
+.yz-main .same-address{
     margin-left: 20px;
     float: left;
     width: 200px;
     line-height: 60px;
 }
-.address-save{
+.yz-main .address-save{
     cursor: pointer;
     width: 66px;
     height: 34px;
@@ -150,19 +150,20 @@ input{
     margin-right: 10px;
     border: none;
 }
-.false-show{
+.yz-main .false-show{
     color: #ff0000;
     line-height: 28px;
     display: none;
 }
-.user-main{
+/*inde.html  by hangwei*/
+.yz-main .user-main{
     float: left;
     padding: 25px;
     width: 950px;
     height: auto;
     overflow: hidden;
 }
-.detail-title{
+.yz-main .detail-title{
     display: block;
     width: 100px;
     height: 35px;
@@ -174,12 +175,12 @@ input{
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
-.detail-line{
+.yz-main .detail-line{
     width: 100%;
     height: 1px;
     background: #fd9500;
 }
-.detail-form{
+.yz-main .detail-form{
     margin-top: 12px;
     margin-bottom: 26px;
     width: 948px;
@@ -187,7 +188,7 @@ input{
     height: auto;
     overflow: hidden;
 }
-.date-up-time{
+.yz-main .date-up-time{
     margin-left: 30px;
     width: 50%;
     height: 45px;
@@ -195,53 +196,53 @@ input{
     font-size: 14px;
     color: #333;
 }
-.date-up-time i{
+.yz-main .date-up-time i{
     color: #fd9500;
 }
-.shop-detail-ul{
+.yz-main .shop-detail-ul{
     margin-top: 5px;
     width: 100%;
     height: auto;
     overflow: hidden;
 }
-.shop-detail-li{
+.yz-main .shop-detail-li{
     float: left;
     width: 88px;
     height: 170px;
     margin: 0 50px;
     text-align: center;
 }
-.shop-detail-li .one{
+.yz-main .shop-detail-li .one{
     display: block;
     width: 88px;
     height: 88px;
     background: url("../../static/images/yzUser.png") no-repeat 0 0;
 }
-.shop-detail-li .two{
+.yz-main .shop-detail-li .two{
     display: block;
     width: 88px;
     height: 88px;
     background: url("../../static/images/yzUser.png") no-repeat 0 -88px;
 }
-.shop-detail-li .three{
+.yz-main .shop-detail-li .three{
     display: block;
     width: 88px;
     height: 88px;
     background: url("../../static/images/yzUser.png") no-repeat 0 -176px;
 }
-.shop-detail-li .four{
+.yz-main .shop-detail-li .four{
     display: block;
     width: 88px;
     height: 88px;
     background: url("../../static/images/yzUser.png") no-repeat -88px 0;
 }
-.shop-detail-li .five{
+.yz-main .shop-detail-li .five{
     display: block;
     width: 88px;
     height: 88px;
     background: url("../../static/images/yzUser.png") no-repeat -88px -88px;
 }
-.shop-detail-name{
+.yz-main .shop-detail-name{
     height: 44px;
     width: 88px;
     line-height: 44px;
@@ -249,7 +250,7 @@ input{
     font-size: 14px;
     color: #333;
 }
-.shop-detail-num{
+.yz-main .shop-detail-num{
     height: 20px;
     width: 88px;
     line-height: 20px;
@@ -257,12 +258,12 @@ input{
     font-size: 14px;
     color: #333;
 }
-.shop-detail-wrap{
+.yz-main .shop-detail-wrap{
     position: relative;
     margin-left: 20px;
     width: 930px;
 }
-.shop-detail-title{
+.yz-main .shop-detail-title{
     display: block;
     height: 50px;
     line-height: 60px;
@@ -270,16 +271,16 @@ input{
     font-weight: bold;
     font-size: 14px;
 }
-.shop-detail-one{
+.yz-main .shop-detail-one{
     overflow: hidden;
 }
-.shop-detail-one .left{
+.yz-main .shop-detail-one .left{
     padding: 5px 0;
     float: left;
     background: #fd9500;
     width: 117px;
 }
-.shop-left-li{
+.yz-main .shop-left-li{
     text-align: right;
     height: 30px;
     line-height: 30px;
@@ -287,14 +288,14 @@ input{
     margin-right: 5px;
     font-size: 12px;
 }
-.shop-detail-one .right{
+.yz-main .shop-detail-one .right{
     float: left;
     margin-left: 13px;
     padding: 4px 0;
     border: 1px solid #dfdfdf;
     width: 798px;
 }
-.shop-right-li{
+.yz-main .shop-right-li{
     text-align: left;
     height: 30px;
     line-height: 30px;
@@ -302,21 +303,21 @@ input{
     margin-left: 10px;
     font-size: 12px;
 }
-.seller-address-info{
+.yz-main .seller-address-info{
     border: 1px solid #dfdfdf;
     border-collapse:collapse;
 }
-.seller-address-info td{
+.yz-main .seller-address-info td{
     border-bottom: 1px solid #dfdfdf;
 }
-.seller-address-send,.seller-address-get{
+.yz-main .seller-address-send,.seller-address-get{
     height: 50px;
     width: 930px;
 }
-.seller-address-title{
+.yz-main .seller-address-title{
     width: 110px;
 }
-.seller-address-title span{
+.yz-main .seller-address-title span{
     display: block;
     width: 65px;
     height: 20px;
@@ -327,67 +328,67 @@ input{
     border-radius: 3px;
     margin: 0 auto;
 }
-.seller-address-name{
+.yz-main .seller-address-name{
     width: 80px;
     text-align: left;
 }
-.seller-address-area{
+.yz-main .seller-address-area{
     width: 215px;
     text-align: left;
 }
-.seller-address-detail{
+.yz-main .seller-address-detail{
     width: 180px;
     padding-right: 30px;
     text-align: left;
 }
-.seller-address-email{
+.yz-main .seller-address-email{
     width: 90px;
     text-align: left;
 }
-.seller-address-phone{
+.yz-main .seller-address-phone{
     width: 115px;
     text-align: center;
 }
-.seller-address-operate{
+.yz-main .seller-address-operate{
     padding-left: 10px;
     width: 98px;
 }
-.seller-address-operate a{
+.yz-main .seller-address-operate a{
     color: #4598c8;
     font-size: 12px;
     display: inline-block;
     width: 45px;
     text-align: center;
 }
-.shop-info-ul{
+.yz-main .shop-info-ul{
     width: 930px;
     height: auto;
     overflow: hidden;
     background: #eee;
 }
-.shop-info-li{
+.yz-main .shop-info-li{
     float: left;
     height: 50px;
     font-size: 14px;
     color: #333;
     line-height: 50px;
 }
-.shop-info-ul .one{
+.yz-main .shop-info-ul .one{
     margin-left: 192px;
 }
-.shop-info-ul .two{
+.yz-main .shop-info-ul .two{
     margin-left: 157px;
 }
-.shop-info-ul .three{
+.yz-main .shop-info-ul .three{
     margin-left: 155px;
 }
-.shop-info-ul .four{
+.yz-main .shop-info-ul .four{
     margin-left: 74px;
 }
-.shop-info-ul .five{
+.yz-main .shop-info-ul .five{
     margin-left: 90px;
 }
-.shop-info-change{
+.yz-main .shop-info-change{
     display: block;
     position: absolute;
     top: 15px;
@@ -400,4 +401,60 @@ input{
     color: #fff;
     line-height: 22px;
     text-align: center;
+}
+/*login.html by yeting*/
+.login .login-con{
+	width: 367px;
+	height: 198px;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    border: 3px solid #e0e0e0;
+    margin: -100px 0 0 -200px;
+    overflow: hidden;
+    padding: 16px 0 0 27px;
+}
+.login .login-con .login-con-title{
+	font-size: 14px;
+	color: #fd9500;
+	font-weight: bold;
+}
+.login .login-con .login-con-main input{
+	display: block;
+	width: 297px;
+	height: 28px;
+	margin-top: 15px;
+	padding-left: 36px;
+	background: url(../images/icon_login.png) no-repeat;
+}
+.login .login-con .login-con-main .login-main-username{
+	background-position: 8px 5px;
+}
+.login .login-con .login-con-main .login-main-password{
+	background-position: 8px -33px;
+}
+.login .login-con .login-con-main .login-main-remind{
+	height: 26px;
+	line-height: 26px;
+	color: red;
+	font-size: 10px;
+}
+.login .login-con .login-main-loginButton{
+	width: 337px;
+	height: 30px;
+	background-color: #FD9500;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 28px;
+	text-align: center;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+}
+.login .login-con .login-con-findPassword{
+	float: right;
+	padding:6px 32px 0 0;
+	color: #666;
 }
