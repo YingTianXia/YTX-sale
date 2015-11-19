@@ -24,3 +24,5 @@ tamplates/item/.DS_Store
 tamplates/.DS_Store
 
 tamplates/user/.DS_Store
+
+*.xml
