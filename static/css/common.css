@@ -4,8 +4,12 @@
 	padding: 0;
 }
 body {
-	color: #000;
-	background: #FFF;
+	word-wrap: break-word;
+	-ms-word-wrap: break-word;
+	background: #fff;
+	font-family: "微软雅黑";
+	-webkit-font-smoothing: antialiased;
+	color: #333;
 	font: 12px Verdana, Arial, sans-serif, "microsoft yahei";
 }
 /*清浮动*/
@@ -36,8 +40,9 @@ table,tr,td{
 	border-spacing:0;
 }
 /* 定义默认的链接样式，仅仅是作为默认样式提供，可以在各自的实例中覆盖掉 */
-a:hover {
+a:hover, a:active {
 	text-decoration: none;
+	outline: none;
 }
 /* 定义图片边框，当图片作为链接内容被填充时，会有默认边框出现，重定义掉 */
 img{
@@ -61,9 +66,20 @@ em,i{
 .block {
 	display: block;
 }
+<<<<<<< HEAD
 .vHidden{
 	visibility: hidden;
 }
 .fw{
 	font-weight: bold;
+=======
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+textarea {
+	display: block;
+>>>>>>> hangwei
 }

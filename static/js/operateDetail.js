@@ -6,7 +6,9 @@
         switch ($(this).html()){
             case "修改":
                 $(this).html('确认');
-                $('.j-changInput').html('<input type="text"/>');
+                $('.j-changInput').each(function(i,v){
+                    $(v).html('<input type="text" value="'+$(v).html()+'"/>');
+                })
                 break;
             case "确认":
                 $(this).html('修改');
