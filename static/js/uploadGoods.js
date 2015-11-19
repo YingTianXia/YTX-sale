@@ -3,120 +3,80 @@
  */
 
 (function($){
-   /* $('.j-addSize').on('click',function(){
-        var dom  =  '<li class="goods-sizeItem J_size">'+
-                    '<input type="checkbox" class="goods-sizeItem-checkbox" checked />'+
-                    '<input type="text" class="input-size" value="'+$(this).siblings().val()+'"/>'+
-                    '</li>';
-        if($(this).siblings().val()){
-            $('#J-sizeUl').append(dom);
-            colorChange();
-        }
-    })
-    $('.j-addColor').on('click',function(){
-        var dom  =  '<li class="goods-color J_color">'+
-                    '<input type="checkbox" class="checkbox-color" />'+
-                    '<span class="color-mark select-color-a"></span>'+
-                    '<input class="input-color" value="'+$(this).siblings().val()+'"  type="text"/>'+
-                    '</li>';
-        if($(this).siblings().val()){
-            $('#J-colorUl').append(dom);
-            colorChange();
-        }
-    })*/
 
-    /**
-     * 从 file 域获取 本地图片 url
-     */
-    function getFileUrl(sourceId) {
-        var url;
-        if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
-            url = document.getElementById(sourceId).value;
-        } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
-            url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
-        } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
-            url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
-        }
-       return url;
-    }
-    /**
-     * 将本地图片 显示到浏览器上
-     */
-    function preImg(fileId) {
-        var url = getFileUrl(fileId);
-        $('.goods-imgItem').each(function(i,v){
-            if($('img',v).length==0){
-                var dom =   '<span class="j-close close">X</span>'+
-                            '<img src="'+url+'" class="goods-imgItem-img" width="100%" height="100%"/>'
-                $(v).html(dom);
-                return false;
+    //富文本编辑器
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor', {
+            allowFileManager : true,
+            langType : 'zh-CN',
+            autoHeightMode : true
+        });
+    });
+
+    //复制粘贴
+    var client = new ZeroClipboard( $(".J-copyLink") );
+    client.on( "ready", function() {
+        client.on( "aftercopy", function( event ) {
+            $('.copySuccessShow').show();
+        } );
+    } );
+    $(document).on('click','.copySuccessShow-L',function(){
+        $('.get-link-show').hide();
+        $('.copySuccessShow').hide();
+    })
+
+    $(document).on('click','.copySuccessShow-R',function(){
+        $('.copySuccessShow').hide();
+    })
+    //日历组件
+
+        var start = {
+            elem: '#inputStartTime',
+            event: 'focus',
+            istime: true,
+            format: 'YYYY-MM-DD hh:mm:ss',
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
             }
-        })
-        /*var filePath;
-        if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
-            filePath = document.getElementById(fileId).value;
-        } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
-            filePath = document.getElementById(fileId).files.item(0);
-        } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
-            filePath = document.getElementById(fileId).files.item(0);
-        }*/
-    }
-    $('#fileUp').on('change',function(){
-        preImg('fileUp')
-    })
-
-    $(document).on('click','.j-close',function(){
-        $(this).parents('.goods-imgItem').html('');
-        $('.goods-imgCon-file').val('');
-    })
-
-    $(document).on('change','.j-good-img',function(){
-        $('.j-good-img').removeAttr('id');
-        $(this).attr('id','J-good-img');
-        var url = getFileUrl('J-good-img');
-        $('#J-good-img').parent().append('<img src="'+url+'" class="" width="100%" height="100%"/><span class="j-deleteGood">删除</span>');
-        $(this).val('');
-    })
-    $(document).on('click','.j-deleteGood',function(){
-        $(this).siblings('img').remove();
-        $(this).remove();
-
-    })
+        }
+        var end = {
+            elem: '#inputEndTime',
+            event: 'focus',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            istime: true,
+            choose: function(datas){
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        }
+        laydate(start);
+        laydate(end);
 
     /*——————————————————————————————————————————尺码表——————————————————————————————————————————*/
+    $('.SKU-A-check').on('click',function(){
+
+        skuChange();
+
+        var isShowImg = $(this).parents('#SKU-A').attr('data-img')=="img" ? true: false;
+        if(isShowImg){
+            colorRender();
+        }
+    })
+
+    $('.SKU-B-check').on('click',function(){
+        skuChange();
+    })
 
     var changeArry=[];
 
-    $(document).on('change','.j-add',function(){
-
-        var saveValue =$(this).attr('attr')+'-'+$(this).val();
-
-        var m = saveValue.substring(0,saveValue.indexOf('-'));
-
-        $.each(changeArry,function(i,el){
-            var nowChange =el.substring(0,el.indexOf('-'))
-            if(nowChange==m){
-                console.log('1')
-                changeArry.splice(i, el);
-            }else{
-                changeArry.push('1')
-            }
-            //console.log(el+i)
-        })
-
-
-        console.log(changeArry)
-
-    })
-
     var colorSize={};
 
-    function colorChange(){
+    function skuChange(){
         var sizeArr = [];
         colorSize={};
 
         $('.J_size').each(function(i,e){
-            var sizeCheck = $('.goods-sizeItem-checkbox',e);
+            var sizeCheck = $('.SKU-B-check',e);
             var sizeVal = $('.input-size',e).val();
             if(sizeCheck[0].checked){
                 sizeArr.push({
@@ -130,27 +90,13 @@
         });
 
         $('.J_color').each(function(i,e){
-            var colorCheck = $('.checkbox-color',e);
+            var colorCheck = $('.SKU-A-check',e);
             var colorVal = $('.input-color',e).val();
             if(colorCheck[0].checked){
                 colorSize[colorVal]=sizeArr;
             }
         });
 
-
-       /*$.each(colorSize,function(name,el){
-            $.each(el,function(index,data){
-                $.each(changeArry,function(i,newData){
-                    if(newData.color==name&&newData.size==data.size){
-                        //console.log(newData.num + newData.color + newData.size)
-                        data.num = newData.num;
-                        data.price = newData.price;
-                        data.sellerCode = newData.sellerCode;
-                        data.goodsCode = newData.goodsCode;
-                    }
-                })
-            })
-        })*/
         $.each(changeArry,function(index,el){
             $.each(colorSize[el.color],function(i,data){
                 if(data.size==el.size){
@@ -166,27 +112,34 @@
 
     function domrender(obj){
         var dom='<tr>'+
-            '<td>颜色分类</td>'+
-            '<td>尺寸</td>'+
+            '<td>'+$(".SKU-name").eq(0).html()+'</td>'+
+            '<td>'+$(".SKU-name").eq(1).html()+'</td>'+
             '<td>价格</td>'+
             '<td>数量</td>'+
             '<td>商家编码</td>'+
             '<td>商品条形码</td>'+
             '</tr>';
-        var checkColor =$('.checkbox-color').is(':checked');
-        var checkSize =$('.goods-sizeItem-checkbox').is(':checked');
+        var singleDom='<tr>'+
+            '<td>'+$(".SKU-name").eq(0).html()+'</td>'+
+            '<td>价格</td>'+
+            '<td>数量</td>'+
+            '<td>商家编码</td>'+
+            '<td>商品条形码</td>'+
+            '</tr>';
+        var isSKUA =$('.SKU-A-check').is(':checked');
+        var isSKUB =$('.SKU-B-check').is(':checked');
         var sizeLength=0;
-        if(checkColor&&checkSize){
+        if(isSKUA&&isSKUB){
             $.each(obj,function(v,tmpl){
                 sizeLength =tmpl.length;
                 $.each(tmpl,function(i,el){
                     dom =dom+'<tr>'+
                         '<td class="td-color">'+v+'</td>'+
                         '<td class="td-size">'+el.size+'</td>'+
-                        '<td><input type="text" attr="'+v+el.size+'a" class="j-add" value="'+ el.price+'"/></td>'+
-                        '<td><input type="text" attr="'+v+el.size+'b" class="j-add" value="'+ el.num+'"/></td>'+
-                        '<td><input type="text" attr="'+v+el.size+'c" class="j-add" value=""/></td>'+
-                        '<td><input type="text" attr="'+v+el.size+'d" class="j-add" value=""/></td>'+
+                        '<td><input type="text"'+ el.price+'"/></td>'+
+                        '<td><input type="text"'+ el.num+'"/></td>'+
+                        '<td><input type="text"/></td>'+
+                        '<td><input type="text"/></td>'+
                         '</tr>';
                 })
             })
@@ -202,74 +155,136 @@
                     $(v).remove();
                 }
             })
-        }else{
+        }else if(isSKUA&&!isSKUB){
+            $.each(obj,function(v){
+                singleDom =singleDom+'<tr>'+
+                    '<td class="td-color">'+v+'</td>'+
+                    '<td><input type="text"/></td>'+
+                    '<td><input type="text"/></td>'+
+                    '<td><input type="text"/></td>'+
+                    '<td><input type="text"/></td>'+
+                    '</tr>';
+            })
+            $('.colorSizeTable').html(singleDom);
+        }
+        else{
             $('.colorSizeTable').html('');
         }
     }
 
-    $('.checkbox-color').on('click',function(){
-        colorChange();
+    function colorRender(){
 
         var dom='<tr>'+
-                '<td class="colorImgTable-a">颜色</td>'+
-                '<td class="colorImgTable-b">图片</td>'+
-                '</tr>';
-        var arr=[];
-        $('.checkbox-color').each(function(i,el){
+            '<td class="colorImgTable-a">颜色</td>'+
+            '<td class="colorImgTable-b">图片</td>'+
+            '</tr>',
+            arr=[],
+            isSKUA =$('.SKU-A-check').is(':checked');
+
+        $('.SKU-A-check').each(function(i,el){
             if($(el).get(0).checked){
                 arr.push({
-                    color:$(el).siblings(".color-mark").attr('class')+' imgColorSpan',
-                    val:$(el).siblings(".input-color").val()
+                    val: $(el).siblings(".input-color").val()
                 })
             }
         })
 
-        $.each(arr,function(i,el){
-            dom =dom+'<tr>'+
-                '<td class="colorImgTable-a">' +
-                '<span class="'+el.color+'"></span>'+
-                '<span >'+el.val+'</span>'+
-                '</td>'+
-                '<td class="colorImgTable-b">'+
-                '<input class="j-good-img" type="file"/>'+
-                '</td>'+
-                '</tr>';
-        })
-        $('.colorImgTable').html(dom);
-
-    })
-
-    $('.goods-sizeItem-checkbox').on('click',function(){
-        colorChange();
-    })
-
-
-    var app = angular.module('myApp', []);
-    app.controller('myCtrl', ['$scope', function($scope) {
-
-        $('.false-show').show();
-        $scope.upload={
-            mail:'free',
-            countNum:'buy',
-            commit:'commit'
+        if(isSKUA){
+            $.each(arr,function(i,el){
+                dom =dom+'<tr>'+
+                    '<td class="colorImgTable-a">'+el.val+'</td>'+
+                    '<td class="colorImgTable-b">'+
+                    '<span class="j-good-img">选择图片</span>'+
+                    '</td>'+
+                    '</tr>';
+            })
+            $('.colorImgTable').html(dom);
+        }else{
+            $('.colorImgTable').html('');
         }
 
-        $scope.save = function() {
-            // check to make sure the form is completely valid
-            if ($scope.uploadForm.$valid) {
-                $('.goods-imgItem').each(function(i,v){
-                    if($('img',v).length==1&&i==0){
-                        alert('success');
-                    }else if(i==0){
-                        alert('请上传宝贝主图');
-                    }
-                })
+    }
+
+
+    //文件夹
+    var arrSelectArry=[];
+    var hasSelectIndex =0;
+    $('.bread-nav').eq(1).html($('.catalog-folder-name').eq(0).html());
+
+    $(document).on('click','.catalog-folder-name',function(){
+        $('.bread-nav').eq(1).html($(this).html());
+    });
+
+    $(document).on('click','.imagelist-item-content',function(){
+
+        var selectMax=$('.folder-actions-has em').html()-0;
+        var maxPic =selectMax-1;
+        if($(this).hasClass('selected')){
+            $(this).removeClass('selected');
+            $(this).find('.selected-icon').remove();
+            arrSelectArry.splice($.inArray($('img',this).attr('src'),arrSelectArry),1);
+            hasSelectIndex--;
+            $('.folder-actions-has i').html(hasSelectIndex);
+        }else{
+
+            if($('#imageContent').find('.selected').length<=maxPic){
+                arrSelectArry.push($('img',this).attr('src'))
+                $(this).addClass('selected');
+                $(this).append('<span class="selected-icon"></span>');
+                hasSelectIndex++;
+                $('.folder-actions-has i').html(hasSelectIndex);
             }else{
-                alert('请填写必须信息')
+                alert('最多选择'+selectMax+'张图片')
             }
-        };
-        console.log($scope)
-    }]);
+        }
+
+    });
+
+    $(document).on('click','.j-good-img',function(){
+        arrSelectArry=[];
+        $('.get-img-show').show()
+        if($(this).hasClass('select-six')){
+            $('.folder-actions-has em').html('6');
+        }else{
+            $('.colorImgTable-b').removeClass('add-cur-img');
+            $(this).parents('.colorImgTable-b').addClass('add-cur-img');
+            $('.folder-actions-has em').html('1')
+        }
+    });
+
+    $(document).on('click','.folder-actions-select',function(){
+        var selectMax =$('.folder-actions-has em').html()-0;
+        if(selectMax>1){
+            $('.goods-imgItem').each(function(v,tmpl){
+                if(arrSelectArry[v]){
+                    $(tmpl).html('<img src="'+arrSelectArry[v]+'"/>');
+                }else{
+                    $(tmpl).html('');
+                }
+            })
+        }else{
+            $('.add-cur-img').html(
+                '<span class="j-good-img">选择图片</span>' +
+                '<img src="'+arrSelectArry[0]+'"/>'
+            )
+        }
+
+
+        $('.imagelist-item-content').removeClass('selected');
+        $('.imagelist-item-content').find('.selected-icon').remove();
+        $('.folder-actions-has i').html('0');
+        $('.get-img-show').hide()
+        hasSelectIndex=0;
+    });
+
+    function uploadDateSave(){
+        var uploadJson ={};
+
+    }
+
+
+
+
 })(jQuery)
 
 

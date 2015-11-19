@@ -7,16 +7,15 @@
     <link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../../static/css/item.css"/>
     <link rel="stylesheet" type="text/css" href="../../static/css/include.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/laydate-skin.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/laydate.css"/>
 </head>
-<body ng-app="myApp">
+<body ng-app>
 <div ng-include="'../include/head.html'"></div>
 <div class="erp-container"  >
-
     <div ng-include="'../include/left.html'"></div>
-    <div class="container clearfix" ng-controller="myCtrl">
-
-        <form name="uploadForm" ng-submit="save()" novalidate>
-            <div class="erp-main">
+    <div class="container clearfix" >
+        <div class="erp-main">
                 <div class="uploadgoods-content">
                     <div class="uploadgoods-desc">
                         <div class="UG-desc-title">产品信息</div>
@@ -34,26 +33,28 @@
                         <div class="UG-goods-normalInfo">
                             <h2 class="UG-goods-normalInfo-title">1.宝贝基本信息</h2>
                             <div class="UG-goods-normalInfo-main clearfix">
-                                <h3 class="UG-goods-attrtitle">宝贝属性：</h3>
+                                <!--<h3 class="UG-goods-attrtitle">宝贝属性：</h3>-->
                                 <div class="UG-goods-attrCon">
                                     <p class="UG-goods-alert">填错宝贝属性，可能会引起宝贝下架，影响您的正常销售。请认真准确填写</p>
                                     <dl class="UG-goods-attr-inputCon clearfix">
                                         <dt class="UG-goods-attr-name">货号：</dt>
                                         <dd class="UG-goods-attr-content">
-                                            <input type="text" class="UG-goods-attr-input" ng-model="upload.goodNo" name="goodNo" required />
-                                            <span class="false-show"  ng-show="uploadForm.goodNo.$touched&& uploadForm.goodNo.$invalid">请填写必须货号</span>
+                                            <input type="text" class="UG-goods-attr-input"/>
                                         </dd>
                                     </dl>
                                     <dl class="UG-goods-attr-SelectCon clearfix">
                                         <dt class="UG-goods-attr-name">牛仔面料：</dt>
                                         <dd class="UG-goods-attr-content">
-                                            <select class="UG-goods-attr-Select" ng-model="upload.material" name="material" required>
-                                                <option value="">请选择</option>
-                                                <option value="棉">棉</option>
-                                                <option value="纱">纱</option>
-                                                <option value="布">布</option>
-                                            </select>
-                                            <span class="false-show"  ng-show="uploadForm.material.$touched&&uploadForm.material.$invalid">请选择面料</span>
+                                            <input type="checkbox"  id="checkA"/>
+                                            <label for="checkA">棉</label>
+                                        </dd>
+                                        <dd class="UG-goods-attr-content">
+                                            <input type="checkbox"  id="checkB"/>
+                                            <label for="checkB">麻</label>
+                                        </dd>
+                                        <dd class="UG-goods-attr-content">
+                                            <input type="checkbox"  id="checkC"/>
+                                            <label for="checkC">布</label>
                                         </dd>
 
                                     </dl>
@@ -61,14 +62,12 @@
                                         <dt class="UG-goods-attr-name">工艺处理：</dt>
                                         <dd class="UG-goods-attr-content">
                                             <div class="UG-goods-attr-checkboxItem">
-                                                <select class="UG-goods-attr-Select" ng-model="upload.technology" name="technology" required>
+                                                <select class="UG-goods-attr-Select">
                                                     <option value="">请选择</option>
                                                     <option value="棉">棉</option>
                                                     <option value="纱">纱</option>
                                                     <option value="布">布</option>
                                                 </select>
-                                                <span class="false-show"  ng-show="uploadForm.technology.$touched&&uploadForm.technology.$invalid">请选择工艺</span>
-
                                             </div>
                                         </dd>
                                     </dl>
@@ -76,25 +75,33 @@
                             </div>
                             <div class="UG-goods-main">
                                 <dl class="UG-goods-mainList clearfix">
-                                    <dt class="UG-goods-main-name">宝贝标题：<span class="yellow">*</span></dt>
+                                    <dt class="UG-goods-main-name">宝贝名称：<span class="yellow">*</span></dt>
                                     <dd class="UG-goods-main-content">
-                                        <input type="text" class="UG-goods-attr-input input400" ng-model="upload.title" name="title" required/>
-                                    </dd>
-                                    <span class="false-show"  ng-show="uploadForm.title.$touched&&uploadForm.title.$invalid">请填写标题</span>
-
-                                </dl>
-                                <dl class="UG-goods-mainList clearfix">
-                                    <dt class="UG-goods-main-name">宝贝卖点：</dt>
-                                    <dd class="UG-goods-main-content">
-                                        <textarea class="UG-goods-main-textarea" rows="5" ng-model="upload.salePoint"></textarea>
+                                        <input type="text" class="UG-goods-attr-input input400"/>
                                     </dd>
                                 </dl>
                                 <dl class="UG-goods-mainList clearfix">
-                                    <dt class="UG-goods-main-name">一口价：<span class="yellow">*</span></dt>
+                                    <dt class="UG-goods-main-name">宝贝类型：</dt>
                                     <dd class="UG-goods-main-content">
-                                        <input type="text" class="UG-goods-attr-input input150" ng-model="upload.price" name="price" required/>
+                                        <div class="UG-goods-receipt">
+                                            <input type="radio" id="goodsType" name="type" checked="checked" value="1"/>
+                                            <label for="goodsType">实体商品</label>
+                                            <input type="radio" id="goodsTypeB" name="type" value="2"/>
+                                            <label for="goodsTypeB">虚拟商品</label>
+                                        </div>
                                     </dd>
-                                    <span class="false-show"  ng-show="uploadForm.price.$touched&&uploadForm.price.$invalid">请填写一口价</span>
+                                </dl>
+                                <dl class="UG-goods-mainList clearfix">
+                                    <dt class="UG-goods-main-name">宝贝简介：</dt>
+                                    <dd class="UG-goods-main-content">
+                                        <textarea class="UG-goods-main-textarea" rows="5"></textarea>
+                                    </dd>
+                                </dl>
+                                <dl class="UG-goods-mainList clearfix">
+                                    <dt class="UG-goods-main-name">市场价：<span class="yellow">*</span></dt>
+                                    <dd class="UG-goods-main-content">
+                                        <input type="number" class="UG-goods-attr-input input150"/>
+                                    </dd>
 
                                 </dl>
                                 <dl class="UG-goods-mainList clearfix">
@@ -102,128 +109,85 @@
                                     <dd class="UG-goods-main-content">
                                         <div class="UG-goods-spec">
                                             <div class="UG-goods-color">
-                                                <p class="UG-goods-spec-title">颜色：</p>
+                                                <p class="SKU-name">颜色</p>
                                                 <div class="UG-goods-colorCon">
-                                                    <ul class="goods-sizeCon clearfix" id="J-colorUl">
+                                                    <ul class="goods-sizeCon clearfix" id="SKU-A" data-img="img">
                                                         <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color" />
-                                                            <span class="color-mark select-color-a"></span>
+                                                            <input type="checkbox" class="SKU-A-check" />
                                                             <input class="input-color" value="红色" type="text"/>
                                                         </li>
                                                         <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color" />
-                                                            <span class="color-mark select-color-b"></span>
+                                                            <input type="checkbox" class="SKU-A-check" />
                                                             <input class="input-color" value="黄色" type="text"/>
                                                         </li>
-                                                        <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color"/>
-                                                            <span class="color-mark select-color-c"></span>
-                                                            <input class="input-color" value="绿色" type="text"/>
-                                                        </li>
-                                                        <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color"/>
-                                                            <span class="color-mark select-color-d"></span>
-                                                            <input class="input-color" value="蓝色" type="text"/>
-                                                        </li>
-                                                        <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color"/>
-                                                            <span class="color-mark select-color-e"></span>
-                                                            <input class="input-color" value="紫色" type="text"/>
-                                                        </li>
-                                                        <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color"/>
-                                                            <span class="color-mark select-color-f"></span>
-                                                            <input class="input-color" value="白色" type="text"/>
-                                                        </li>
-                                                        <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color"  />
-                                                            <span class="color-mark select-color-g"></span>
-                                                            <input class="input-color" value="灰色"  type="text"/>
-                                                        </li>
-                                                        <li class="goods-color J_color">
-                                                            <input type="checkbox" class="checkbox-color" />
-                                                            <span class="color-mark select-color-h"></span>
-                                                            <input class="input-color" value="黑色" type="text"/>
-                                                        </li>
                                                     </ul>
-                                                   <!--<div class="goods-color-addColor">
-                                                        <input type="text" class="goods-color-addColor-input" placeholder="添加自定义颜色"/>
-                                                        <span class="goods-color-addColor-text j-addColor">添加</span>
-
-                                                    </div>-->
-                                                    <table class="colorImgTable">
-                                                    </table>
-
+                                                    <table class="colorImgTable"></table>
                                                 </div>
                                             </div>
                                             <div class="UG-goods-size">
-                                                <p class="UG-goods-spec-title">尺寸：</p>
-                                                <ul class="goods-sizeCon clearfix" id="J-sizeUl">
+                                                <p class="SKU-name">尺寸</p>
+                                                <ul class="goods-sizeCon clearfix" id="SKU-B">
                                                     <li class="goods-sizeItem J_size">
-                                                        <input type="checkbox" class="goods-sizeItem-checkbox"  />
+                                                        <input type="checkbox" class="SKU-B-check"  />
                                                         <input type="text" class="input-size" value="XS"/>
                                                     </li>
                                                     <li class="goods-sizeItem J_size">
-                                                        <input type="checkbox" class="goods-sizeItem-checkbox"  />
+                                                        <input type="checkbox" class="SKU-B-check"  />
                                                         <input type="text" class="input-size" value="S"/>
                                                     </li>
                                                     <li class="goods-sizeItem J_size">
-                                                        <input type="checkbox" class="goods-sizeItem-checkbox"  />
+                                                        <input type="checkbox" class="SKU-B-check"  />
                                                         <input type="text" class="input-size" value="M"/>
                                                     </li>
-                                                    <li class="goods-sizeItem J_size">
-                                                        <input type="checkbox" class="goods-sizeItem-checkbox"  />
-                                                        <input type="text" class="input-size" value="L"/>
-                                                    </li>
-                                                    <li class="goods-sizeItem J_size">
-                                                        <input type="checkbox" class="goods-sizeItem-checkbox"  />
-                                                        <input type="text" class="input-size" value="XL"/>
-                                                    </li>
-                                                    <li class="goods-sizeItem J_size">
-                                                        <input type="checkbox" class="goods-sizeItem-checkbox"  />
-                                                        <input type="text" class="input-size" value="XXL"/>
-                                                    </li>
                                                 </ul>
-                                               <!-- <div class="goods-color-addColor">
-                                                    <input type="text" class="goods-color-addColor-input" placeholder="添加商品尺寸"/>
-                                                    <span class="goods-color-addColor-text j-addSize">添加</span>
-                                                </div>-->
                                             </div>
-                                            <table class="colorSizeTable">
-
-                                            </table>
+                                            <table class="colorSizeTable"></table>
                                         </div>
                                     </dd>
                                 </dl>
                                 <dl class="UG-goods-mainList clearfix">
                                     <dt class="UG-goods-main-name">宝贝数量：<span class="yellow">*</span></dt>
                                     <dd class="UG-goods-main-content">
-                                        <input type="number" class="UG-goods-attr-input input150" ng-model="upload.goodNum" name="goodNum" required/>
+                                        <input type="number" class="UG-goods-attr-input input150" />
                                         <span>件</span>
-                                        <span class="false-show"  ng-show="uploadForm.goodNum.$touched&&uploadForm.goodNum.$invalid">请填写宝贝数量</span>
                                     </dd>
                                 </dl>
                                 <dl class="UG-goods-mainList clearfix">
-                                    <dt class="UG-goods-main-name">商家编码：</dt>
+                                    <dt class="UG-goods-main-name">最大售卖数：<span class="yellow">*</span></dt>
                                     <dd class="UG-goods-main-content">
-                                        <input type="text" class="UG-goods-attr-input input150" ng-model="upload.sellerCode"/>
+                                        <input type="number" class="UG-goods-attr-input input150" />
+                                        <span>件</span>
                                     </dd>
                                 </dl>
                                 <dl class="UG-goods-mainList clearfix">
-                                    <dt class="UG-goods-main-name">商品条形码：</dt>
+                                    <dt class="UG-goods-main-name">最小售卖数：<span class="yellow">*</span></dt>
                                     <dd class="UG-goods-main-content">
-                                        <input type="text" class="UG-goods-attr-input input150" ng-model="upload.goodCode" />
+                                        <input type="number" class="UG-goods-attr-input input150" />
+                                        <span>件</span>
+                                    </dd>
+                                </dl>
+                                <dl class="UG-goods-mainList clearfix">
+                                    <dt class="UG-goods-main-name">售卖开始时间：</dt>
+                                    <dd class="UG-goods-main-content">
+                                        <input type="text" id="inputStartTime" class="UG-goods-attr-input input150 " />
+                                    </dd>
+                                </dl>
+                                <dl class="UG-goods-mainList clearfix">
+                                    <dt class="UG-goods-main-name">售卖结束时间：</dt>
+                                    <dd class="UG-goods-main-content">
+                                        <input type="text" id="inputEndTime" class="UG-goods-attr-input input150 " />
                                     </dd>
                                 </dl>
                                 <dl class="UG-goods-mainList clearfix">
                                     <dt class="UG-goods-main-name">宝贝图片：</dt>
                                     <dd class="UG-goods-main-content">
                                         <div class="goods-imgCon">
-                                            <div class="goods-imgCon-controler">
+                                            <span class="j-good-img select-six">选择图片</span>
+                                           <!-- <div class="goods-imgCon-controler">
                                                 <input type="file" class="goods-imgCon-file" id="fileUp"/>
                                                 <p class="goods-imgCon-alert">提示：1.本地上传图片大小不能超过3过<span class="yellow">3MB</span>。</p>
                                                 <p class="goods-imgCon-alert">&nbsp;&nbsp;&nbsp;2.本类目下您最多可上传<span class="yellow">6</span>张图片。</p>
-                                            </div>
+                                            </div>-->
                                             <ul class="goods-imgList clearfix">
                                                 <li class="goods-imgItem">
                                                     <span class="yellow">*</span>主图
@@ -240,10 +204,7 @@
                                 <dl class="UG-goods-mainList clearfix">
                                     <dt class="UG-goods-main-name">宝贝描述：</dt>
                                     <dd class="UG-goods-main-content">
-                                        <textarea name="" id="" cols="30" rows="10" class="goodMS" ng-model="upload.goodDetail"></textarea>
-                                        <!--<div class="UG-goods-editCon" >
-                                            &lt;!&ndash;文本编辑器区域&ndash;&gt;
-                                        </div>-->
+                                        <textarea id="editor" name="" cols="100" rows="20" style="width:600px;height:100px;"></textarea>
                                     </dd>
                                 </dl>
                             </div>
@@ -254,22 +215,22 @@
                                 <dt class="UG-goods-main-name">提取方式：<span class="yellow">*</span></dt>
                                 <dd class="UG-goods-main-content">
                                     <div class="goods-expressCon">
-                                        <input type="radio" id="goods-express" ng-checked="true" disabled value="free" name="express" ng-model="upload.express"/>
+                                        <input type="radio" id="goods-express" disabled="disabled" checked="checked" value="free" name="express"/>
                                         <label for="goods-express">包邮</label>
                                     </div>
-                                    <div class="goods-expressCon">
-                                        <input type="radio" id="express－setting" disabled value="set" name="express" ng-model="upload.express"/>
+                                    <!--<div class="goods-expressCon">
+                                        <input type="radio" id="express－setting" disabled="disabled" value="set" name="express"/>
                                         <label for="express－setting">运费设置</label>
                                         <select class="goods-express-select">
                                             <option value="">请选择运费模版</option>
                                         </select>
-                                    </div>
+                                    </div>-->
                                 </dd>
                             </dl>
                         </div>
-                        <div class="UG-goods-selling">
+                        <!--<div class="UG-goods-selling">
                             <h2 class="UG-goods-normalInfo-title">3.售后保障信息</h2>
-                            <!--<dl class="UG-goods-mainList clearfix">
+                            <dl class="UG-goods-mainList clearfix">
                                 <dt class="UG-goods-main-name">发票：</dt>
                                 <dd class="UG-goods-main-content">
                                     <div class="UG-goods-receipt">
@@ -290,25 +251,25 @@
                                         <label for="fix2">有</label>
                                     </div>
                                 </dd>
-                            </dl>-->
+                            </dl>
                             <dl class="UG-goods-mainList clearfix">
                                 <dt class="UG-goods-main-name">退换货承诺：</dt>
                                 <dd class="UG-goods-main-content UG-goods-main-content-dif">
-                                    <input type="checkbox" id="promise" checked disabled/>
+                                    <input type="checkbox" id="promise" checked="checked" disabled="disabled" value="promise"/>
                                     <label for="promise">凡购买本店商品,若存在质量问题或描述不符，本店将主动提供退换货服务并承担来回邮费！</label>
                                 </dd>
                             </dl>
-                            <!--<dl class="UG-goods-mainList clearfix">
+                            <dl class="UG-goods-mainList clearfix">
                                 <dt class="UG-goods-main-name">服务保障：</dt>
                                 <dd class="UG-goods-main-content UG-goods-main-content-dif">
                                     <input type="checkbox" id="promise" />
                                     <label for="promise">该商品品类必须支持"七天退货"服务;</label>
                                 </dd>
-                            </dl>-->
+                            </dl>
                         </div>
                         <div class="UG-goods-otherInfo">
                             <h2 class="UG-goods-normalInfo-title">4.其他信息</h2>
-                            <!--<dl class="UG-goods-mainList clearfix">
+                            <dl class="UG-goods-mainList clearfix">
                                 <dt class="UG-goods-main-name">会员打折：</dt>
                                 <dd class="UG-goods-main-content">
                                     <div class="UG-goods-receipt">
@@ -318,34 +279,26 @@
                                         <label for="user1">参与会员打折</label>
                                     </div>
                                 </dd>
-                            </dl>-->
+                            </dl>
                             <dl class="UG-goods-mainList clearfix">
                                 <dt class="UG-goods-main-name">库存计数：</dt>
                                 <dd class="UG-goods-main-content">
                                     <div class="UG-goods-receipt">
-                                        <input type="radio" id="stock" name="stock" value="buy" ng-checked="true" disabled ng-model="upload.countNum"/>
+                                        <input type="radio" id="stock" name="stock" checked="checked" disabled="disabled" value="pay"/>
                                         <label for="stock">拍下减库存</label>
-                                        <input type="radio" id="stock1" name="stock" value="pay" disabled ng-model="upload.countNum"/>
+                                        <input type="radio" id="stock1" name="stock" disabled="disabled" value="pay"/>
                                         <label for="stock1">付款减库存</label>
                                     </div>
                                 </dd>
                             </dl>
-                            <!--<dl class="UG-goods-mainList clearfix">
-                                <dt class="UG-goods-main-name">有效期：</dt>
-                                <dd class="UG-goods-main-content">
-                                    <div class="UG-goods-receipt">
-                                        <input type="radio" id="" name="" />
-                                        <label for="">7天</label>
-                                    </div>
-                                </dd>
-                            </dl>-->
+
                             <dl class="UG-goods-mainList clearfix">
                                 <dt class="UG-goods-main-name">开始时间：</dt>
                                 <dd class="UG-goods-main-content">
                                     <div class="UG-goods-receipt">
-                                        <input type="radio" id="time" ng-model="upload.time" value="soon" name="time" ng-model="upload.time"/>
+                                        <input type="radio" id="time" name="time" value="soon"/>
                                         <label for="time">立刻</label>
-                                        <input type="radio" id="time1" ng-model="upload.time" value="package" name="time" ng-model="upload.time"/>
+                                        <input type="radio" id="time1" name="time" value="package"/>
                                         <label for="time1">放入仓库</label>
                                     </div>
                                 </dd>
@@ -354,25 +307,179 @@
                                 <dt class="UG-goods-main-name">橱窗推荐：</dt>
                                 <dd class="UG-goods-main-content">
                                     <div class="UG-goods-receipt">
-                                        <input type="radio" id="recommend"  ng-model="upload.recommend" value="yes" name="recommend" ng-model="upload.recommend"/>
+                                        <input type="radio" id="recommend" name="recommend" value="yes"/>
                                         <label for="recommend">是</label>
-                                        <input type="radio" id="recommend1" ng-model="upload.recommend" value="no" name="recommend" ng-model="upload.recommend"/>
+                                        <input type="radio" id="recommend1" name="recommend" value="no"/>
                                         <label for="recommend1">否</label>
                                     </div>
                                 </dd>
                             </dl>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="uploadgoods-submitCon">
                         <button type="submit" class="uploadgoods-submit">发布</button>
                     </div>
                 </div>
             </div>
-        </form>
     </div>
 </div>
+<div class="get-img-show">
+    <div class="imageManage">
+        <div class="main-content clearfix">
+            <div class="catalog">
+                <div class="catalog-title">图片目录</div>
+                <div class="catalog-list" id="catalog">
+                    <dl class="catalog-folder">
+                        <dt class="catalog-folder-name-content active">
+                            <i class="catalog-folder-icon"></i>
+                            <a class="catalog-folder-name" href="">文件夹1</a>
+                        </dt>
+                        <dt class="catalog-folder-name-content active">
+                            <i class="catalog-folder-icon"></i>
+                            <a class="catalog-folder-name" href="">文件夹2</a>
+                        </dt>
+                        <dt class="catalog-folder-name-content active">
+                            <i class="catalog-folder-icon"></i>
+                            <a class="catalog-folder-name" href="">文件夹3</a>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="folder-content">
+                <div class="folder-controler clearfix">
+                    <div class="folder-bread-nav">
+                        <span class="bread-nav">我的图片</span>
+                        <i>&gt;</i>
+                        <span class="bread-nav">我的图片</span>
+                    </div>
+                    <div class="folder-actions">
+                        <span class="folder-actions-has">已选<i>0</i>/<em>6</em>张图片</span>
+                        <span class="folder-actions-select">确认</span>
+                    </div>
+                </div>
+                <ul class="imageList-content clearfix" id="imageContent">
+                    <li class="imageList-item">
+                        <div class="imagelist-item-content">
+                            <img src="#1"/>
+                        </div>
+                    </li>
+                    <li class="imageList-item">
+                        <div class="imagelist-item-content">
+                            <img src="#2"/>
+                        </div>
+                    </li>
+                    <li class="imageList-item">
+                        <div class="imagelist-item-content">
+                            <img src="#3"/>
+                        </div>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="imagelist-item-content">
+                            <img src="#4"/>
+                        </div>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="imagelist-item-content">
+                            <img src="#5"/>
+                        </div>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="imagelist-item-content">
+                            <img src="#6"/>
+                        </div>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="imagelist-item-content">
+                            <img src="#7"/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="get-link-show">
+    <div class="imageManage get-link-wrap">
+        <div class="main-content clearfix">
+            <div class="catalog">
+                <div class="catalog-title">图片目录</div>
+                <div class="catalog-list" >
+                    <dl class="catalog-folder">
+                        <dt class="catalog-folder-name-content active">
+                            <i class="catalog-folder-icon"></i>
+                            <a class="catalog-folder-name" href="">文件夹1</a>
+                        </dt>
+                        <dt class="catalog-folder-name-content active">
+                            <i class="catalog-folder-icon"></i>
+                            <a class="catalog-folder-name" href="">文件夹2</a>
+                        </dt>
+                        <dt class="catalog-folder-name-content active">
+                            <i class="catalog-folder-icon"></i>
+                            <a class="catalog-folder-name" href="">文件夹3</a>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="folder-content">
+                <ul class="imageList-content clearfix">
+                    <li class="imageList-item">
+                        <div class="img-select-link">
+                            <img src="url0"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink" data-clipboard-text="url0">复制链接</p>
+                    </li>
+                    <li class="imageList-item">
+                        <div class="img-select-link">
+                            <img src="url1"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink"  data-clipboard-text="url1">复制链接</p>
+                    </li>
+                    <li class="imageList-item">
+                        <div class="img-select-link">
+                            <img src="url2"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink" data-clipboard-text="url2">复制链接</p>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="img-select-link">
+                            <img src="url3"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink" data-clipboard-text="url3">复制链接</p>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="img-select-link">
+                            <img src="url4"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink" data-clipboard-text="url4">复制链接</p>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="img-select-link">
+                            <img src="url5"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink" data-clipboard-text="url5">复制链接</p>
+                    </li>
+                    <li class="imageList-item" data-imageId="123">
+                        <div class="img-select-link">
+                            <img src="url6"/>
+                        </div>
+                        <p class="imageList-item-controler J-copyLink" data-clipboard-text="url6">复制链接</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copySuccessShow">
+        <p class="copySuccessShow-text">粘贴成功，确定粘贴？</p>
+        <span class="copySuccessShow-L">确定</span>
+        <span class="copySuccessShow-R">取消</span>
+    </div>
+</div>
+
 <script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../static/js/angular.min.js"></script>
+<script src="../../static/js/kindeditor-all.js"></script>
+<script src="../../static/js/ZeroClipboard.js"></script>
+<script src="../../static/js/laydate.dev.js"></script>
 <script src="../../static/js/uploadGoods.js"></script>
 </body>
 </html>

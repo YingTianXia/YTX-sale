@@ -93,7 +93,7 @@
     float: left; }
 
 .UG-goods-mainList {
-    margin: 10px 0; }
+    margin: 15px 0; }
 
 .input400 {
     width: 400px; }
@@ -111,7 +111,7 @@
     padding: 10px 20px;
     background: #F5F5F5; }
 
-.UG-goods-spec-title {
+.SKU-name {
     padding-bottom: 10px; }
 
 .UG-goods-color {
@@ -192,7 +192,7 @@
     margin-bottom: 5px;
     vertical-align: middle; }
 
-.goods-sizeItem-checkbox, .goods-sizeItem-label {
+.SKU-B-check, .goods-sizeItem-label {
     height: 24px;
     float: left;
     display: inline-block;
@@ -269,6 +269,7 @@
     vertical-align: middle; }
 
 .uploadgoods-submitCon {
+    margin-top: 20px;
     width: 100%;
     background: #f5f5f5;
     height: 36px;
@@ -299,14 +300,8 @@
     text-align: center;
     line-height: 24px;
     vertical-align: middle; }
-.color-mark{
-    float: left;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin: 0 5px ;
-}
-.checkbox-color{
+.SKU-A-check{
+    margin-right: 5px;
     height: 24px;
     display: inline-block;
     float: left;
@@ -330,30 +325,7 @@
     width: 60px;
     height: 18px;
 }
-.select-color-a{
-    background: red;
-}
-.select-color-b{
-    background: yellow;
-}
-.select-color-c{
-    background: green;
-}
-.select-color-d{
-    background: blue;
-}
-.select-color-e{
-    background: purple;
-}
-.select-color-f{
-    background: white;
-}
-.select-color-g{
-    background: grey;
-}
-.select-color-h{
-    background: black;
-}
+
 .false-show{
     color: #ff0000;
     line-height: 20px;
@@ -375,17 +347,11 @@
     border: 1px solid #999;
 }
 .colorSizeTable input{
-
     text-align: center;
 }
 .colorImgTable-a{
     width: 25%;
     text-align: center;
-}
-.colorImgTable-a span{
-    display: block;
-    float: left;
-    line-height: 30px;
 }
 .colorImgTable-b{
     width: 75%;
@@ -402,28 +368,27 @@
     width: 20px;
     height: 20px;
 }
-.colorImgTable-b input{
-    margin-left: 20px;
-    width: 60px;
+.j-good-img{
+    display: block;
     float: left;
-}
-.colorImgTable-b img{
-    margin-left: 30px;
-    float: left;
-    width: 20px;
-    height: 20px;
-}
-.colorImgTable-b span{
     margin-left: 10px;
-    float: left;
-    width: 40px;
+    width: 80px;
     height: 20px;
-    background: #999;
-    font-size: 12px;
+    background: #fd9500;
+    color: #fff;
+    font-size: 14px;
     line-height: 20px;
     text-align: center;
     border-radius: 3px;
 }
+.colorImgTable-b img{
+    float: left;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    overflow: h;
+}
+
 .goodMS{
     width: 582px;
     height: 22px;
@@ -467,7 +432,7 @@
 .UG-goods-attr-content {
     float: left;
     padding-left: 10px;
-    max-width: 745px; }
+    width: 50px; }
 
 .SM-addArg {
     width: 70px;
@@ -872,3 +837,371 @@
     cursor: pointer; }
 .category-submit:hover {
     background: #fd8300; }
+
+/*————————————————————————————————————————————————————————————————————————————————————*/
+.get-img-show,.get-link-show{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+.manage-main{
+    width: 1200px;
+    margin: 0 auto;
+}
+.imageManage,.propManage{
+    background: #fff;
+    margin: 50px auto;
+    width: 950px;
+    height: 497px;
+}
+.imageManage .title-content,.propManage .title-content{
+    border-bottom: 1px solid #FD9500;
+}
+.imageManage .title,.propManage .title{
+    font-size:14px;
+    width: 101px;
+    line-height: 34px;
+    background: #fd9500;
+    text-align: center;
+    color: #fff;
+    border-radius: 2px 2px 0 0;
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+}
+.imageManage .main-content{
+    padding-top:20px;
+}
+
+.imageManage .catalog{
+    float: left;
+    width: 200px;
+}
+.imageManage .catalog-title{
+    background: #FD9500;
+    line-height: 49px;
+    color: #fff;
+    padding-left:20px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+.imageManage .catalog-list{
+    border: 1px solid #dfdfdf;
+    padding:13px 19px 13px 0;
+    height: 400px;
+    overflow: auto;
+}
+.imageManage .catalog-folder-name-content{
+    font-size:0;
+    line-height: 17px;
+    height: 17px;
+    margin: 20px 0 5px;
+}
+.imageManage .catalog-folder{
+    padding-left:19px;
+}
+.imageManage .catalog-folder-icon{
+    width: 20px;
+    height: 17px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right:10px;
+}
+.imageManage .folder-content{
+    width: 730px;
+    float: left;
+    margin-left: 20px;
+}
+.imageManage .catalog-folder .active .catalog-folder-icon{
+    background: url(../images/folder.png) no-repeat 0 0;
+}
+.imageManage .catalog-folder .active .catalog-folder-name{
+    color: #FD9500;
+}
+.imageManage .catalog-folder-content{
+    cursor: pointer;
+}
+.imageManage .catalog-folder-name{
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    display: inline;
+}
+.imageManage .folder-controler{
+    border-bottom: 1px solid #DFDFDF;
+}
+.imageManage .folder-bread-nav{
+    float: left;
+    line-height: 49px;
+}
+.imageManage .folder-actions{
+    padding-top: 12px;
+    float: right;
+    margin-right: 27px;
+}
+.imageManage .bread-nav{
+    color: #4598c8;
+}
+.imageManage .folder-actions .disabled{
+    background: #999;
+    cursor: default;
+}
+.imageManage .allSelect{
+    font-size: 0;
+    line-height: 25px;
+    height: 25px;
+}
+#allSelect,.imageManage .allSelect label{
+    display: inline-block;
+    vertical-align: middle;
+}
+.imageManage .allSelect label{
+    font-size: 12px;
+    margin-left: 4px;
+}
+.imageManage .imageList-item{
+    float: left;
+    width: 150px;
+    margin: 15px;
+}
+.imageManage .imagelist-item-content,.imageManage .img-select-link{
+    cursor: pointer;
+    border: 1px solid #DFDFDF;
+    height:148px;
+    overflow:hidden;
+    position: relative;
+}
+.imageManage .imagelist-item-content img,.imageManage .img-select-link img{
+    width:100%;
+}
+.imageList-item-controler{
+    cursor: pointer;
+    text-align: center;
+    background: #fd8300;
+    width: 150px;
+    font-size: 14px;
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+}
+.imageManage .selected-icon{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/selected.png) no-repeat 0 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.imageManage .selected{
+    border: 1px solid #FD9500;
+}
+#uploadImage{
+    height: 25px;
+    width: 80px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.pop-size{
+    width:478px;
+    margin-left: -239px;
+}
+.popMain-content{
+    margin-top:10px;
+    padding: 20px 0;
+}
+.propManage .prop-tabBar{
+    font-size: 0;
+    padding: 10px 0;
+}
+.propManage .prop-tab{
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    background: #999;
+    padding:4px 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.propManage .prop-tabBar .active{
+    background: #FD9500;
+}
+.propManage .bread-item{
+    margin: 0 2px;
+}
+.propManage .bread-nav{
+    padding-top:10px;
+}
+.propManage .prop-controler{
+    padding-top:10px;
+}
+.propManage .addProp,.propManage .sort{
+    width:100px;
+    line-height:24px;
+    text-align: center;
+    background: #FD9500;
+    color:#fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    cursor: pointer;
+}
+.propManage .prop-controler{
+
+}
+.propManage .addProp{
+    float:left;
+}
+.propManage .sort{
+    float:right;
+}
+.propManage .propTable{
+    margin-top:20px;
+}
+.propManage .propth{
+    border:1px solid #999;
+    line-height: 40px;
+    font-weight: normal;
+}
+.propManage .proptd{
+    height:40px;
+    border:1px solid #999;
+    text-align: center;
+}
+.propManage .propAction{
+    display: inline;
+}
+.propManage .propAction:hover{
+    color:#FD9500;
+}
+.pop-prop .prop-name{
+    float:left;
+    width:120px;
+    text-align: right;
+}
+.pop-prop .prop-name .unsee{
+    color:#fff;
+}
+.pop-prop .prop-form{
+    padding:5px 0;
+}
+.pop-prop .prop-content{
+    float:left;
+    margin-left: 20px;
+}
+#textarea_tab,#select_tab,#number_tab{
+    display: none;
+}
+.propManage .J_propsort{
+    width: 100px;
+    text-align: center;
+    line-height: 24px;
+    height: 24px;
+}
+.sortComplete{
+    width:100px;
+    line-height:34px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    background:#FD9500;
+    color:#fff;
+    text-align: center;
+    margin:30px auto 0 auto;
+    display: none;
+    cursor: pointer;
+}
+.folder-actions-select{
+    height: 26px;
+    width: 80px;
+    text-align: center;
+    line-height: 26px;
+    background: #fd9500;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    display: block;
+    float: left;
+}
+.folder-actions-has{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    text-align: left;
+
+}
+.get-link-show .catalog-list{
+    height: 500px;
+}
+.get-link-wrap{
+    margin: 40px auto 0;
+    position: relative;
+    width: 950px;
+    height: 597px;
+    overflow: hidden;
+}
+.get-link-wrap .imageList-content{
+    margin-top: 35px;
+}
+.copySuccessShow-text{
+    margin: 30px 0 40px;
+    text-align: center;
+}
+.copySuccessShow{
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 250px;
+    left: 50%;
+    margin-left: -100px;
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid #c9c9c9;
+}
+.copySuccessShow-L,.copySuccessShow-R{
+    float: left;
+    font-size: 14px;
+    display: block;
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    margin-left: 46px;
+    cursor: pointer;
+}
+.copySuccessShow-L{
+
+    background: #fd8300;
+    color: #FFF;
+}
+.copySuccessShow-R{
+    background: #fff;
+    color: #000;
+    width: 78px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid #c9c9c9;
+}
+
+
+
+
+
+
+
+
+
+
+
+

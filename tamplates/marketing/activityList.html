@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动报名列表</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <link rel="stylesheet" href="../../static/css/marketing.css"/>
+</head>
+<body>
+    <div class="act-wrap">
+        <div class="act-head">
+            <span class="act-title">活动列表</span>
+            <p class="act-hr"></p>
+        </div>
+        <div class="act-search">
+            <ul class="act-search-ul">
+                <li class="act-search-li">
+                    <span>活动状态</span>
+                    <select name="" id="" class="J-actStatus">
+                        <option value="">请选择</option>
+                        <option value="报名中">报名中</option>
+                        <option value="报名已满">报名已满</option>
+                        <option value="报名已结束">报名已结束</option>
+                        <option value="活动进行中">活动进行中</option>
+                        <option value="活动结束">活动结束</option>
+                    </select>
+                </li>
+                <li class="act-search-li">
+                    <span>报名状态</span>
+                    <select name="" id="J－registerStatus" >
+                        <option value="">请选择</option>
+                        <option class="registerStatus-option option-a">未报名</option>
+                        <option class="registerStatus-option option-b">已报名</option>
+                        <option class="registerStatus-option option-c">未参与</option>
+                        <option class="registerStatus-option option-d">已参与</option>
+                    </select>
+                </li>
+                <li class="act-search-li">
+                    <span class="act-search-span">搜索</span>
+                </li>
+            </ul>
+        </div>
+        <div class="act-detail">
+            <table>
+                <thead>
+                    <tr>
+                        <th>活动ID</th>
+                        <th>活动类型</th>
+                        <th>活动名称</th>
+                        <th class="act-th-time">活动时间</th>
+                        <th>类目</th>
+                        <th>活动状态</th>
+                        <th>报名状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12342</td>
+                        <td>品牌团</td>
+                        <td>品牌团12345</td>
+                        <td class="act-th-time">开始：2015/10/10 10:10:10<br/>结束：2015/12/10 10:10:10</td>
+                        <td>类目列表</td>
+                        <td>报名中</td>
+                        <td>未报名</td>
+                        <td>
+                            <a href="#" target="_blank" class="act-register">报名</a>
+                            <a href="#" target="_blank" class="act-look">查看详情</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../static/js/jquery-1.11.3.min.js"></script>
+    <script src="../../static/js/actList.js"></script>
+</body>
+</html>
