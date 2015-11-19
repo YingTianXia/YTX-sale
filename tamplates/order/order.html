@@ -19,15 +19,15 @@
 				<div class="order-con-search clearfix">
 					<div class="order-search-tagbox">
 						<ul class="order-search-tag fl clearfix">
-							<li class="order-search-tag-active">全部订单</li>
-							<li>待付款<span class="order-search-num">216</span></li>
-							<li>待发货<span class="order-search-num">23</span></li>
-							<li>部分发货<span class="order-search-num">39</span></li>
-							<li>已发货<span class="order-search-num">539</span></li>
-							<li>未评价<span class="order-search-num">39</span></li>
-							<li>成功的订单<span class="order-search-num">339</span></li>
-							<li>关闭的订单<span class="order-search-num">59</span></li>
-							<li>售后<span class="order-search-num">539</span></li>
+							<li class="order-search-tagcon order-search-tag-active">全部订单</li>
+							<li class="order-search-tagcon">待付款<span class="order-search-num">216</span></li>
+							<li class="order-search-tagcon">待发货<span class="order-search-num">23</span></li>
+							<li class="order-search-tagcon">部分发货<span class="order-search-num">39</span></li>
+							<li class="order-search-tagcon">已发货<span class="order-search-num">539</span></li>
+							<li class="order-search-tagcon">未评价<span class="order-search-num">39</span></li>
+							<li class="order-search-tagcon">成功的订单<span class="order-search-num">339</span></li>
+							<li class="order-search-tagcon">关闭的订单<span class="order-search-num">59</span></li>
+							<li class="order-search-tagcon order-search-after">售后<span class="order-search-num">539</span></li>
 						</ul>
 					</div>
 					<div class="order-search-condition clearfix">
@@ -35,15 +35,11 @@
 							<span>成交时间:</span>
 							<input id="start" />—<input id="end" />
 						</div>
-						<div class="order-condition-phone fl">
-							<span>买家电话:</span>
-							<input value="" />
-						</div>
 						<div class="order-condition-orderNum fl">
 							<span>订单号:</span>
 							<input value="" />
 						</div>
-						<div class="order-condition-status fl">
+						<div class="order-condition-status fl hidden">
 							<span>售后状态:</span>
 							<select name="">
 								<option>申请退款</option>
@@ -55,6 +51,23 @@
 								<option>买家取消申请</option>
 								<option>卖家不同意</option>
 							</select>
+						</div>
+						<div class="clearfix fl">
+							<div class="order-condition-id fl">
+								<span>买家ID:</span>
+								<input value="" />
+							</div>
+							<div class="order-condition-phone fl">
+								<span>买家电话:</span>
+								<input value="" />
+							</div>
+							<div class="order-condition-name fl">
+								<span>商品名称:</span>
+								<input value="" />
+							</div>
+							<div class="order-condition-search fl">
+								<input class="order-search-button" type="button" id="search" value="搜索" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -82,7 +95,7 @@
 									</td>
 									<td class="order-items-inner-num"><span>1</span></td>
 									<td class="order-items-inner-price"><span>￥359.00</span></td>
-									<td class="order-items-inner-buttom"><a href="">发货</a></td>
+									<td class="order-items-inner-buttom"><a id="delivery" href="">发货</a></td>
 								</tr>
 							</table>
 							<table class="order-items-inner">
@@ -102,9 +115,9 @@
 							<div class="order-items-statistics clearfix">
 								<p class="fr"><span>共2件</span><span>合计:￥652(平台包邮)</span></p>
 								<p class="fr clearfix">
-									<a class="order-items-statistics-print" href="">打印配货单</a>
-									<a href="">批量发货</a>
-									<a href="">备注</a>
+									<a class="order-items-statistics-print" href="javascript:;">打印配货单</a>
+									<a id="deliverys" href="javascript:;">批量发货</a>
+									<a id="remark" href="javascript:;">备注</a>
 									<a href="">查看物流</a>
 									<a href="">订单详情</a>
 								</p>
@@ -113,6 +126,48 @@
 					</div>
 				</div>
 			</div>
+			<!--单个发货-->
+			<div class="pop1 delivery-pop J_pop" id="pop_delivery">
+		        <p class="delivery-pop-title">填写物流信息</p>
+		        <div class="delivery-pop-con">
+		        		<select class="delivery-pop-con-kind">
+		        			<option>圆通快递</option>
+		        			<option>顺丰快递</option>
+		        		</select>
+		        		<input type="text" placeholder="快递单号" />
+		        </div>
+		        <div class="delivery-pop-btnbox">
+		            <a class="delivery-pop-btn1 J_submitDeliverySure" href="javascript:;">确定</a>
+		            <a class="delivery-pop-btn2 J_popClose" href="javascript:;">取消</a>
+		        </div>
+		    </div>
+		    <!--批量发货-->
+		    <div class="pop1 delivery-pop J_pop" id="pop_deliverys">
+		        <p class="delivery-pop-title">填写物流信息</p>
+		        <div class="delivery-pop-con">
+		        		<select class="delivery-pop-con-kind">
+		        			<option>圆通快递</option>
+		        			<option>顺丰快递</option>
+		        		</select>
+		        		<input type="text" placeholder="快递单号" />
+		        </div>
+		        <div class="delivery-pop-btnbox">
+		            <a class="delivery-pop-btn1 J_submitDeliverysSure" href="javascript:;">确定</a>
+		            <a class="delivery-pop-btn2 J_popClose" href="javascript:;">取消</a>
+		        </div>
+		    </div>
+		    <!--备注-->
+		    <div class="pop1 remark-pop J_pop" id="pop_remark">
+		        <p class="remark-pop-title">填写备注流信息</p>
+		        <div class="remark-pop-con">
+		        		<textarea rows="7" cols="32" placeholder="填写备注流信息"></textarea>
+		        </div>
+		        <div class="remark-pop-btnbox">
+		            <a class="remark-pop-btn1 J_submitRemarkSure" href="javascript:;">确定</a>
+		            <a class="remark-pop-btn2 J_popClose" href="javascript:;">取消</a>
+		        </div>
+		    </div>
+		    <div class="pop-mask" id="J_popMask"></div>
 		</div>
 		<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>

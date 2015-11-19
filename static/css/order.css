@@ -25,7 +25,7 @@
 }
 .order .order-con .order-con-search{
 	width: 948px;
-	height: 118px;
+	height: 160px;
 	border: 1px solid #c9c9c9;
 	background-color: #f5f5f5;
 }
@@ -60,7 +60,7 @@
 .order .order-con .order-search-condition{
 	margin: 0 24px;
 	height: 47px;
-	line-height: 60px;
+	line-height: 50px;
 }
 .order .order-con .order-search-condition input{
 	width: 120px;
@@ -155,4 +155,108 @@
     -webkit-border-radius: 5px;
     border-radius:5px;
     text-align: center;
+}
+.pop1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    display: none;
+}
+.delivery-pop{
+    width: 270px;
+    height: 140px;
+    padding: 30px;
+    margin: -150px 0 0 -165px;
+    background-color: #fff;
+    border: solid 1px #a0a0a0;
+}
+.delivery-pop-title{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.delivery-pop-con select{
+	display: block;
+	width: 245px;
+	height: 30px;
+}
+.delivery-pop-con input{
+	display: block;
+	width: 230px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	margin: 15px 0;
+}
+.delivery-pop-btnbox{
+	width: 190px;
+	margin: 0 auto;
+}
+.delivery-pop-btnbox a{
+	float: left;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #FD9500;
+	text-align: center;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    margin-right: 10px;
+    color: #FD9500;
+}
+.delivery-pop-btnbox .delivery-pop-btn1{
+	background-color: #FD9500;
+	color: #fff;
+}
+
+.remark-pop{
+    width: 245px;
+    height: 180px;
+    padding: 30px;
+    margin: -170px 0 0 -165px;
+    background-color: #fff;
+    border: solid 1px #a0a0a0;
+}
+.remark-pop-title{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.remark-pop-con textarea{
+	margin-bottom: 15px;
+}
+.remark-pop-btnbox{
+	width: 190px;
+	margin: 0 auto;
+}
+.remark-pop-btnbox a{
+	float: left;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #FD9500;
+	text-align: center;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    margin-right: 10px;
+    color: #FD9500;
+}
+.remark-pop-btnbox .remark-pop-btn1{
+	background-color: #FD9500;
+	color: #fff;
+}
+
+
+.pop-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: .6;
+    display: none;
 }
