@@ -82,6 +82,32 @@ $(".validate").delegate('.validate-main-next','click',function () {
 	});
 })
 //newPassword页面
+$().ready(function() {
+    $("#signUpForm").validate({
+      rules: {
+        newPassword:{
+          required:true,
+          minlength:6
+        },
+        newPasswordSure: {
+          required: true,
+          minlength:6,
+          equalTo: "#newPassword"
+        }
+      },
+      messages:{
+        newPassword:{
+          minlength: '密码需大于6位',
+          required:'密码不能为空'
+        },
+        newPasswordSure:{
+          required:'密码不能为空',
+          minlength: '密码需大于6位',
+          equalTo:'密码不相同'
+        }
+      }
+    });
+  });
 $(".newPassword").delegate('.newPassword-main-next','click',function () {
 	var newPassword = $("#newPassword").val();//新密码
 	var newPasswordSure = $("#newPasswordSure").val();//确认新密码

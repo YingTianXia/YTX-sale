@@ -662,23 +662,20 @@
 	font-size: 14px;
 }
 .newPassword .newPassword-con-main{
-	width: 320px;
+	width: 450px;
 	margin: 0 auto;
 	position: relative;
 }
 .newPassword .newPassword-main-newPassword,.newPassword .newPassword-main-newPasswordSure{
 	padding-bottom: 25px;
 }
-.newPassword .newPassword-main-newPassword input{
+.newPassword .newPassword-main-newPassword input,.newPassword .newPassword-main-newPasswordSure input{
 	width: 238px;
 	height: 26px;
+	margin-right: 10px;
 }
 .newPassword .newPassword-main-newPasswordSure{
 	height: 30px;
-}
-.newPassword .newPassword-main-newPasswordSure input{
-	width: 238px;
-	height: 26px;
 }
 .newPassword .newPassword-main-newPasswordSure a{
 	display: inline;
@@ -691,6 +688,7 @@
 	color: red;
 }
 .newPassword .newPassword-main-next{
+	display: block;
 	width: 140px;
 	height: 35px;
 	line-height: 35px;
@@ -700,7 +698,12 @@
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius:5px;
-    margin: 20px auto;
+    margin-left: 100px;
+    border: none;
+}
+.newPassword .error{
+	color: red;
+	font-size: 12px;
 }
 /*succe.html by yeting*/
 .success .success-con{
