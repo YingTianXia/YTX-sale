@@ -7,7 +7,6 @@ body {
 	color: #000;
 	background: #FFF;
 	font: 12px Verdana, Arial, sans-serif, "microsoft yahei";
-	text-align: center;
 }
 /*清浮动*/
 .clearfix {
@@ -59,4 +58,54 @@ img{
 }
 .block {
 	display: block;
+}
+
+
+
+/*弹窗公共样式*/
+.pop1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    border: 3px solid #e0e0e0; 
+    background: #fff;
+    padding: 15px 20px;
+    display: none;
+}
+.pop-title{
+	font-size: 14px;
+	color: #FD9500;
+}
+.pop-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: .6;
+    display: none;
+}
+.size-pop-btnbox{
+	font-size: 0;
+	text-align: center;
+}
+.size-pop-btn1,.size-pop-btn2{
+	display: inline-block;
+	font-size: 12px;
+	padding: 4px 24px;
+	margin: 10px 10px 0 10px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.size-pop-btn1{
+	border:1px solid #FD9500;
+	background: #FD9500;
+	color: #fff;
+}
+.size-pop-btn2{
+	border: 1px solid #999;
+	color: #999;
 }

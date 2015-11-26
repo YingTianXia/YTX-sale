@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卖家管理-活动管理-活动列表</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <link rel="stylesheet" href="../../static/css/activity.css"/>
+</head>
+<body>
+    <div class="pub-content">
+        <div class="pub-right">
+            <div class="pub-title-box">
+                <div class="pub-title">活动列表</div>
+            </div>
+            <div class="pub-box-noborder">
+            	<div class="act-search-bar">
+            		<label>报名状态:</label>
+            		<select>
+            			<option>所有状态</option>
+            			<option>已报名</option>
+            		</select>
+            		<label>活动状态:</label>
+            		<select>
+            			<option>全部状态</option>
+            			<option>报名中</option>
+            			<option>进行中</option>
+            			<option>已结束</option>
+            		</select>
+            		<a class="act-search-btn1" href="javascript:;">筛选</a>
+            	</div>
+                <div class="act-list-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="8%">活动ID</th>
+                                <th width="14%">活动名称</th>
+                                <th width="10%">活动类型</th>
+                                <th width="28%">活动时间</th>
+                                <th width="10%">活动类目</th>
+                                <th width="10%">活动状态</th>
+                                <th width="10%">报名状态</th>
+                                <th width="10%">操作</th>
+                            </tr>  
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12313121</td>
+                                <td>品牌周年庆优惠券</td>
+                                <td>品牌团</td>
+                                <td>开始: 2015-11-11 11:00:00<br/>结束:2015-11-12 11:00:00</td>
+                                <td>男装,女装</td>
+                                <td>活动中</td>
+                                <td>未报名</td>
+                                <td>
+                                    <a class="act-list-btn1" href="javascript:;">报名</a>
+                                    <p><a class="act-list-operation2" href="javascript:;">查看详情</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="act-page">
+                    <a class="act-page-num lt" href="javascript:;">&lt;</a>
+                    <a class="act-page-num" href="javascript:;">1</a>
+                    <a class="act-page-num" href="javascript:;">2</a>
+                    <a class="act-page-num" href="javascript:;">3</a>
+                    ...
+                    <a class="act-page-num" href="javascript:;">5</a>
+                    <a class="act-page-num gt" href="javascript:;">&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

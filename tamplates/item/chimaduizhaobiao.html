@@ -83,6 +83,7 @@
     line-height: 50px;
     width: 120px;
     text-align: center;
+    height: 50px;
 }
 .size-btn-addpara{
     float: left;
@@ -526,6 +527,7 @@ body .editing .J_tableCanel{
             var editInput = $('.J_tableEditInput','.editing');
             editInput.each(function(i,e){
                 var _data = $(e).val();
+                console.log(_data)
                 $(e).siblings('.J_tableData').html(_data);
             });
             $('.editing').removeClass('editing');
