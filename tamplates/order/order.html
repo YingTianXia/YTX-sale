@@ -19,15 +19,15 @@
 				<div class="order-con-search clearfix">
 					<div class="order-search-tagbox">
 						<ul class="order-search-tag fl clearfix">
-							<li class="order-search-tagcon order-search-tag-active">全部订单</li>
-							<li class="order-search-tagcon">待付款<span class="order-search-num">216</span></li>
-							<li class="order-search-tagcon">待发货<span class="order-search-num">23</span></li>
-							<li class="order-search-tagcon">部分发货<span class="order-search-num">39</span></li>
-							<li class="order-search-tagcon">已发货<span class="order-search-num">539</span></li>
-							<li class="order-search-tagcon">未评价<span class="order-search-num">39</span></li>
-							<li class="order-search-tagcon">成功的订单<span class="order-search-num">339</span></li>
-							<li class="order-search-tagcon">关闭的订单<span class="order-search-num">59</span></li>
-							<li class="order-search-tagcon order-search-after">售后<span class="order-search-num">539</span></li>
+							<li class="order-search-tagcon order-search-tag-active" data-status = "">全部订单</li>
+							<li class="order-search-tagcon" data-status = "1">待付款<span class="order-search-num">216</span></li>
+							<li class="order-search-tagcon" data-status = "2">待发货<span class="order-search-num">23</span></li>
+							<li class="order-search-tagcon" data-status = "3">部分发货<span class="order-search-num">39</span></li>
+							<li class="order-search-tagcon" data-status = "4">已发货<span class="order-search-num">539</span></li>
+							<!--<li class="order-search-tagcon">未评价<span class="order-search-num">39</span></li>-->
+							<li class="order-search-tagcon" data-status = "5">成功的订单<span class="order-search-num">339</span></li>
+							<li class="order-search-tagcon" data-status = "6">关闭的订单<span class="order-search-num">59</span></li>
+							<!--<li class="order-search-tagcon order-search-after">售后<span class="order-search-num">539</span></li>-->
 						</ul>
 					</div>
 					<div class="order-search-condition clearfix">
@@ -72,7 +72,7 @@
 					</div>
 				</div>
 				<div class="order-con-main">
-					<div class="order-main-orders">
+					<div class="order-main-orders" data-saleOrderId = "123">
 						<div class="order-orders-details clearfix">
 							<p class="order-details-orderNum fl">订单号:<span>20150718123456789</span></p>
 							<p class="order-details-saleOrderNum fl">卖家订单号:<span>20150718123456789</span></p>
@@ -84,9 +84,9 @@
 							<p class="order-details-address fl">买家地址:<span>北京市 东城区 东华门街道 某某小区2幢3单元2楼</span></p>
 						</div>
 						<div class="order-orders-items">
-							<table class="order-items-inner">
+							<table class="order-items-inner" data-skuid = "1">
 								<tr>
-									<td class="order-items-inner-choose"><input name="order-items-inner" type="checkbox" value="" /></td>
+									<td class="order-items-inner-choose"><input class="order-items-inner-chooses" name="order-items-inner" type="checkbox" value="" /></td>
 									<td class="order-items-inner-img"><img src="../../static/images/test-80-80.jpg"/></td>
 									<td class="order-items-inner-details">
 										<p>货号:10016</p>
@@ -98,9 +98,9 @@
 									<td class="order-items-inner-buttom"><a id="delivery" href="">发货</a></td>
 								</tr>
 							</table>
-							<table class="order-items-inner">
+							<table class="order-items-inner" data-skuid = "2">
 								<tr>
-									<td class="order-items-inner-choose"><input name="order-items-inner" type="checkbox" value="" /></td>
+									<td class="order-items-inner-choose"><input class="order-items-inner-chooses" name="order-items-inner" type="checkbox" value="" /></td>
 									<td class="order-items-inner-img"><img src="../../static/images/test-80-80.jpg"/></td>
 									<td class="order-items-inner-details">
 										<p>货号:10016</p>
@@ -125,16 +125,21 @@
 						</div>
 					</div>
 				</div>
+				<div class="paging j_paging"  data-total="100" data-pageSize="5" data-pageNumber="2"></div>
 			</div>
 			<!--单个发货-->
-			<div class="pop1 delivery-pop J_pop" id="pop_delivery">
+			<div class="pop1 delivery-pop J_pop" id="pop_delivery" data-skuid = "">
 		        <p class="delivery-pop-title">填写物流信息</p>
 		        <div class="delivery-pop-con">
-		        		<select class="delivery-pop-con-kind">
-		        			<option>圆通快递</option>
-		        			<option>顺丰快递</option>
+		        		<select class="delivery-pop-con-addr">
+		        			<option value="杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州">杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州</option>
+		        			<option value="宁波">宁波</option>
 		        		</select>
-		        		<input type="text" placeholder="快递单号" />
+		        		<select class="delivery-pop-con-kind">
+		        			<option value="1">圆通快递</option>
+		        			<option value="2">顺丰快递</option>
+		        		</select>
+		        		<input class="delivery-pop-con-deliveryNum" type="text" placeholder="快递单号" />
 		        </div>
 		        <div class="delivery-pop-btnbox">
 		            <a class="delivery-pop-btn1 J_submitDeliverySure" href="javascript:;">确定</a>
@@ -145,11 +150,15 @@
 		    <div class="pop1 delivery-pop J_pop" id="pop_deliverys">
 		        <p class="delivery-pop-title">填写物流信息</p>
 		        <div class="delivery-pop-con">
+		        		<select class="delivery-pop-con-addr">
+		        			<option value="杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州">杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州</option>
+		        			<option value="宁波">宁波</option>
+		        		</select>
 		        		<select class="delivery-pop-con-kind">
 		        			<option>圆通快递</option>
 		        			<option>顺丰快递</option>
 		        		</select>
-		        		<input type="text" placeholder="快递单号" />
+		        		<input class="delivery-pop-con-deliveryNum" type="text" placeholder="快递单号" />
 		        </div>
 		        <div class="delivery-pop-btnbox">
 		            <a class="delivery-pop-btn1 J_submitDeliverysSure" href="javascript:;">确定</a>
@@ -157,7 +166,7 @@
 		        </div>
 		    </div>
 		    <!--备注-->
-		    <div class="pop1 remark-pop J_pop" id="pop_remark">
+		    <div class="pop1 remark-pop J_pop" id="pop_remark" data-saleOrderId = "">
 		        <p class="remark-pop-title">填写备注流信息</p>
 		        <div class="remark-pop-con">
 		        		<textarea rows="7" cols="32" placeholder="填写备注流信息"></textarea>
@@ -172,6 +181,7 @@
 		<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/js/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/js/paging.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../static/js/order-order.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

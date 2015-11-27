@@ -79,3 +79,52 @@ table {
 textarea {
 	display: block;
 }
+
+
+/*通用分页*/
+.paging {
+	width: 400px;
+	padding: 15px 20px;
+	text-align: left;
+	color: #ccc;
+	margin: 0 auto;
+}
+.paging a {
+	display: inline-block;
+	color: #ddd;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	border: 1px solid #ddd;
+	margin: 0 2px;
+	vertical-align: middle;
+}
+
+.paging a:hover {
+	text-decoration: none;
+	border: 1px solid #000;
+}
+
+.paging span.current {
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	margin: 0 2px;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #000;
+	vertical-align: middle;
+}
+
+.paging span.disabled {
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	margin: 0 2px;
+	color: #bfbfbf;
+	background: #f2f2f2;
+	border: 1px solid #bfbfbf;
+	vertical-align: middle;
+}

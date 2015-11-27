@@ -456,7 +456,7 @@
 .yz-main .address-html{
     display: none;
 }
-.yz-main .pop1{
+.yz-pop{
     position: fixed;
     top: 30%;
     left: 50%;
@@ -467,15 +467,15 @@
     padding: 15px 20px;
     display: none;
 }
-.yz-main .pop-title{
+.yz-pop-title{
     font-size: 14px;
     color: #FD9500;
 }
-.yz-main .size-pop-btnbox{
+.yz-size-pop-btnbox{
     font-size: 0;
     text-align: center;
 }
-.yz-main .size-pop-btn1,.size-pop-btn2{
+.yz-size-pop-btn1,.yz-size-pop-btn2{
     display: inline-block;
     font-size: 12px;
     padding: 4px 24px;
@@ -484,16 +484,16 @@
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
 }
-.yz-main .size-pop-btn1{
+.yz-size-pop-btn1{
     border:1px solid #FD9500;
     background: #FD9500;
     color: #fff;
 }
-.yz-main .size-pop-btn2{
+.yz-size-pop-btn2{
     border: 1px solid #999;
     color: #999;
 }
-.yz-main .size-pop-con1{
+.yz-size-pop-con1{
     text-align: center;
 }
 
@@ -553,4 +553,243 @@
 	padding:6px 32px 0 0;
 	color: #666;
 }
-
+/*findPassword.html by yeting*/
+.findPassword .findPassword-con{
+	width: 990px;
+	margin:0 auto;
+	padding-top: 80px;
+	font-size: 14px;
+}
+.findPassword .findPassword-con-main{
+	width: 320px;
+	margin: 0 auto;
+}
+.findPassword .findPassword-main-userName,.findPassword .findPassword-main-CAPTCHA{
+	padding-bottom: 25px;
+}
+.findPassword .findPassword-main-userName input{
+	width: 238px;
+	height: 26px;
+}
+.findPassword .findPassword-main-CAPTCHA{
+	height: 30px;
+}
+.findPassword .findPassword-main-CAPTCHA input{
+	width: 118px;
+	height: 26px;
+}
+.findPassword .findPassword-main-CAPTCHA a{
+	display: inline;
+}
+.findPassword .findPassword-main-remind{
+	height: 16px;
+	line-height: 16px;
+	font-size: 10px;
+	color: red;
+}
+.findPassword .findPassword-main-next{
+	width: 140px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	background-color: #FD9500;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    margin: 30px auto;
+}
+/*validate.html by yeting*/
+.validate .validate-con{
+	width: 990px;
+	margin:0 auto;
+	padding-top: 80px;
+	font-size: 14px;
+}
+.validate .validate-con-main{
+	width: 320px;
+	margin: 0 auto;
+	position: relative;
+}
+.validate .validate-main-validateWay,.validate .validate-main-validateCode{
+	padding-bottom: 25px;
+}
+.validate .validate-main-validateWay input{
+	width: 238px;
+	height: 26px;
+}
+.validate .validate-main-validateCode{
+	height: 30px;
+}
+.validate .validate-main-validateCode input{
+	width: 238px;
+	height: 26px;
+}
+.validate .validate-main-validateCode a{
+	display: inline;
+}
+.validate .validate-main-remind{
+	padding-left: 70px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 10px;
+	color: red;
+}
+.validate .validate-main-next{
+	width: 140px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	background-color: #FD9500;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    margin: 20px auto;
+}
+.validate .validate-main-resend{
+	width: 80px;
+	position: absolute;
+	top: 6px;
+    left: 325px;
+	font-size: 12px;
+}
+/*newPassword.html by yeting*/
+.newPassword .newPassword-con{
+	width: 990px;
+	margin:0 auto;
+	padding-top: 80px;
+	font-size: 14px;
+}
+.newPassword .newPassword-con-main{
+	width: 450px;
+	margin: 0 auto;
+	position: relative;
+}
+.newPassword .newPassword-main-newPassword,.newPassword .newPassword-main-newPasswordSure{
+	padding-bottom: 25px;
+}
+.newPassword .newPassword-main-newPassword input,.newPassword .newPassword-main-newPasswordSure input{
+	width: 238px;
+	height: 26px;
+	margin-right: 10px;
+}
+.newPassword .newPassword-main-newPasswordSure{
+	height: 30px;
+}
+.newPassword .newPassword-main-newPasswordSure a{
+	display: inline;
+}
+.newPassword .newPassword-main-remind{
+	padding-left: 70px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 10px;
+	color: red;
+}
+.newPassword .newPassword-main-next{
+	display: block;
+	width: 140px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	background-color: #FD9500;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    margin-left: 100px;
+    border: none;
+}
+.newPassword .error{
+	color: red;
+	font-size: 12px;
+}
+/*succe.html by yeting*/
+.success .success-con{
+	width: 990px;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+.success .success-con-main{
+	width: 400px;
+	margin: 0 auto;
+}
+.success .success-con-main p{
+	width: 250px;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 50px;
+	background: url(../images/success.png) no-repeat left top;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+.success .success-con-main span{
+	display: block;
+	width: 360px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+.success .success-con-main a{
+	display: inline;
+	color: #FD9500;
+}
+/*toEmail.html by yeting*/
+.toEmail .toEmail-con{
+	width: 990px;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+.toEmail .toEmail-con-main{
+	width: 450px;
+	margin: 0 auto;
+}
+.toEmail .toEmail-con-main p{
+	width: 350px;
+	height: 54px;
+	line-height: 54px;
+	padding-left: 60px;
+	background: url(../images/remind.png) no-repeat left top;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+.toEmail .toEmail-con-main span{
+	display: block;
+	width: 400px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+.toEmail .toEmail-con-main a{
+	display: inline;
+	color: #FD9500;
+}
+/*暂用头部*/
+.newhead{
+	background-color: #f8faf9;
+	border-bottom: 3px solid #e7e8e8;
+}
+.newhead .newhead-con{
+	width: 990px;
+	margin: 0 auto;
+}
+.newhead .newhead-con-title{
+	padding-left: 20px;
+	height: 58px;
+	line-height: 58px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.newhead .newhead-con-tag li{
+	padding-left: 20px;
+	height: 58px;
+	line-height: 58px;
+	font-size: 14px;
+}
