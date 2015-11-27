@@ -738,4 +738,58 @@
 	display: inline;
 	color: #FD9500;
 }
-
+/*toEmail.html by yeting*/
+.toEmail .toEmail-con{
+	width: 990px;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+.toEmail .toEmail-con-main{
+	width: 450px;
+	margin: 0 auto;
+}
+.toEmail .toEmail-con-main p{
+	width: 350px;
+	height: 54px;
+	line-height: 54px;
+	padding-left: 60px;
+	background: url(../images/remind.png) no-repeat left top;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+.toEmail .toEmail-con-main span{
+	display: block;
+	width: 400px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+.toEmail .toEmail-con-main a{
+	display: inline;
+	color: #FD9500;
+}
+/*暂用头部*/
+.newhead{
+	background-color: #f8faf9;
+	border-bottom: 3px solid #e7e8e8;
+}
+.newhead .newhead-con{
+	width: 990px;
+	margin: 0 auto;
+}
+.newhead .newhead-con-title{
+	padding-left: 20px;
+	height: 58px;
+	line-height: 58px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.newhead .newhead-con-tag li{
+	padding-left: 20px;
+	height: 58px;
+	line-height: 58px;
+	font-size: 14px;
+}
