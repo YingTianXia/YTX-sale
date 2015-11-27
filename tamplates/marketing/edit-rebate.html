@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理-营销工具-满减活动</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <link rel="stylesheet" href="../../static/css/marketing.css"/>
+</head>
+<body>
+    <div class="pub-content">
+        <div class="pub-right">
+            <div class="pub-title-box">
+                <div class="pub-title">设置折扣</div>
+            </div>
+            <div class="pub-box">
+<!--                 <div class="additem-select-bar">
+                    商品类型: 
+                    <select class="additem-select">
+                        <option value="" selected="true" disabled="true">请选择</option>
+                        <option value="">类型1</option>
+                        <option value="">类型2</option>
+                        <option value="">类型3</option>
+                    </select>
+                    <a class="act-select-btn" href="javascript:;">搜索</a>
+                </div>
+                <div class="additem-search-bar">
+                    <div class="additem-search-type">
+                        <input class="J_test" type="radio" name="additemtype" value="1" id="type1">
+                        <label for="type1">按商品名称</label>
+                        <input class="J_test" type="radio" name="additemtype" value="2" id="type2">
+                        <label for="type2">按商品编号</label>
+                        <input class="J_test" type="radio" name="additemtype" value="3" id="type3">
+                        <label for="type3">按属性</label>
+                        <input class="J_test" type="radio" name="additemtype" value="4" id="type4">
+                        <label for="type4">按商家编码</label>
+                    </div>
+                    <div class="additem-search">
+                        <input type="text">
+                        <a class="act-select-btn" href="javascript:;">搜索</a>
+                    </div>
+                </div> -->
+                <div class="additem-table J_itemTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">商品ID</th>
+                                <th width="10%">商品图</th>
+                                <th width="25%">名称</th>
+                                <th width="10%">原价</th>
+                                <th colspan="3" width="45%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span id="">SM00013</span></td>
+                                <td><img src="../../static/images/80x100.jpg"></td>
+                                <td>
+                                    <p class="additem-table-name">森马毛衣 2015冬装新款 女士甜美套头毛衫圆领绣花针织衫韩版潮女 </p>
+                                </td>
+                                <td>&yen;<span class="J_original">666.00</span></td>
+                                <td width="15%">
+                                    <p>折扣</p>
+                                    <p><input class="act-set-rebate J_setRebeta" type="text">折</p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠金额</p>
+                                    <p>&yen;<input class="act-set-rebate J_setMarkDown" type="text"></p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠后金额</p>
+                                    <p>&yen;<input class="act-set-rebate J_setResult" type="text"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span id="">SM00013</span></td>
+                                <td><img src="../../static/images/80x100.jpg"></td>
+                                <td>
+                                    <p class="additem-table-name">森马毛衣 2015冬装新款 女士甜美套头毛衫圆领绣花针织衫韩版潮女 </p>
+                                </td>
+                                <td>&yen;<span class="J_original">888.00</span></td>
+                                <td width="15%">
+                                    <p>折扣</p>
+                                    <p><input class="act-set-rebate J_setRebeta" type="text">折</p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠金额</p>
+                                    <p>&yen;<input class="act-set-rebate J_setMarkDown" type="text"></p>
+                                </td>
+                                <td width="15%">
+                                    <p>优惠后金额</p>
+                                    <p>&yen;<input class="act-set-rebate J_setResult" type="text"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="act-table-batch">
+                    <label>统一设置折扣</label>
+                    <input class="act-set-rebate J_setAllRebeta_val" type="text">折
+                    <a class="act-batch-btn1 J_setAllRebeta" href="javascript:;">统一设置折扣</a>
+                    <label>统一设置优惠金额</label>
+                    &yen;<input class="act-set-rebate J_setAllMarkDown_val" type="text">
+                    <a class="act-batch-btn1 J_setAllMarkDown" href="javascript:;">统一设置优惠金额</a>
+                </div>
+                <div class="act-page">
+                    <a class="act-page-num lt" href="javascript:;">&lt;</a>
+                    <a class="act-page-num" href="javascript:;">1</a>
+                    <a class="act-page-num" href="javascript:;">2</a>
+                    <a class="act-page-num" href="javascript:;">3</a>
+                    ...
+                    <a class="act-page-num" href="javascript:;">5</a>
+                    <a class="act-page-num gt" href="javascript:;">&gt;</a>
+                </div>
+                <div class="act-submit-box">
+                    <a class="act-submit-btn" href="javascript:;">返回选择商品</a>
+                    <a class="act-submit-btn" href="javascript:;">提交</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+(function($){
+    var editRebte = {
+        init:function(){
+            var _this = this;
+            _this.bindEv();
+        },
+        bindEv:function(){
+            var _this = this;
+            $('.J_itemTable').on('blur','.J_setRebeta',function(e){
+                _this.setRebeta(e.target);
+            });
+            $('.J_itemTable').on('blur','.J_setMarkDown',function(e){
+                _this.setMarkDown(e.target);
+            });
+            $('.J_itemTable').on('blur','.J_setResult',function(e){
+                _this.setResult(e.target);
+            });
+            $('.J_setAllRebeta').on('click',function(){
+                _this.setAllRebeta();
+            });
+            $('.J_setAllMarkDown').on('click',function(){
+                _this.setAllMarkDown();
+            });
+        },
+        setRebeta:function(et){
+            var _this = this;
+            var _tr = $(et).parent().parent().parent();
+            var _etval = $(et).val();
+            if(_etval == ''|| _etval == ' '){
+                return false;
+            }
+            var op = parseFloat($('.J_original',_tr).html());
+            var _rebeta = parseFloat(_etval)/10;
+            if(_rebeta>=1|| _rebeta<=0){
+                alert('设置错误');
+                return false;
+            }
+            var _markDown = (op*(1-_rebeta)).toFixed(2);
+            var _result = (op*_rebeta).toFixed(2);
+            $('.J_setMarkDown',_tr).val(_markDown);
+            $('.J_setResult',_tr).val(_result);
+        },
+        setMarkDown:function(et){
+            var _this = this;
+            var _tr = $(et).parent().parent().parent();
+            var _etval = $(et).val();
+            if(_etval == ''|| _etval == ' '){
+                return false;
+            }
+            var op = parseInt($('.J_original',_tr).html());
+            var _md = parseInt(_etval);
+            if(_md>=op|| _md<=0){
+                alert('设置错误');
+                return false;
+            }
+            var _rebeta = ((op-_md)/op*10).toFixed(1);
+            var _result = (op-_md).toFixed(2);
+            $('.J_setRebeta',_tr).val(_rebeta);
+            $('.J_setResult',_tr).val(_result);
+        },
+        setResult:function(et){
+            var _this = this;
+            var _tr = $(et).parent().parent().parent();
+            var _etval = $(et).val();
+            if(_etval == ''|| _etval == ' '){
+                return false;
+            }
+            var op = parseInt($('.J_original',_tr).html());
+            var _result = parseInt(_etval);
+            if(_result>=op|| _result<=0){
+                alert('设置错误');
+                return false;
+            }
+            var _rebeta = (_result/op*10).toFixed(1);
+            var _markDown = (op-_result).toFixed(2);
+            $('.J_setRebeta',_tr).val(_rebeta);
+            $('.J_setMarkDown',_tr).val(_markDown);
+
+        },
+        setAllRebeta:function(){
+            var _this = this;
+            var _val = $('.J_setAllRebeta_val').val();
+            if(_val == ''|| _val == ' '){
+                return false;
+            }
+            var _rebeta = parseFloat(_val)/10;
+            if(_rebeta>=1|| _rebeta<=0){
+                alert('设置错误');
+                return false;
+            }
+            $('.J_itemTable tbody tr').each(function(i,e){
+                var op = parseFloat($('.J_original',e).html());
+                var _markDown = (op*(1-_rebeta)).toFixed(2);
+                var _result = (op*_rebeta).toFixed(2);
+                $('.J_setRebeta',e).val(_rebeta*10);
+                $('.J_setMarkDown',e).val(_markDown);
+                $('.J_setResult',e).val(_result);
+            });
+
+        },
+        setAllMarkDown:function(){
+            var _this = this;
+            var _val = $('.J_setAllMarkDown_val').val();
+            if(_val == ''|| _val == ' '){
+                return false;
+            }
+            $('.J_itemTable tbody tr').each(function(i,e){
+                var op = parseFloat($('.J_original',e).html());
+                var _md = parseInt(_val);
+                if(_md>=op|| _md<=0){
+                    alert('设置错误');
+                    return false;
+                }
+                var _rebeta = ((op-_md)/op*10).toFixed(1);
+                var _result = (op-_md).toFixed(2);
+                $('.J_setRebeta',e).val(_rebeta);
+                $('.J_setMarkDown',e).val(_md);
+                $('.J_setResult',e).val(_result);
+            });
+        }
+    }
+    editRebte.init();
+})(jQuery)
+</script>
+</html>

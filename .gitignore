@@ -48,3 +48,5 @@ static/js/laydate.dev.js
 .idea/workspace.xml
 
 static/.DS_Store
+
+.DS_Store

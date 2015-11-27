@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理-营销工具-满减活动</title>
+    <link rel="stylesheet" href="../../static/css/common.css"/>
+    <link rel="stylesheet" href="../../static/css/marketing.css"/>
+</head>
+<body>
+    <div class="pub-content">
+        <div class="pub-right" id="found_act">
+            <div class="pub-title-box">
+                <div class="pub-title">满减活动</div>
+            </div>
+            <div class="pub-box J_detail_box">
+                <div>查看活动</div>
+                <a class="act-btn-edit J_open_edit J_info_view" href="javascript:;">编辑</a>
+                <div class="act-box">
+                    <div class="act-info clearfix">
+                        <div class="act-info-tit">
+                            <span>*</span>活动名称： 
+                        </div>
+                        <div class="act-info-con">
+                            <span class="J_info_view">活动111</span>
+                            <input id="activityName" class="act-info-input J_actInput J_info_edit" value="请输入活动名称" defval="请输入活动名称">
+                        </div>
+                    </div>
+                    <div class="act-info clearfix">
+                        <div class="act-info-tit">
+                            <span>*</span>开始时间： 
+                        </div>
+                        <div class="act-info-con">
+                            <span class="J_info_view">2015-11-11 00:00:00</span>
+                            <input id="startDate" class="act-info-input J_actInput J_info_edit" value="请输入开始时间" defval="请输入开始时间">
+                            <span class="J_info_edit">*暂时手动输入 格式: 2015-11-11 00:00:00</span>
+                        </div>
+                    </div>
+                    <div class="act-info clearfix">
+                        <div class="act-info-tit">
+                            <span>*</span>结束时间： 
+                        </div>
+                        <div class="act-info-con">
+                            <span class="J_info_view">2015-11-11 00:00:00</span>
+                            <input id="endDate" class="act-info-input J_actInput J_info_edit" value="请输入结束时间" defval="请输入结束时间">
+                            <span class="J_info_edit">*暂时手动输入 格式: 2015-11-11 00:00:00</span>
+                        </div>
+                    </div>
+                    <div class="act-info clearfix">
+                        <div class="act-info-tit">
+                            <span>*</span>活动描述： 
+                        </div>
+                        <div class="act-info-textarea J_info_view">活动描述：活动描述：活动描述：活动描述：活动描述：活动描述：活动描述：活动描述：活动描述：活动描述：活动描述：
+                        </div>
+                        <textarea id="activityDescribe" class="act-info-textarea J_info_edit"></textarea>
+                    </div>
+                    <div class="act-info">
+                    </div>
+                    <div class="act-info clearfix">
+                        <div class="act-info-tit">
+                            <span>*</span>活动类型： 
+                        </div>
+                        <div class="act-info-con">
+                            <span class="J_info_view">限时折扣</span>
+                            <select id="activityType" class="act-info-select J_actSelect J_info_edit">
+                                <option value="1">限时折扣</option>
+                                <option value="2">全场限时折扣</option>
+                                <option value="3">满多少元减多少元</option>
+                                <option value="4">满多少件打多少元</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- 限时折扣 -->
+                    <div class="act-set J_actType" style="display:block">
+                        <!-- <p>折扣：<input class="act-info-input2 J_rebate" type="number"> 折</p> -->
+                        <!-- <p><a class="act-set-btn" href="additem.html">提交并添加商品</a></p> -->
+                        <p><a href="activity-list.html">提交并前往编辑参加活动商品与折扣</a></p>
+                    </div>
+                    <!-- 全场限时折扣 -->
+                    <div class="act-set J_actType">
+                        <p>折扣：<input class="act-info-input2 J_allRebate" type="number"> 折</p>
+                        <!-- <p><a class="act-set-btn" href="javascript:;">保存</a></p> -->
+                    </div>
+                    <!-- 满多少元减多少元 -->
+                    <div class="act-set J_actType">
+                        <p><input class="act-info-checkbox" type="checkbox">上不封顶</p>
+                        <div class="J_manjian">
+                            <p>满：<input class="act-info-input2 J_type3_man" type="number"> 元 减：<input class="act-info-input2 J_type3_jian" type="number"> 元 <a class="act-set-btn ml-10 J_actSetDelete" href="javascript:;">删除</a></p>
+                        </div>
+                        <p><a class="act-set-btn J_addtype3" href="javascript:;">添加</a></p>
+                    </div>
+                    <!-- 满多少件减多少元 -->
+                    <div class="act-set J_actType">
+                        <p><input class="act-info-checkbox" type="checkbox">上不封顶</p>
+                        <div class="J_manjian">
+                            <p>满：<input class="act-info-input2 J_type4_man" type="number"> 件 减：<input class="act-info-input2 J_type4_jian" type="number"> 元 <a class="act-set-btn ml-10 J_actSetDelete" href="javascript:;">删除</a></p>
+                        </div>
+                        <p><a class="act-set-btn J_addtype4" href="javascript:;">添加</a></p>
+                    </div>
+                </div>
+                <div class="act-submit-box">
+                    <div class="J_info_view">
+                        <a class="act-submit-btn" href="activity-list.html">返回列表</a>
+                    </div>
+                    <div class="J_info_edit">
+                        <a class="act-submit-btn J_actSubmit" href="javascript:;">提交</a>
+                        <a class="act-submit-btn J_close_edit" href="javascript:;">取消</a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<script>
+(function($){
+    $('.J_open_edit').on('click',function(){
+        $('.J_detail_box').addClass('editing');
+    });
+    $('.J_close_edit').on('click',function(){
+        $('.J_detail_box').removeClass('editing');
+    });
+    $('.J_actInput').on('focus',function(e){
+        console.log();
+        if($(e.target).val() == $(e.target).attr('defval')){
+            $(e.target).val('');
+        }
+    });
+    $('.J_actSelect').on('change',function(e){
+        var _v = e.target.value-1;
+        $('.J_actType').removeClass('active');
+        $('.J_actType').eq(_v).addClass('active');
+    });
+    $('.J_addtype3').on('click',function(){
+        $('.J_manjian','.active').append('<p>满：<input class="act-info-input2 J_type3_man" type="number"> 元 减：<input class="act-info-input2 J_type3_jian" type="number"> 元 <a class="act-set-btn ml-10 J_actSetDelete" href="javascript:;">删除</a></p>');
+    });
+    $('.J_addtype4').on('click',function(){
+        $('.J_manjian','.active').append('<p>满：<input class="act-info-input2 J_type4_man" type="number"> 件 减：<input class="act-info-input2 J_type4_jian" type="number"> 元 <a class="act-set-btn ml-10 J_actSetDelete" href="javascript:;">删除</a></p>');
+    });
+    $('.J_actType').on('click','.J_actSetDelete',function(e){
+        var _tpp = $(e.target).parent().parent(),
+            _tp  = $(e.target).parent();
+        if($('p',_tpp).length>1){
+            _tp.remove();
+        }else{
+            alert('至少需要一个条件');
+        }
+    });
+    $('.J_actSubmit').on('click',function(){
+        var _fullReductionDetails = [];
+        var _activityName = $('#activityName').val(),
+            _startDate = $('#startDate').val(),
+            _endDate = $('#endDate').val(),
+            _activityDescribe = $('#activityDescribe').val();
+            _activityType = $('#activityType').val();
+            if(_activityType == '1'){
+                //商品限时折扣
+                var _rebeta = parseInt($('.J_rebate').val());
+                // if(_rebeta <= 0 || _rebeta >10 || $('.J_rebate').val() == undefined||$('.J_rebate').val() == ''){
+                //     alert('请输入正确的折扣');
+                //     return false;
+                // }
+                var _details = {
+                    id: "",
+                    rebate: _rebeta
+                }
+                _fullReductionDetails.push(_details);
+            }else if(_activityType == '2'){
+                //全场限时折扣
+                var _rebeta = parseInt($('.J_allRebate').val());
+                // if(_rebeta <= 0 || _rebeta >10 || $('.J_allRebate').val() == undefined||$('.J_allRebate').val() == ''){
+                //     alert('请输入正确的折扣');
+                //     return false;
+                // }
+                var _details = {
+                    id: "",
+                    rebate: _rebeta
+                }
+                _fullReductionDetails.push(_details);
+            }else if(_activityType == '3'){
+                //满多少元减多少元
+            }else if(_activityType == '4'){
+                //满多少件减多少元
+            }
+        // var _data = {
+        //     id:1,
+        //     activityName: _activityName,
+        //     startDate: _startDate,
+        //     endDate: _endDate,
+        //     activityDescribe: _activityDescribe,
+        //     activityType:_activityType,// 1:限时折扣,2,3,4
+        //     sellerId:"",//卖家id
+        //     products:"",//商品列表 ”123,234,345"
+        //     fullReductionDetails:[
+        //         {
+        //             id:"", //活动条件id
+        //             fullSet:"",//满xx
+        //             reductionSet:"", //减xx
+        //             rebate:"" //折扣
+        //         }
+        //     ]
+        // };
+        var _data = {
+            id:1,
+            activityName: _activityName,
+            startDate: _startDate,
+            endDate: _endDate,
+            activityDescribe: _activityDescribe,
+            activityType:_activityType,// 1:限时折扣,2,3,4
+            sellerId:"",//卖家id
+            products:"",//商品列表 ”123,234,345"
+            fullReductionDetails: _fullReductionDetails
+        };
+        //test
+                // if(_activityType == '1'){
+                //     window.location.href="additem.html" 
+                // }
+
+                
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/fullReduction/save",
+        //     data: JSON.stringify(_data),
+        //     dataType: "json",
+        //     contentType: "application/json; charset=utf-8",
+        //     success: function(data){
+        //         console.log(data);
+        //         if(_activityType == '1'){
+        //             windows.location.href="additem.html" 
+        //         }
+        //     },
+        //     error: function(res){
+        //         console.log(res);
+        //     }
+        // });
+    })
+})(jQuery);
+</script>
+</body>
+</html>
