@@ -143,6 +143,7 @@
 }
 .order .order-con .order-items-statistics a{
 	display: inline-block;
+	margin-right: 5px;
 	width: 80px;
 	height: 25px;
 	line-height: 25px;
@@ -258,3 +259,66 @@
     opacity: .6;
     display: none;
 }
+
+/*order_detail*/
+.ty-order-content{border:1px solid #C9C9C9;margin-top:20px;*zoom:1;padding:15px 25px;}
+.ty-order-desc-left,.ty-order-desc-right{float:left;}
+.ty-order-desc-right{margin-left:200px;}
+.ty-order-text{line-height:1.8;}
+.ty-order-desc-right .ty-order-text{font-size:14px;font-weight:bold;}
+.ty-order-desc-right .ty-order-text span{color:#fd9500;}
+.ty-order-user{margin-top:25px;}
+.ty-orderList-content{margin-top:20px;}
+.ty-orderList-thead{background:#F5F5F5;border:1px solid #C9C9C9;height:30px;line-height:30px;}
+.ty-th{float:left;text-align:center;}
+.ty-th-pro{width:390px;}
+.ty-th-val{width:80px;}
+.ty-th-price{width:110px;}
+.ty-th-status{width:110px;}
+.ty-th-sum{width:110px;}
+.ty-th-action{width:148px;}
+.ty-orderList-tbody{border:1px solid #C9C9C9;padding:0 20px;border-top:none;*zoom:1;}
+.ty-td{float:left;text-align:center;}
+.ty-td-pro{width:370px;text-align:left;}
+.ty-td-val{width:80px;}
+.ty-td-price{width:110px;}
+.ty-td-status{width:110px;}
+.ty-td-sum{width:110px;}
+.ty-td-action{width:128px;}
+.ty-orderList-pro{float:left;width:100px;height:100px;overflow:hidden;}
+.ty-orderList-proImage{width:100%;}
+.ty-orderList-desc{float:left;width:250px;}
+.ty-orderList-tbodyTr{padding:15px 0;border-bottom:1px solid #E5E5E5;}
+.ty-orderList-text{word-wrap:break-word;line-height:1.8;}
+.ty-td span,.ty-td del{display:block;line-height:1.8;}
+.ty-td-price span,.ty-td-price del{line-height:20px;}
+.ty-td-sum span{color:#f00;}
+.ty-td del{color:#999;}
+.ty-td-status span{color:#FD9500;}
+.action-deliver{background:#333;}
+.action-reply,.action-deliver{margin:4px auto;width:80px;height:25px;line-height:25px;border-radius:4px;color:#fff;cursor:pointer;}
+.action-reply{background:#999;}
+.ty-orderList-sum{text-align:right;padding:10px 0;}
+.ty-orderList-desc-text{line-height:1.8;color:#999;}
+.ty-orderList-desc-text span{color:#333;}
+.ty-orderList-desc-sum,.ty-orderList-desc-total{line-height:1.8;color:#333;}
+.ty-orderList-desc-total span{color:#f00;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

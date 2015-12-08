@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html ng-app="orderOrder" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>后台管理-订单管理</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/common.css" th:href="@{/static/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/order.css" th:href="@{/static/css/order.css}"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/laydate.css" th:href="@{/static/css/laydate.css}"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/laydate-skin.css" th:href="@{/static/css/laydate-skin.css}"/>
+</head>
+<body>
+<div ng-include="'../include/head.html'"></div>
+<div class="order">
+    <div ng-include="'../include/left.html'"></div>
+    <div class="order-con fr">
+        <div class="order-con-title">
+            <p>订单管理</p>
+        </div>
+        <div class="order-con-search clearfix">
+            <div class="order-search-tagbox">
+                <ul class="order-search-tag fl clearfix">
+                    <li class="order-search-tagcon order-search-tag-active" data-status="">全部订单</li>
+                    <li class="order-search-tagcon" data-status="1">待付款<span class="order-search-num">216</span></li>
+                    <li class="order-search-tagcon" data-status="2">待发货<span class="order-search-num">23</span></li>
+                    <li class="order-search-tagcon" data-status="3">部分发货<span class="order-search-num">39</span></li>
+                    <li class="order-search-tagcon" data-status="4">已发货<span class="order-search-num">539</span></li>
+                    <!--<li class="order-search-tagcon">未评价<span class="order-search-num">39</span></li>-->
+                    <li class="order-search-tagcon" data-status="5">成功的订单<span class="order-search-num">339</span></li>
+                    <li class="order-search-tagcon" data-status="6">关闭的订单<span class="order-search-num">59</span></li>
+                    <!--<li class="order-search-tagcon order-search-after">售后<span class="order-search-num">539</span></li>-->
+                </ul>
+            </div>
+            <div class="order-search-condition clearfix">
+                <div class="order-condition-time fl">
+                    <span>成交时间:</span>
+                    <input id="start" />—<input id="end" />
+                </div>
+                <div class="order-condition-orderNum fl">
+                    <span>订单号:</span>
+                    <input value="" />
+                </div>
+                <div class="order-condition-status fl hidden">
+                    <span>售后状态:</span>
+                    <select name="">
+                        <option>申请退款</option>
+                        <option>申请退款退货</option>
+                        <option>卖家已同意</option>
+                        <option>买家已发货</option>
+                        <option>买家确认收货</option>
+                        <option>退款成功</option>
+                        <option>买家取消申请</option>
+                        <option>卖家不同意</option>
+                    </select>
+                </div>
+                <div class="clearfix fl">
+                <!--
+                 <div class="order-condition-id fl">
+                        <span>买家ID:</span>
+                        <input value="" />
+                    </div>
+                    <div class="order-condition-phone fl">
+                        <span>买家电话:</span>
+                        <input value="" />
+                    </div>
+                    <div class="order-condition-name fl">
+                        <span>商品名称:</span>
+                        <input value="" />
+                    </div>-->
+                    <div class="order-condition-search fl">
+                        <input class="order-search-button" type="button" id="search" value="搜索" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-con-main">
+            <!-- 1   data-saleOrderId-->
+            <div class="order-main-orders" th:each="saleOrderMap:${saleOrderMaps}" data-saleOrderId = "" th:attr="data-saleOrderId=${saleOrderMap.saleOrderId}">
+                    <div class="order-orders-details clearfix">
+                        <p class="order-details-orderNum fl">订单号:<span th:text="${saleOrderMap.purchaseOrderSn}">20150718123456789</span></p>
+                        <p class="order-details-saleOrderNum fl">卖家订单号:<span th:text="${saleOrderMap.saleOrderSn}">20150718123456789</span></p>
+                        <p class="order-details-orderTime fl">下单时间:<span th:text="${#dates.format(saleOrderMap.createAt,'yyyy-MM-dd HH:mm:ss')}">2015-07-18 12:34:56</span></p>
+                        <p class="order-details-payTime fl">付款时间:<span>2015-07-18 12:34:56</span></p>
+                        <p class="order-details-orderStatus fl" th:switch="${saleOrderMap.status}">订单状态:
+                            <span th:case="1">待付款</span>
+                            <span th:case="2">待发货</span>
+                            <span th:case="3">部分发货</span>
+                            <span th:case="4">全部发货</span>
+                            <span th:case="5">已完成</span>
+                            <span th:case="6">已取消</span>
+                        </p>
+                        <p class="order-details-buyer fl">收货人:<span th:text="${saleOrderMap.consignee}">王小明</span></p>
+                        <p class="order-details-phone fl">联系方式:<span th:text="${saleOrderMap.phone}">12345678912</span></p>
+                        <p class="order-details-address fl">买家地址:<span th:text="${saleOrderMap.address}">北京市 东城区 东华门街道 某某小区2幢3单元2楼</span></p>
+                </div>
+                <!-- 2    data-skuid-->
+                <div class="order-orders-items" data-skuid = "1">
+                    <table class="order-items-inner" th:each="order:${saleOrderMap.saleOrderList}">
+                        <tr>
+                            <td class="order-items-inner-choose"><input class="order-items-inner-chooses" name="order-items-inner" type="checkbox" value="" /></td>
+                            <td class="order-items-inner-img"><img src="../../static/images/test-80-80.jpg" th:src="${order.itemImageKey}" width="80" height="80"/></td>
+                            <td class="order-items-inner-details">
+                                <p>货号:<span th:text="${order.articleNumber}">10016</span></p>
+                                <p th:text="${order.itemName}">森马加厚棒球羽绒服 男 2015冬装新款 男士直筒休闲外套 韩版潮流</p>
+                                <p th:text="${order.itemSkuName}"><span>蓝色</span><span>M</span></p>
+                            </td>
+                            <td class="order-items-inner-num"><span th:text="${order.number}">1</span></td>
+                            <td class="order-items-inner-price">￥<span th:text="${order.unitPrice}">359.00</span></td>
+                            <td class="order-items-inner-buttom" th:switch="${order.status}">
+                                <a id="delivery" href="javascript:;" th:case="2" >发货</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="order-items-statistics clearfix">
+                        <p class="fr"><span>共<b th:text="${saleOrderMap.number}">2</b>件</span><span>合计:￥<b th:text="${saleOrderMap.totalAmount}">652</b>(平台包邮)</span></p>
+                        <p class="fr clearfix" th:switch="${saleOrderMap.status}">
+                            <span th:case="1">
+                                <a class="order-items-statistics-print" href="javascript:;">打印配货单</a>
+                                <a id="remark" href="javascript:;">备注</a>
+                                 <a href="">订单详情</a>
+                            </span>
+                            <span th:case="2">
+                                <a class="order-items-statistics-print" href="javascript:;">打印配货单</a>
+                                <a id="remark" href="javascript:;">备注</a>
+                                <a id="deliverys" href="javascript:;">批量发货</a>
+                                 <a href="">订单详情</a>
+                            </span>
+                            <span th:case="3">
+                                <a class="order-items-statistics-print" href="javascript:;">打印配货单</a>
+                                <a id="remark" href="javascript:;">备注</a>
+                                <a id="deliverys" href="javascript:;">批量发货</a>
+                                <a href="">查看物流</a>
+                                 <a href="">订单详情</a>
+                            </span>
+                            <span th:case="4">
+                                <a class="order-items-statistics-print" href="javascript:;">打印配货单</a>
+                                <a href="">查看物流</a>
+                                 <a href="">订单详情</a>
+                            </span>
+                            <span th:case="5">
+                                <a href="">查看物流</a>
+                                <a href="">订单详情</a>
+                            </span>
+                             <span th:case="6">
+                                <a href="">订单详情</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3  data-total  data-pageSize  data-pageNumber-->
+        <div class="paging j_paging"  data-total="100" data-pageSize="5" data-pageNumber="2" th:attr="data-total=${total},data-pageSize=${pageSize},data-pageNumber=${pageNumber}"></div>
+    </div>
+    <!--单个发货-->
+    <!-- 4 data-skuid 此为前端储存器,不用赋值-->
+    <div class="pop1 delivery-pop J_pop" id="pop_delivery" data-skuid="">
+        <p class="delivery-pop-title">填写物流信息</p>
+        <!-- 5 value 为后端取值用 节点内部为前端显示用-->
+        <select class="delivery-pop-con-addr">
+            <option value="杭州杭州杭州杭州杭州">杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭</option>
+            <option value="宁波">宁波</option>
+        </select>
+        <div class="delivery-pop-con">
+            <select class="delivery-pop-con-kind">
+                <!-- 6 value 为对应物流id-->
+                <option value="1">圆通快递</option>
+                <option value="2">顺丰快递</option>
+            </select>
+            <input class="delivery-pop-con-deliveryNum" type="text" placeholder="快递单号" />
+        </div>
+        <div class="delivery-pop-btnbox">
+            <a class="delivery-pop-btn1 J_submitDeliverySure" href="javascript:;">确定</a>
+            <a class="delivery-pop-btn2 J_popClose" href="javascript:;">取消</a>
+        </div>
+    </div>
+    <!--批量发货-->
+    <div class="pop1 delivery-pop J_pop" id="pop_deliverys">
+        <p class="delivery-pop-title">填写物流信息</p>
+        <div class="delivery-pop-con">
+            <!-- 7 同单个发货-->
+            <select class="delivery-pop-con-addr">
+                <option value="杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州">杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州杭州</option>
+                <option value="宁波">宁波</option>
+            </select>
+            <!-- 8 同单个发货-->
+            <select class="delivery-pop-con-kind">
+                <option value="1">圆通快递</option>
+                <option value="2">顺丰快递</option>
+            </select>
+            <input class="delivery-pop-con-deliveryNum" type="text" placeholder="快递单号" />
+        </div>
+        <div class="delivery-pop-btnbox">
+            <a class="delivery-pop-btn1 J_submitDeliverysSure" href="javascript:;">确定</a>
+            <a class="delivery-pop-btn2 J_popClose" href="javascript:;">取消</a>
+        </div>
+    </div>
+    <!--备注-->
+    <!-- 9 data-skuid 此为前端储存器,不用赋值-->
+    <div class="pop1 remark-pop J_pop" id="pop_remark" data-saleOrderId="">
+        <p class="remark-pop-title">填写备注流信息</p>
+        <div class="remark-pop-con">
+            <textarea rows="7" cols="32" placeholder="填写备注流信息"></textarea>
+        </div>
+        <div class="remark-pop-btnbox">
+            <a class="remark-pop-btn1 J_submitRemarkSure" href="javascript:;">确定</a>
+            <a class="remark-pop-btn2 J_popClose" href="javascript:;">取消</a>
+        </div>
+    </div>
+    <div class="pop-mask" id="J_popMask"></div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js" th:src="@{/webjars/jquery/2.1.4/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/angular.min.js" th:src="@{/static/js/angular.min.js}" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/laydate.dev.js" th:src="@{/static/js/laydate.dev.js}" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/paging.js" th:src="@{/static/js/paging.js}" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/order-order.js" th:src="@{/static/js/order-order.js}" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
