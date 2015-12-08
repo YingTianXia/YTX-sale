@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<title>后台管理-订单管理</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/order.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/laydate.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/laydate-skin.css"/>
+</head>
+<body>
+<div ng-include="'../include/head.html'"></div>
+<div class="order">
+	<div ng-include="'../include/left.html'"></div>
+	<div class="order-con fr">
+		<div class="order-con-title">
+			<p>订单详情</p>
+		</div>
+		<div class="ty-order-content">
+			<div class="ty-order-desc-main clearfix">
+				<div class="ty-order-desc-left">
+					<p class="ty-order-text">买家订单号：<span>20150718123456789</span></p>
+					<p class="ty-order-text">卖家订单号：<span>20150718123456788</span></p>
+					<p class="ty-order-text">下单时间：<span>2015-07-18 12:34:56</span></p>
+					<p class="ty-order-text">付款时间：<span>2015-07-18 12:39:26</span></p>
+				</div>
+				<div class="ty-order-desc-right">
+					<p class="ty-order-text">订单状态：<span>部分发货</span></p>
+					<p class="ty-order-alert">您还有部分商品未发货，请及时处理！</p>
+				</div>
+			</div>
+			<div class="ty-order-user">
+				<p class="ty-order-text">收货人：<span>王小明</span></p>
+				<p class="ty-order-text">联系方式：<span>12345678912</span></p>
+				<p class="ty-order-text">收货地址：<span>北京市 东城区 东华门街道 某某小区2幢3单元2楼</span></p>
+			</div>
+		</div>
+		<div class="ty-orderList-content">
+			<div class="ty-orderList-table">
+				<ul class="ty-orderList-thead">
+					<li class="ty-th ty-th-pro" width="390">订单商品</li>
+					<li class="ty-th ty-th-val" width="80">数量</li>
+					<li class="ty-th ty-th-price" width="110">单价</li>
+					<li class="ty-th ty-th-status" width="110">状态</li>
+					<li class="ty-th ty-th-sum" width="110">小计</li>
+					<li class="ty-th ty-th-action" width="148">操作</li>
+				</ul>
+				<div class="ty-orderList-tbody">
+					<ul class="ty-orderList-tbodyTr clearfix">
+						<li class="ty-td ty-td-pro">
+							<div class="ty-orderList-pro">
+								<img src="#" class="ty-orderList-proImage"/>
+							</div>
+							<div class="ty-orderList-desc">
+								<p class="ty-orderList-text">货号：10016</p>
+								<p class="ty-orderList-text">森马加厚棒球羽绒服 男 2015冬装新款 男士直筒休闲外套 韩版潮流</p>
+								<p class="ty-orderList-text">蓝色-M</p>
+							</div>
+						</li>
+						<li class="ty-td ty-td-val"><span>123</span></li>
+						<li class="ty-td ty-td-price">
+							<span>￥123.00</span>
+							<del>￥345.00</del>
+						</li>
+						<li class="ty-td ty-td-status"><span>未发货</span></li>
+						<li class="ty-td ty-td-sum">
+							<span>￥123123.00</span>
+						</li>
+						<li class="ty-td ty-td-action">
+							<div class="action-deliver">发货</div>
+						</li>
+					</ul>
+					<ul class="ty-orderList-tbodyTr clearfix">
+						<li class="ty-td ty-td-pro">
+							<div class="ty-orderList-pro">
+								<img src="#" class="ty-orderList-proImage"/>
+							</div>
+							<div class="ty-orderList-desc">
+								<p class="ty-orderList-text">货号：10016</p>
+								<p class="ty-orderList-text">森马加厚棒球羽绒服 男 2015冬装新款 男士直筒休闲外套 韩版潮流</p>
+								<p class="ty-orderList-text">蓝色-M</p>
+							</div>
+						</li>
+						<li class="ty-td ty-td-val"><span>123</span></li>
+						<li class="ty-td ty-td-price">
+							<span>￥123.00</span>
+							<del>￥345.00</del>
+						</li>
+						<li class="ty-td ty-td-status"><span>未发货</span></li>
+						<li class="ty-td ty-td-sum">
+							<span>￥123123.00</span>
+						</li>
+						<li class="ty-td ty-td-action">
+							<div class="action-deliver">查看物流</div>
+							<!--<div class="action-reply">回复评价</div>-->
+						</li>
+					</ul>
+					<div class="ty-orderList-sum">
+						<p class="ty-orderList-desc-text">满499减50，<span>-¥50</span></p>
+						<p class="ty-orderList-desc-text">满899减100，<span>-¥100</span></p>
+						<p class="ty-orderList-desc-text">全场抵扣通用券（满159可用）<span>-¥50</span></p>
+						<p class="ty-orderList-desc-sum">共<span>2</span>件商品 </p>
+						<p class="ty-orderList-desc-total">合计：<span>¥458.00</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../static/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../static/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
