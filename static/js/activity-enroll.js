@@ -42,7 +42,7 @@ var pop = {
 				if($('.J_info_btn').hasClass('active')){
 					isAnim = true;
 					$('.J_info_btn').toggleClass('active');
-					$('.act-enroll-info-list').animate(
+					$('.J_foldBox').animate(
 						{
 							height:'240px'
 						},
@@ -55,7 +55,7 @@ var pop = {
 					var ulh = $('.act-enroll-info-list ul').height();
 					isAnim = true;
 					$('.J_info_btn').toggleClass('active');
-					$('.act-enroll-info-list').animate(
+					$('.J_foldBox').animate(
 						{
 							height: ulh+'px'
 						},
@@ -67,6 +67,22 @@ var pop = {
 				}
 			}
 		});
+	    $('.J_popItemTable tr').on('click',function(e){
+	        if($('.J_itemCheck',this)[0].checked){
+	            $('.J_itemCheck',this).prop("checked",false);
+	        }else{
+	            $('.J_itemCheck',this).prop("checked",true);
+	        }
+	        $('.J_itemCheck').on('click',function(e){
+	            e.stopPropagation();
+	        });
+	    });
+	    $('.J_popAllCheck').on('click',function(){
+	        $('.J_itemCheck').prop("checked",true);
+	    });
+	    $('.J_popAllUncheck').on('click',function(){
+	        $('.J_itemCheck').prop("checked",false);
+	    });
 
 	}
 	function wordCount(){

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>卖家管理-活动管理-活动报名-品牌</title>
+    <title>卖家管理-活动管理-活动报名-单品</title>
     <link rel="stylesheet" href="../../static/css/common.css"/>
     <link rel="stylesheet" href="../../static/css/activity.css"/>
 </head>
@@ -14,44 +14,32 @@
             </div>
             <div class="pub-box-noborder">
                 <div class="act-tit">审核状态</div>
-                <div class="act-box step2"><!-- 6个阶段  step1 ~ step6 -->
-                    <div class="act-enroll-brand-progress">
-                        <div class="act-enroll-brand-icon1">1</div>
-                        <div class="act-enroll-brand-icon2">2</div>
-                        <div class="act-enroll-brand-icon3">3</div>
-                        <div class="act-enroll-brand-icon4">4</div>
-                        <div class="act-enroll-brand-icon5">5</div>
-                        <!-- 第6阶段 -->
-                        <div class="act-enroll-brand-icon6"></div>
-                        <!-- <div class="act-enroll-brand-icon-pass"></div> -->
-                        <!-- <div class="act-enroll-brand-icon-notpass"></div> -->
+                <div class="act-box step2"><!-- 4个阶段  step1 ~ step4 -->
+                    <div class="act-enroll-item-progress">
+                        <div class="act-enroll-item-icon1">1</div>
+                        <div class="act-enroll-item-icon2">2</div>
+                        <div class="act-enroll-item-icon3">3</div>
+                        <!-- 第4阶段 -->
+                        <div class="act-enroll-item-icon4">4</div>
+                        <!-- <div class="act-enroll-item-icon-pass"></div> -->
+                        <!-- <div class="act-enroll-item-icon-notpass"></div> -->
                     </div>
                     <div class="clearfix">
-                        <div class="act-enroll-brand-step1">
+                        <div class="act-enroll-item-step1">
                             <p>未报名</p>
                             <p>已报名</p>
                         </div>
-                        <div class="act-enroll-brand-step2">
-                            <p class="pb-5">品牌信息审核</p>
-                            <p>（品牌信息审核通过）</p>
-                            <p>（品牌信息审核未通过）</p>
-                        </div>
-                        <div class="act-enroll-brand-step3">
-                            <p class="pb-5">商品审核动态</p>
-                            <p>审核通过：12</p>
-                            <p>全部商品：25</p>
-                        </div>
-                        <div class="act-enroll-brand-step4">
+                        <div class="act-enroll-item-step2">
                             <p class="pb-5">商品审核</p>
                             <p>（商品审核通过）</p>
                             <p>（商品审核未通过）</p>
                         </div>
-                        <div class="act-enroll-brand-step5">
+                        <div class="act-enroll-item-step3">
                             <p class="pb-5">质检审核</p>
                             <p>（质检审核通过）</p>
                             <p>（质检审核未通过）</p>
                         </div>
-                        <div class="act-enroll-brand-step6">
+                        <div class="act-enroll-item-step4">
                             <p class="pb-5">审核结果</p>
                             <p>（审核审核通过）</p>
                             <p>（审核审核未通过）</p>
@@ -60,7 +48,7 @@
                 </div>
                 <div class="act-tit">活动信息</div>
                 <div class="act-box">
-                    <div class="act-enroll-info-list">
+                    <div class="act-enroll-info-list J_foldBox">
                         <ul>
                             <li class="act-enroll-info-li clearfix">
                                 <div class="act-enroll-info-tit">活动类型:</div>
@@ -121,75 +109,68 @@
                         </div>
                     </div>
                 </div>
-                <div class="act-tit">品牌信息</div>
-                <div class="act-box">
-                    <ul>
-                        <li class="act-enroll-info-li2 clearfix">
-                            <div class="act-enroll-info-tit"><span class="fc-orange">*</span>品牌海报上传:</div>
-                            <div class="act-enroll-info-con">
-                                <a class="act-enroll-btn-upload" href="javascript:;">上传图片</a>
-                                <div class="act-enroll-picview">
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        <li class="act-enroll-info-li2 clearfix">
-                            <div class="act-enroll-info-tit"><span class="fc-orange">*</span>品牌活动标题:</div>
-                            <div class="act-enroll-info-con J_wordCount">
-                                <input class="act-enroll-input1 J_wordInput" type="text" maxlength="20"/>
-                                <span>(<em class="J_wordNum">0</em>/<em>20</em>字)</span>
-                            </div>
-                        </li>
-                        <li class="act-enroll-info-li2 clearfix">
-                            <div class="act-enroll-info-tit"><span class="fc-orange">*</span>品牌活动副标题:</div>
-                            <div class="act-enroll-info-con J_wordCount">
-                                <input class="act-enroll-input1 J_wordInput" type="text" maxlength="20"/>
-                                <span>(<em class="J_wordNum">0</em>/<em>20</em>字)</span>
-                            </div>
-                        </li>
-                        <li class="act-enroll-info-li2 clearfix">
-                            <div class="act-enroll-info-tit">平台审核意见:</div>
-                            <div class="act-enroll-info-con">
-                                <p class="w-450">平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见平台审核意见</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
                 <div class="act-tit">参与活动商品</div> 
                 <div class="act-box">
-                    <div class="act-enroll-item-bar">
-                        <span>最多可添加商品数量:<em>200</em>个</span>
-                        <span>已添加:<em>20</em>个</span>
-                        <span>还可添加:<em>10</em>个</span>
+                    <div class="act-enroll-item-bar2">
                         <a class="act-enroll-btn-additem J_enroll_additem" href="javascript:;">添加商品</a>
                     </div>
-                    <div class="act-enroll-item-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th width="5%">序号</th>
-                                    <th width="10%">商品ID</th>
-                                    <th width="15%">商品名称</th>
-                                    <th width="15%">商品原价</th>
-                                    <th width="15%">活动价格</th>
-                                    <th width="15%">参与活动商品数量</th>
-                                    <th width="10%">操作</th>
-                                    <th width="15%">平台审核意见</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>12146</td>
-                                    <td>森马加厚棒球羽绒服 男士直筒休闲外套 韩版潮流</td>
-                                    <td>&yen;199.00</td>
-                                    <td>&yen;<input class="act-enroll-item-input1" type="number"/></td>
-                                    <td><input class="act-enroll-item-input1" type="number"/></td>
-                                    <td><a href="javascript:;">删除</a></td>
-                                    <td><p>&nbsp;</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="act-enroll-info-list2">
+                        <ul>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit">商品名称:</div>
+                                <div class="act-enroll-info-con">商品名称商品名称</div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit">商品ID:</div>
+                                <div class="act-enroll-info-con">234232</div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit">商品原价:</div>
+                                <div class="act-enroll-info-con">111.11元</div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit"><span class="fc-orange">*</span>商品活动价:</div>
+                                <div class="act-enroll-info-con">
+                                    <input class="act-enroll-input2" type="text" maxlength="20"> 元
+                                </div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit"><span class="fc-orange">*</span>参加活动商品数量:</div>
+                                <div class="act-enroll-info-con">
+                                    <input class="act-enroll-input2" type="text" maxlength="20">
+                                </div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit"><span class="fc-orange">*</span>商品主标题:</div>
+                                <div class="act-enroll-info-con J_wordCount">
+                                    <input class="act-enroll-input1 J_wordInput" type="text" maxlength="20">
+                                    <span>(<em class="J_wordNum">0</em>/<em>20</em>字)</span>
+                                </div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit"><span class="fc-orange">*</span>商品副标题:</div>
+                                <div class="act-enroll-info-con J_wordCount">
+                                    <input class="act-enroll-input1 J_wordInput" type="text" maxlength="20">
+                                    <span>(<em class="J_wordNum">0</em>/<em>20</em>字)</span>
+                                </div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit"><span class="fc-orange">*</span>商品主图上传:</div>
+                                <div class="act-enroll-info-con">
+                                    <div>
+                                        <a class="act-enroll-btn1" href="javascript:;">上传图片</a>
+                                        <span class="fc-grey">(图片尺寸:418*418; 格式:jpg,png; 大小:300kb以内;)</span>
+                                    </div>
+                                    <div class="act-enroll-pic-box"></div>
+                                </div>
+                            </li>
+                            <li class="act-enroll-info-li clearfix">
+                                <div class="act-enroll-info-tit">平台审核意见:</div>
+                                <div class="act-enroll-info-con">
+                                    <p class="w-450">平台审核意见:平台审核意见:平台审核意见:平台审核意见:平台审核意见:平台审核意见:平台审核意见:平台审核意见:</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="act-enroll-btn-box">
                         <a class="act-enroll-btn-item1" href="javascript:;">保存报名</a>
@@ -233,9 +214,7 @@
     </div>
     <div class="pop-mask J_popClose" id="J_popMask"></div>
     <div class="pop1 act-pop1 J_pop" id="pop_enroll_additem">
-        <div class="pop-select-bar">
-            选择商品: 
-        </div>
+        <div class="pop-select-bar">选择商品:</div>
 <!--         <div class="pop-select-bar">
             商品类型: 
             <select class="pop-select">
@@ -276,7 +255,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -286,7 +265,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -296,7 +275,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -306,7 +285,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -316,7 +295,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -326,7 +305,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -336,7 +315,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -346,7 +325,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -356,7 +335,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -366,7 +345,7 @@
                         <td>&yen;100.00</td>
                     </tr>
                     <tr>
-                        <td><input class="J_itemCheck" type="checkbox"></td>
+                        <td><input class="J_itemCheck" type="radio" name="addItem"></td>
                         <td>SM00013</td>
                         <td><img src="../../static/images/80x100.jpg" height="30px;"></td>
                         <td>
@@ -378,10 +357,6 @@
                 </tbody>
             </table>
         </div>
-        <div class="pop-table-batch">
-            <a class="pop-batch-btn1 J_popAllCheck" href="javascript:;">本页全选</a>
-            <a class="pop-batch-btn2 J_popAllUncheck" href="javascript:;">全部移除</a>
-        </div>
         <div class="act-page">
             <a class="act-page-num lt" href="javascript:;">&lt;</a>
             <a class="act-page-num" href="javascript:;">1</a>
@@ -392,7 +367,7 @@
             <a class="act-page-num gt" href="javascript:;">&gt;</a>
         </div>
         <div class="act-btn-box">
-            <a class="act-btn" href="javascript:;">提交</a>
+            <a class="act-btn" href="javascript:;">确定</a>
             <a class="act-btn J_popClose" href="javascript:;">取消</a>
         </div>
     </div>

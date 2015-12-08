@@ -22,6 +22,9 @@
 .fc-orange{
     color: #fd9500;
 }
+.fc-grey{
+    color: #999;
+}
 .pub-content em,
 .pub-content i{
     font-style: normal;
@@ -59,6 +62,12 @@
     border: solid 1px #c9c9c9;
     padding: 20px 25px 40px;
     background-color: #f5f5f5;
+    margin-top: 15px;
+}
+.pub-box-white{
+    border: solid 1px #c9c9c9;
+    padding: 20px 25px 40px;
+    background-color: #fff;
     margin-top: 15px;
 }
 .pub-box-noborder{
@@ -162,14 +171,14 @@
     color: #fd9500;
     display: inline;
 }
-.act-enroll-tit{
+.act-tit{
     color: #ff9900;
     font-size: 14px;
     line-height: 30px;
     position: relative;
     border-bottom: solid 1px #ddd; 
 }
-.act-enroll-box{
+.act-box{
     padding: 20px 0 40px 20px;
 }
 .act-enroll-brand-progress{
@@ -179,6 +188,14 @@
     _background: url(../images/activity-icon_8.png) no-repeat 0 0;
     text-align: center;
 }
+.act-enroll-item-progress{
+    width: 608px;
+    height: 35px;
+    background: url(../images/activity-icon.png) no-repeat 0 -50px;
+    _background: url(../images/activity-icon_8.png) no-repeat 0 -50px;
+    text-align: center;
+    margin-left: 120px;
+}
 .act-enroll-brand-icon1,
 .act-enroll-brand-icon2,
 .act-enroll-brand-icon3,
@@ -186,7 +203,13 @@
 .act-enroll-brand-icon5,
 .act-enroll-brand-icon6,
 .act-enroll-brand-icon-pass,
-.act-enroll-brand-icon-notpass{
+.act-enroll-brand-icon-notpass,
+.act-enroll-item-icon1,
+.act-enroll-item-icon2,
+.act-enroll-item-icon3,
+.act-enroll-item-icon4,
+.act-enroll-item-icon-pass,
+.act-enroll-item-icon-notpass{
     width: 31px;
     height: 30px;
     line-height: 30px;
@@ -228,11 +251,35 @@
     margin-left: 117px;
 }
 
+.act-enroll-item-icon1{
+    margin-left: 43px;
+}
+.act-enroll-item-icon2{
+    margin-left: 133px;
+}
+.act-enroll-item-icon3{
+    margin-left: 133px;
+}
+.act-enroll-item-icon4{
+    margin-left: 133px;
+}
+.act-enroll-item-icon-pass{
+    background-position: -100px -100px;
+    margin-left: 116px;
+}
+.act-enroll-item-icon-notpass{
+    background-position: -200px -100px;
+    margin-left: 116px;
+}
+
 .step1 .act-enroll-brand-icon1,
 .step2 .act-enroll-brand-icon2,
 .step3 .act-enroll-brand-icon3,
 .step4 .act-enroll-brand-icon4,
-.step5 .act-enroll-brand-icon5{
+.step5 .act-enroll-brand-icon5,
+.step1 .act-enroll-item-icon1,
+.step2 .act-enroll-item-icon2,
+.step3 .act-enroll-item-icon3{
     background-position: 0px -100px;
 }
 
@@ -242,24 +289,44 @@
 .act-enroll-brand-step3,
 .act-enroll-brand-step4,
 .act-enroll-brand-step5,
-.act-enroll-brand-step6{
+.act-enroll-brand-step6,
+.act-enroll-item-step1,
+.act-enroll-item-step2,
+.act-enroll-item-step3,
+.act-enroll-item-step4{
     text-align: center;
     float: left;
     padding: 10px 10px 0;
     line-height: 16px;
     color: #999999;
 }
-.act-enroll-brand-step1{
+.act-enroll-brand-step1,
+.act-enroll-item-step1{
     width: 100px;
+}
+.act-enroll-item-step1{
+    margin-left: 120px;
 }
 .act-enroll-brand-step2{
     width: 140px;
 }
+.act-enroll-item-step2{
+    width: 130px;
+    margin-left: 28px;
+}
 .act-enroll-brand-step3{
     width: 130px;
 }
+.act-enroll-item-step3{
+    width: 124px;
+    margin-left: 16px;
+}
 .act-enroll-brand-step4{
     width: 130px;
+}
+.act-enroll-item-step4{
+    width: 130px;
+    margin-left: 16px;
 }
 .act-enroll-brand-step5{
     width: 130px;
@@ -273,7 +340,11 @@
 .step3 .act-enroll-brand-step3,
 .step4 .act-enroll-brand-step4,
 .step5 .act-enroll-brand-step5,
-.step6 .act-enroll-brand-step6{
+.step6 .act-enroll-brand-step6,
+.step1 .act-enroll-item-step1,
+.step2 .act-enroll-item-step2,
+.step3 .act-enroll-item-step3,
+.step4 .act-enroll-item-step4{
     color: #333;
 }
 .act-enroll-info-list{
@@ -281,6 +352,11 @@
     position: relative;
     overflow: hidden;
     height: 240px;
+    border: solid 1px #ccc;
+}
+.act-enroll-info-list2{
+    padding: 10px 0 30px;
+    position: relative;
     border: solid 1px #ccc;
 }
 .act-enroll-info-li{
@@ -350,9 +426,19 @@
     width: 190px;
     padding: 0 5px;
 }
+.act-enroll-input2{
+    height: 18px;
+    width: 90px;
+    padding: 0 5px;
+}
 .act-enroll-item-bar{
     text-align: right;
     line-height: 26px;
+}
+.act-enroll-item-bar2{
+    text-align: left;
+    line-height: 26px;
+    margin-bottom: 15px;
 }
 .act-enroll-item-bar span{
     margin-right: 20px;
@@ -434,13 +520,68 @@
     padding: 0 5px;
     margin-left: 5px;
 }
+.act-detail-li{
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+.act-detail-tit{
+    float: left;
+    display: inline;
+    width: 160px;
+    margin-right: 20px;
+    text-align: right;
+}
+.act-detail-con{
+    float: left;
+    display: inline;
+    width: 650px;
+}
 
+.act-btn-box{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.act-btn{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    width: 80px;
+    height: 24px;
+    color: #fff;
+    background-color: #fd9500;
+    border-radius: 3px;
+    line-height: 24px;
+    margin: 0 20px;
+    text-align: center;
+}
+.act-enroll-btn1{
+    line-height: 20px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    padding: 0 15px;
+    background-color: #fd9500;
+    color: #fff;
+    margin-right: 20px;
+}
+.act-enroll-pic-box{
+    width: 150px;
+    height: 150px;
+    border: solid 1px #ccc;
+    margin-top: 15px;
+}
+
+.act-enroll-pic-box img{
+    display: block;
+    width: 100%;
+}
 
 
 .act-pop1{
     width: 800px;
     margin:0 0 0 -400px;
-    top: 50px;
+    top: 20px;
 }
 .pop-select-bar{
     line-height: 20px;
@@ -524,7 +665,6 @@
     line-height: 18px;
     margin-bottom: 10px;
 }
-
 
 
 
